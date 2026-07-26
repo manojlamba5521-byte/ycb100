@@ -70,9 +70,11 @@ def test_public_repository_essential_files_exist() -> None:
         "LICENSE",
         "README.md",
         "SECURITY.md",
+        "docs/LEADERBOARD.md",
         "docs/LIMITATIONS.md",
         "docs/YCB100_BENCHMARK_PLAN.md",
         "docs/YCB100_QUALIFICATION_PLAN.md",
+        "results/development_leaderboard.v1.json",
     }
     assert not sorted(path for path in required if not (root / path).is_file())
 
