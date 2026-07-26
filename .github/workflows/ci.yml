@@ -26,6 +26,7 @@ jobs:
       - name: Public regression gate
         run: >-
           python -m pytest
+          tests/test_development_leaderboard.py
           tests/test_public_repository.py
           tests/test_scenario_manifest.py
           tests/test_adaptive_causal_portable_entrypoint.py
