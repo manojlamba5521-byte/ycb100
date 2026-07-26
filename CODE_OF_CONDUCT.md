@@ -1,6 +1,6 @@
 # Code of Conduct
 
-YCB-100 contributors must maintain a professional, evidence-oriented research
+ConsequenceBench contributors must maintain a professional, evidence-oriented research
 environment.
 
 Harassment, discrimination, threats, deliberate disclosure of private

@@ -1,6 +1,6 @@
 # Project Governance
 
-YCB-100 is maintained by the Yuvin Research Team.
+ConsequenceBench is maintained by Yuvin Labs Research.
 
 Maintainers control executable contracts, public releases, scoring schemas, and
 qualification claims. No individual contributor, model provider, candidate

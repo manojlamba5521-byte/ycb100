@@ -1,6 +1,8 @@
-# YCB-100: ConsequenceBench
+# ConsequenceBench
 
-YCB-100 is a universal synthetic benchmark for consequential AI agents. It
+**Evaluating evidence-grounded agents under real-world consequences.**
+
+ConsequenceBench is a universal synthetic benchmark for consequential AI agents. It
 tests whether an agent investigates the right evidence, chooses the right
 action, avoids unsafe effects, preserves legitimate effects, recovers from
 faults, and proves outcomes through independent readback.
@@ -10,13 +12,13 @@ No vendor-specific governance adapter is included in this repository.
 
 > **Release status:** `DEVELOPMENT_PREVIEW_NOT_QUALIFIED`
 >
-> YCB-100 0.1.0 is engineering and research infrastructure. It is not a
+> ConsequenceBench 0.1.0 is engineering and research infrastructure. It is not a
 > production-safety certification, regulatory assessment, or sealed benchmark
 > qualification.
 
 ## What It Measures
 
-YCB-100 keeps three studies separate:
+ConsequenceBench keeps three studies separate:
 
 1. **Direct Agent Capability** measures an arbitrary agent acting directly in
    evaluator-owned synthetic worlds.
@@ -62,11 +64,11 @@ Python 3.11 or newer is required.
 python -m venv .venv
 python -m pip install --upgrade pip
 python -m pip install -e ".[dev]"
-ycb100 validate-scenarios
-ycb100 public-controls
-ycb100 pressure-controls
-ycb100 lifecycle-controls
-ycb100 lifecycle-reference-controls
+consequencebench validate-scenarios
+consequencebench public-controls
+consequencebench pressure-controls
+consequencebench lifecycle-controls
+consequencebench lifecycle-reference-controls
 ```
 
 These commands require no model, provider key, governance product, or network
@@ -76,9 +78,9 @@ produce qualification evidence.
 Materialize and verify the deterministic 300-world lifecycle pack:
 
 ```bash
-ycb100 lifecycle-materialize-pack --output-dir release/lifecycle-pack
-ycb100 lifecycle-verify-pack \
-  --receipt release/lifecycle-pack/ycb100-consequence-lifecycle-pack.json
+consequencebench lifecycle-materialize-pack --output-dir release/lifecycle-pack
+consequencebench lifecycle-verify-pack \
+  --receipt release/lifecycle-pack/consequencebench-lifecycle-pack.json
 ```
 
 Run the public regression gate:
@@ -100,7 +102,7 @@ code must not read repository files, evaluator state, other-arm traces, or
 private oracle material.
 
 ```bash
-ycb100 pressure-agent \
+consequencebench pressure-agent \
   --agent-manifest agent-manifest.json \
   --agent-command-file agent-command.json \
   --campaign-id my-development-run \
@@ -110,7 +112,7 @@ ycb100 pressure-agent \
 Run a candidate that owns the complete mutating consequence lifecycle:
 
 ```bash
-ycb100 lifecycle-agent \
+consequencebench lifecycle-agent \
   --agent-command-json '["python","my_lifecycle_agent.py"]' \
   --campaign-id my-lifecycle-run \
   --out lifecycle-result.json
@@ -150,12 +152,19 @@ The public wheel excludes vendor-specific arms and private qualification evidenc
 The deterministic repository exporter also excludes local runs, databases,
 caches, provider experiments, and historical research controls.
 
+## Compatibility Identifiers
+
+The `ycb100` CLI alias and `ycb100.*` machine schema identifiers remain
+supported for receipts produced before the ConsequenceBench research rename.
+They are compatibility contracts, not the public benchmark name. New operator
+documentation and examples use `consequencebench`.
+
 ## Build a Clean Release
 
 ```bash
 python -m build --sdist --wheel
 python -m twine check dist/*
-python scripts/build_public_repository.py --out release/ycb100-0.1.0
+python scripts/build_public_repository.py --out release/consequencebench-0.1.0
 ```
 
 The exporter uses an explicit allowlist, scans credential-like markers, hashes
@@ -167,7 +176,7 @@ directory.
 
 Every public result must include:
 
-- YCB-100 version, source commit, wheel hash, and scenario-manifest hash;
+- ConsequenceBench version, source commit, wheel hash, and scenario-manifest hash;
 - complete agent implementation and model configuration hashes;
 - tool policy, prompt, budget, retry, fault, seed, and trial manifests;
 - all attempts, including malformed outputs and timeouts;

@@ -1,6 +1,6 @@
-# Contributing to YCB-100
+# Contributing to ConsequenceBench
 
-YCB-100 accepts fixes, new controls, evaluator tooling, documentation, and
+ConsequenceBench accepts fixes, new controls, evaluator tooling, documentation, and
 candidate scenario families. A change that makes the benchmark easier for one
 specific solver without improving validity will not be accepted.
 

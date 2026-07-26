@@ -3,15 +3,15 @@ requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ycb100"
+name = "consequencebench"
 version = "0.1.0"
-description = "Universal benchmark for evidence-grounded consequential AI agents"
+description = "Evaluate evidence-grounded AI agents under real-world consequences"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
 dependencies = []
 authors = [
-  { name = "Yuvin Research Team" },
+  { name = "Yuvin Labs Research" },
 ]
 keywords = [
   "ai-agents",
@@ -45,11 +45,12 @@ vertex = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/manojlamba5521-byte/ycb100/tree/main/docs"
-Issues = "https://github.com/manojlamba5521-byte/ycb100/issues"
-Repository = "https://github.com/manojlamba5521-byte/ycb100"
+Documentation = "https://github.com/yuvin-labs/consequencebench/tree/main/docs"
+Issues = "https://github.com/yuvin-labs/consequencebench/issues"
+Repository = "https://github.com/yuvin-labs/consequencebench"
 
 [project.scripts]
+consequencebench = "benchmarks.yuvin_consequencebench_100.adaptive_causal.cli:main"
 ycb100 = "benchmarks.yuvin_consequencebench_100.adaptive_causal.cli:main"
 
 [tool.setuptools]

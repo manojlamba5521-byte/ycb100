@@ -1,6 +1,6 @@
 # Changelog
 
-All notable benchmark changes are recorded here. YCB-100 follows Semantic
+All notable benchmark changes are recorded here. ConsequenceBench follows Semantic
 Versioning for executable contracts and scoring schemas.
 
 ## [Unreleased]
@@ -10,7 +10,7 @@ Versioning for executable contracts and scoring schemas.
 
 ## [0.1.0] - 2026-07-25
 
-- Established the YCB-100 Development Preview.
+- Established the ConsequenceBench Development Preview.
 - Added 100 adaptive synthetic worlds across five domains.
 - Separated direct capability, governance conformance, and incremental-effect
   studies.

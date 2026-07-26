@@ -1,4 +1,4 @@
-"""Build hardening for the standalone YCB-100 distribution.
+"""Build hardening for the standalone ConsequenceBench distribution.
 
 Setuptools can retain unrelated modules under ``build/lib/benchmarks`` from a
 previous invocation.  This project deliberately ships only the adaptive-causal namespace,
@@ -25,7 +25,7 @@ PUBLIC_PACKAGES = [
 
 
 class IsolatedYcb100BuildPy(_build_py):
-    """Remove stale generated namespace contents before copying YCB-100 sources."""
+    """Remove stale generated namespace contents before copying ConsequenceBench sources."""
 
     def run(self) -> None:
         build_root = Path(self.build_lib).resolve()
