@@ -1,0 +1,58 @@
+name: benchmark-ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  portable:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.11", "3.12", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+      - name: Public regression gate
+        run: >-
+          python -m pytest
+          tests/test_public_repository.py
+          tests/test_scenario_manifest.py
+          tests/test_adaptive_causal_portable_entrypoint.py
+          tests/test_adaptive_causal_package_isolation.py
+      - name: Credential-free controls
+        run: |
+          ycb100 validate-scenarios --out scenario-validation.json
+          ycb100 public-controls --out public-controls.json
+          ycb100 pressure-controls --out pressure-controls.json
+
+  artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build and inspect
+        run: |
+          python -m pip install ".[dev]"
+          python -m build --sdist --wheel
+          python -m twine check dist/*
+          python scripts/build_public_repository.py --out release/ycb100-0.1.0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ycb100-development-preview
+          path: |
+            dist/*
+            release/*.zip
+            release/*.integrity.json
