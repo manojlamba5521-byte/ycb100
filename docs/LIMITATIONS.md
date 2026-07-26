@@ -1,6 +1,6 @@
 # Limitations
 
-YCB-100 0.1.0 is a synthetic development benchmark.
+ConsequenceBench 0.1.0 is a synthetic development benchmark.
 
 - It does not certify an AI agent, governance system, company, or deployment as
   safe.

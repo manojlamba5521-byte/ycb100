@@ -1,8 +1,8 @@
-# YCB-100 ConsequenceBench Benchmark Plan
+# ConsequenceBench Benchmark Plan
 
 Status: approved implementation plan. The portable Foundation contract subset is
 implemented; world control planes, OCI isolation, actual governed execution,
-and qualification are not. This document does not certify a YCB-100 result, a model
+and qualification are not. This document does not certify a ConsequenceBench result, a model
 score, a governance-system advantage, or production safety.
 
 The implementation boundary, lifecycle protocol, corpus-custody rules, and
@@ -10,11 +10,11 @@ release gates are defined by this plan and the
 [Consequence Lifecycle Protocol](CONSEQUENCE_LIFECYCLE_PROTOCOL.md).
 The empirical hardening thresholds, sealed evaluator boundary, and independent
 qualification requirements are defined in the
-[YCB-100 Qualification Plan](YCB100_QUALIFICATION_PLAN.md).
+[ConsequenceBench Qualification Plan](YCB100_QUALIFICATION_PLAN.md).
 
 ## 1. Decision
 
-YCB-100, **Adaptive Causal Consequences** (`YCB-100-ACC`), will be a
+ConsequenceBench, **Adaptive Causal Consequences** (`ConsequenceBench-ACC`), will be a
 universal benchmark that any agent developer can run locally without a governance product,
 cloud credentials, production access, or a proprietary model.
 
@@ -38,9 +38,9 @@ layer blocks. Both observations matter and must remain visible.
 V4 is retained as a public interactive design-admission track. It is useful
 for protocol, trace, and shortcut-control testing, but its standalone tools do
 not execute any product-specific governance service graph. Corpus V3 is retained as
-a real-kernel deterministic control. Neither is a YCB-100 qualification result.
+a real-kernel deterministic control. Neither is a ConsequenceBench qualification result.
 
-## 2. What YCB-100 Measures
+## 2. What ConsequenceBench Measures
 
 A governance system under test is a model-independent consequence boundary. An agent may
 reason, investigate, request, and propose. It cannot become a trusted
@@ -48,7 +48,7 @@ principal, mint trusted evidence, write canonical state, self-authorize,
 reserve an effect, invoke an exclusive controlled connector, or declare
 `VERIFIED`.
 
-YCB-100 therefore tests five distinct properties:
+ConsequenceBench therefore tests five distinct properties:
 
 | Property | Direct-agent question | Governed-system question |
 |---|---|---|
@@ -64,7 +64,7 @@ The permitted claim is narrow:
 > connector build, and seed set, the governed arm changed measured consequence
 > outcomes by the reported paired amounts.
 
-YCB-100 must not claim that governance makes a model intelligent, that a benchmark
+ConsequenceBench must not claim that governance makes a model intelligent, that a benchmark
 proves regulatory compliance, or that a simulator certifies a real sector.
 
 ## 3. Universal Access Without an Open-Test Illusion
@@ -104,7 +104,7 @@ internet.
 
 Separate optional **connector certification** campaigns may use a named test
 tenant and independently controlled source reader. They publish a different
-certificate and cannot raise an agent's universal YCB-100 score.
+certificate and cannot raise an agent's universal ConsequenceBench score.
 
 ## 4. Execution Architecture
 
@@ -145,7 +145,7 @@ source state and trace.
 
 ### 4.1 Agent Adapter Protocol
 
-YCB-100 defines a provider-neutral JSONL-over-stdio protocol and OCI execution
+ConsequenceBench defines a provider-neutral JSONL-over-stdio protocol and OCI execution
 profile. A compliant adapter must support:
 
 - `episode.start`: public mission, tool manifest, budget, initial observation,
@@ -213,7 +213,7 @@ independent but equivalent twins before any A/B result is accepted.
 
 ## 5. Five Domains and Twenty-Five Causal Families
 
-YCB-100 preserves the fixed public shape: five domains, four challenge lenses per
+ConsequenceBench preserves the fixed public shape: five domains, four challenge lenses per
 domain, and five archetypes per lens. A public archetype is not one static
 question. It generates many worlds from one causal family.
 
@@ -336,7 +336,7 @@ The projects are practical integration candidates, not endorsements or sector
 certifications: Apache Fineract offers a multi-tenant REST financial-services
 platform; Keycloak supplies local identity/role/event surfaces; pandapower
 supports repeatable power-flow calculations; Synthea produces synthetic FHIR
-data; and Gitea is a self-hosted Git service. YCB-100's oracle remains independent
+data; and Gitea is a self-hosted Git service. ConsequenceBench's oracle remains independent
 of every adapter.
 
 ## 8. Scoring and Qualification
@@ -381,7 +381,7 @@ disposition. Any governed unsafe effect fails the governed run.
 
 ## 9. Baselines and Difficulty Evidence
 
-YCB-100 is not called 9/10 because its authors say it is difficult. It earns that
+ConsequenceBench is not called 9/10 because its authors say it is difficult. It earns that
 assessment only after an empirical separation campaign:
 
 1. four-line direct policy, always-execute, and always-deny controls;
@@ -450,7 +450,7 @@ token reuse, or trace alteration produces a hard failure.
 Acceptance: fresh checkout runs one family per domain without Docker, internet,
 credentials, or a governance product; all source-state effects are independently observable.
 
-### YCB-100.3: make the product membrane real
+### ConsequenceBench.3: make the product membrane real
 
 - Replace governed-arm imitation with actual current product container.
 - Route evidence handles only through connector-owned ingestion/resolution.
@@ -463,7 +463,7 @@ Acceptance: restart, revocation-before-dispatch, response loss, duplicate,
 cross-tenant, and partial-effect tests measure actual services and source state
 in both arms.
 
-### YCB-100.4: procedural causal generator and oracle
+### ConsequenceBench.4: procedural causal generator and oracle
 
 - Implement five causal modules per domain and four lenses per module.
 - Generate public seed bundles and private held-out structural graph modules.
@@ -512,7 +512,7 @@ and deterministic validation hashes.
 
 ## 11. Required Regression and Release Gates
 
-Before YCB-100 reports an agent result, require schema and semantic validation of
+Before ConsequenceBench reports an agent result, require schema and semantic validation of
 every manifest/candidate/trace/readback/oracle/report; no secrets, personal
 data, PHI, production identifiers, or host mounts; candidate and snapshot
 equality across arms; real governance-service ownership in governed runs;
@@ -529,7 +529,7 @@ claim it would otherwise support.
 
 ## 12. Research Basis and Reusable Components
 
-YCB-100 adopts, but does not copy or depend on, several useful ideas:
+ConsequenceBench adopts, but does not copy or depend on, several useful ideas:
 
 - [ToolSandbox](https://arxiv.org/abs/2408.04682) shows why stateful tools,
   implicit dependencies, and intermediate milestones reveal more than a

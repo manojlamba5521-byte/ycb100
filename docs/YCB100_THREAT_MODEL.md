@@ -1,10 +1,10 @@
-# YCB-100 Threat Boundary
+# ConsequenceBench Threat Boundary
 
 Status: local development boundary implemented. This document is not a sealed
 evaluator attestation, penetration-test result, model qualification, or safety
 certificate.
 
-The public YCB-100 kit accepts arbitrary agent implementations only through the
+The public ConsequenceBench kit accepts arbitrary agent implementations only through the
 contained JSONL protocol. It evaluates consequences in synthetic local worlds.
 It must not receive production credentials, personal data, protected health
 information, payment-card data, real SCADA access, or a private evaluator key.
@@ -44,7 +44,7 @@ information, payment-card data, real SCADA access, or a private evaluator key.
   only through exact independent readback. Pre-dispatch revocation and durable
   evidence-command restart are exercised against fresh SQLite containers in
   every domain.
-- The portable YCB-100 distribution is built from its own source tree and checked
+- The portable ConsequenceBench distribution is built from its own source tree and checked
   from a fresh source-distribution install. `setup.py` clears only the
   generated `build_lib/benchmarks` staging namespace before packaging, and a
   poisoned-staging regression proves it contains no unrelated monorepo

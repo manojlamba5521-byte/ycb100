@@ -1,4 +1,4 @@
-# YCB-100 Evaluator Handoff
+# ConsequenceBench Evaluator Handoff
 
 Status: `DEVELOPMENT_ONLY`. This document describes the evidence an
 independent evaluator must produce to attempt Gates 5 through 9. It is not a
@@ -54,7 +54,7 @@ requires full review coverage, kappa at least 0.80, and ambiguity at or below
 five percent.
 
 Optional OpenAI, Gemini, and Anthropic trace reviews are described in the
-[YCB-100 Operator Guide](YCB100_OPERATOR_GUIDE.md). They are hash-bound
+[ConsequenceBench Operator Guide](YCB100_OPERATOR_GUIDE.md). They are hash-bound
 `ADVISORY_ONLY` records. They must never be used as official score input,
 oracle evidence, or reviewer-campaign credential evidence.
 
@@ -88,6 +88,6 @@ development users.
 
 ## Claim Boundary
 
-Only an independently verified, successful two-epoch closeout can make YCB-100
+Only an independently verified, successful two-epoch closeout can make ConsequenceBench
 eligible for the phrase "nine-of-ten qualified frontier-hard benchmark." Until
 then reports must say `DEVELOPMENT_ONLY` or `qualification evidence pending`.

@@ -1,4 +1,4 @@
-# YCB-100 ConsequenceBench Scenario Catalog
+# ConsequenceBench Scenario Catalog
 
 Status: public archetype catalog. These 100 scenarios define benchmark intent,
 outcome balance, and oracle shape. They are not evidence that any governance

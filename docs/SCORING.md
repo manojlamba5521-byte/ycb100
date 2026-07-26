@@ -1,8 +1,8 @@
-# YCB-100 Measurement Standard
+# ConsequenceBench Measurement Standard
 
-YCB-100 measures two different things. An agent's capacity to reason through a
+ConsequenceBench measures two different things. An agent's capacity to reason through a
 partially observable causal environment is not the same as a governance
-membrane's ability to control the consequences of that reasoning. The YCB-100
+membrane's ability to control the consequences of that reasoning. The ConsequenceBench
 scorecard therefore never turns a governance refusal into an increase in agent
 capability.
 
@@ -12,7 +12,7 @@ universal: a participant need not use a particular governance system, model, pro
 agent framework.
 
 `adaptive_causal.metric_derivation` is the required local derivation boundary for new
-YCB-100 controls. It computes dimensions from evaluator-owned episode evaluations,
+ConsequenceBench controls. It computes dimensions from evaluator-owned episode evaluations,
 causal/invariance sister observations, paired lifecycle facts, and observed
 evaluation-trust facts. A caller may not describe a hand-entered percentage as
 a benchmark measurement. Local development runs correctly retain zero points
@@ -143,6 +143,6 @@ not turn an incorrect candidate into a correct agent decision.
 
 Historical generic pilot scorecards are not canonical evaluators for the
 Pressure Worlds or Consequence Lifecycle Track and are not shipped as supported
-entry points. Public YCB-100
+entry points. Public ConsequenceBench
 controls, fixture candidates, local containment, and deterministic worlds are
 `DEVELOPMENT_SCORE_ONLY`; they are not a model rating or a nine-of-ten result.

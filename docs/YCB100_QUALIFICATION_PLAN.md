@@ -1,19 +1,19 @@
-# YCB-100 ConsequenceBench Qualification Plan
+# ConsequenceBench Qualification Plan
 
 Status: approved hardening and qualification plan. This is a plan for earning
-an empirical "frontier-hard" assessment. It is not evidence that YCB-100 currently
+an empirical "frontier-hard" assessment. It is not evidence that ConsequenceBench currently
 has that assessment, a model result, a governance-system advantage, or production-safety
 certification.
 
 Related documents:
 
-- [YCB-100 Benchmark Plan](YCB100_BENCHMARK_PLAN.md)
+- [ConsequenceBench Benchmark Plan](YCB100_BENCHMARK_PLAN.md)
 - [Consequence Lifecycle Protocol](CONSEQUENCE_LIFECYCLE_PROTOCOL.md)
 - [Evaluator Handbook](YCB100_EVALUATOR_HANDBOOK.md)
 
 ## 1. Decision And Claim Boundary
 
-YCB-100 remains a universal benchmark: any developer can run the public
+ConsequenceBench remains a universal benchmark: any developer can run the public
 development tier without a governance product, cloud credentials, privileged infrastructure,
 or a proprietary model. It separately measures:
 
@@ -52,7 +52,7 @@ These are status indicators, not scores assigned to an agent or product.
 
 ## 3. Research Decisions
 
-YCB-100 adopts mechanisms, not corpora or claims, from existing work.
+ConsequenceBench adopts mechanisms, not corpora or claims, from existing work.
 
 | Source | Adopt | Boundary |
 |---|---|---|
@@ -60,8 +60,8 @@ YCB-100 adopts mechanisms, not corpora or claims, from existing work.
 | [AgentDojo](https://github.com/ethz-spylab/agentdojo) | paired ordinary/adversarial tool content and utility-versus-security reporting | Prompt injection is one family, not the entire governance test. |
 | [tau-bench](https://github.com/sierra-research/tau-bench) | policy-constrained multi-turn tool workflows and clarification | The oracle is deterministic; an LLM user simulator is optional stress evidence only. |
 | [CausalWorld](https://github.com/rr-learning/CausalWorld) | explicit causal variables, interventions, structural distribution shifts | Do not add robotics or PyBullet to the universal core. |
-| [BrowserGym](https://github.com/ServiceNow/BrowserGym) and [OSWorld](https://github.com/xlang-ai/OSWorld) | reset/step/close lifecycle, clean-environment discipline, independently observed execution | Browser and VM tasks remain optional adapter evidence, not YCB-100's universal core. |
-| [MLE-bench](https://github.com/openai/mle-bench) and [METR](https://metr.org/time-horizons/) | exact run configuration, multi-run variance, resource reporting, human-time calibration | YCB-100 scores consequence outcomes through an independent oracle. |
+| [BrowserGym](https://github.com/ServiceNow/BrowserGym) and [OSWorld](https://github.com/xlang-ai/OSWorld) | reset/step/close lifecycle, clean-environment discipline, independently observed execution | Browser and VM tasks remain optional adapter evidence, not ConsequenceBench's universal core. |
+| [MLE-bench](https://github.com/openai/mle-bench) and [METR](https://metr.org/time-horizons/) | exact run configuration, multi-run variance, resource reporting, human-time calibration | ConsequenceBench scores consequence outcomes through an independent oracle. |
 | [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) | context-specific, repeatable TEVV | Synthetic worlds cannot certify regulated operations. |
 
 Open-source control-plane adapters remain optional and separately reviewed:
@@ -69,11 +69,11 @@ Apache Fineract, Keycloak, pandapower, Synthea/HAPI FHIR, Gitea, Toxiproxy,
 and WireMock. They require pinned commit and OCI digest, license/SBOM/security
 review, synthetic data, local test instances, source readback, idempotency,
 cleanup, and a separate connector certificate. Their absence is NOT_RUN,
-never a pass or a reduction in universal YCB-100 difficulty.
+never a pass or a reduction in universal ConsequenceBench difficulty.
 
 ## 4. What Makes A World Hard
 
-YCB-100 must be hard because the agent learns a changing causal world under
+ConsequenceBench must be hard because the agent learns a changing causal world under
 constraints, not because it receives longer prompts. Every admitted episode
 requires all of the following:
 
@@ -316,7 +316,7 @@ Closeout binds and reopens every child artifact before hashing the release.
 
 Expected difficulty bands in the blueprint remain hypotheses. They never replace
 these gates. If strong baselines solve nearly every sealed task, humans cannot
-solve a family reliably, or direct systems do not make meaningful errors, YCB-100 is
+solve a family reliably, or direct systems do not make meaningful errors, ConsequenceBench is
 not nine-of-ten hard regardless of trajectory length.
 
 ## 8. Reporting And Stop Rules
@@ -345,7 +345,7 @@ evidence.
 
 ## 9. Definition Of Done
 
-YCB-100 is eligible for the phrase "nine-of-ten qualified frontier-hard benchmark"
+ConsequenceBench is eligible for the phrase "nine-of-ten qualified frontier-hard benchmark"
 only when Gates 0 through 9 and every threshold above pass in two meaningful
 epochs. Until then it is accurately described as a developing universal adaptive
 causal-consequence benchmark with a partial banking slice.

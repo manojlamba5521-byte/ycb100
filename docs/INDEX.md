@@ -1,4 +1,4 @@
-# YCB-100 Documentation
+# ConsequenceBench Documentation
 
 ## Benchmark Definition
 

@@ -1,4 +1,4 @@
-# YCB-100 Operator Guide
+# ConsequenceBench Operator Guide
 
 ## Roles
 
@@ -11,7 +11,7 @@
 
 ## Give a Task to an Agent
 
-Yes. Give the benchmark to an AI agent directly, but through the YCB-100 JSONL
+Yes. Give the benchmark to an AI agent directly, but through the ConsequenceBench JSONL
 protocol rather than pasting an answerable question into a chat window. This
 keeps evidence, tool budget, timing, and transcript identical across compared
 arms.
@@ -32,8 +32,8 @@ Existing adapters are concrete examples:
 py -3 scripts/ycb100_vertex_gemini_jsonl_agent.py --help
 py -3 scripts/ycb100_ollama_jsonl_agent.py --help
 py -3 scripts/ycb100_codex_cli_jsonl_agent.py --help
-ycb100 pressure-agent --help
-ycb100 lifecycle-agent --help
+consequencebench pressure-agent --help
+consequencebench lifecycle-agent --help
 ```
 
 Any model or framework can participate when its adapter follows the same JSONL

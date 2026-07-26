@@ -158,15 +158,15 @@ contamination.
 Materialize the immutable development pack:
 
 ```bash
-ycb100 lifecycle-materialize-pack --output-dir release/lifecycle-pack
-ycb100 lifecycle-verify-pack \
-  --receipt release/lifecycle-pack/ycb100-consequence-lifecycle-pack.json
+consequencebench lifecycle-materialize-pack --output-dir release/lifecycle-pack
+consequencebench lifecycle-verify-pack \
+  --receipt release/lifecycle-pack/consequencebench-lifecycle-pack.json
 ```
 
 The pack contains separate deterministic archives:
 
-- `ycb100-consequence-lifecycle-public.zip`: candidate-safe views;
-- `ycb100-consequence-lifecycle-evaluator.zip`: evaluator-only state.
+- `consequencebench-lifecycle-public.zip`: candidate-safe views;
+- `consequencebench-lifecycle-evaluator.zip`: evaluator-only state.
 
 The receipt binds all child hashes, all public/private world joins, source
 files, artifact sizes, archive hashes, variant counts, and the pack hash.
@@ -176,7 +176,7 @@ out-of-root evidence.
 ## Run An Agent
 
 ```bash
-ycb100 lifecycle-agent \
+consequencebench lifecycle-agent \
   --agent-command-json '["python","my_agent.py"]' \
   --campaign-id local-development \
   --scenario-id FIN-C02 \

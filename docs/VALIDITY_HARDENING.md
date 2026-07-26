@@ -1,7 +1,7 @@
-# YCB-100 Validity Hardening Record
+# ConsequenceBench Validity Hardening Record
 
 This record captures the independent review of the original executable pilot
-and the corrections required before treating YCB-100 as a difficult agent
+and the corrections required before treating ConsequenceBench as a difficult agent
 benchmark.
 
 ## Corrected In Corpus V3
