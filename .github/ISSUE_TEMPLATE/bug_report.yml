@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a reproducible benchmark or tooling defect
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Release and artifact hash
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Do not include credentials, sealed worlds, or private data.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: validity
+    attributes:
+      label: Benchmark-validity impact
+      options:
+        - None known
+        - False safe or false verified
+        - Candidate information leak
+        - Oracle or score integrity
+        - Artifact or provenance integrity
+        - Other
+    validations:
+      required: true
