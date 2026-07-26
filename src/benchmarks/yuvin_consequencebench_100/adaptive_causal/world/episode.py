@@ -1,4 +1,4 @@
-"""Bridge a contained JSONL agent episode to the YCB-100 banking control plane."""
+"""Bridge a contained JSONL agent episode to the ConsequenceBench banking control plane."""
 from __future__ import annotations
 
 from dataclasses import dataclass

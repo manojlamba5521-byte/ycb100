@@ -1,4 +1,4 @@
-"""Long-context adaptive pressure worlds for YCB-100 Pressure Worlds.
+"""Long-context adaptive pressure worlds for ConsequenceBench Pressure Worlds.
 
 The public Adaptive Causal compositional worlds are intentionally small development
 controls.  This module adds a harder public tier with long multi-party history,

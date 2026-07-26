@@ -1,4 +1,4 @@
-"""Bounded local causal episodes for the YCB-100 public development tier.
+"""Bounded local causal episodes for the ConsequenceBench public development tier.
 
 The episode deliberately models consequences rather than a prompt-answer
 exercise.  It is evaluator-owned, uses only synthetic local state, and keeps

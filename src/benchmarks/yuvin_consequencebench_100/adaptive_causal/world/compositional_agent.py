@@ -1,4 +1,4 @@
-"""Proposal-generation adapter for arbitrary agents in compositional YCB-100 worlds.
+"""Proposal-generation adapter for arbitrary agents in compositional ConsequenceBench worlds.
 
 Agents receive raw records, read-only tools, and a public proposal envelope.
 They submit a decision claim, never a caller-authored trusted-evidence or

@@ -1,4 +1,4 @@
-"""Evaluator-owned dynamic worlds for the YCB-100 public development tier."""
+"""Evaluator-owned dynamic worlds for the ConsequenceBench public development tier."""
 
 from benchmarks.yuvin_consequencebench_100.adaptive_causal.world.banking import (
     BankingRefundScenarioV1,

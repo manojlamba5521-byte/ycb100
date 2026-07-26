@@ -1,4 +1,4 @@
-"""Deterministic event-sourced world primitives for YCB-100 public episodes."""
+"""Deterministic event-sourced world primitives for ConsequenceBench public episodes."""
 from __future__ import annotations
 
 import copy

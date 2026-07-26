@@ -1,6 +1,6 @@
 """Interactive public-development causal episodes over raw family evidence.
 
-This module deliberately does not reuse the procedural YCB-100 world implementation.
+This module deliberately does not reuse the procedural ConsequenceBench world implementation.
 It gives a participant a bounded, changing raw-evidence surface while retaining
 the schedule, causal family mechanism, expected terminal outcome, and custody
 journal inside the evaluator object.

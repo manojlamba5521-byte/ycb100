@@ -1,4 +1,4 @@
-"""Deterministic causal specifications for the non-banking YCB-100 control planes.
+"""Deterministic causal specifications for the non-banking ConsequenceBench control planes.
 
 This module is intentionally a specification layer only.  It neither opens a
 network connection nor performs a domain action.  Later Gate 2 work can attach
@@ -113,7 +113,7 @@ class DomainControlPlaneSpec:
             raise ValueError("domain control-plane schema version mismatch")
         domain_id = _identifier(self.domain_id, "domain_id")
         if domain_id not in DOMAIN_IDS:
-            raise ValueError("domain_id is not a supported YCB-100 control plane")
+            raise ValueError("domain_id is not a supported ConsequenceBench control plane")
         object.__setattr__(self, "domain_id", domain_id)
         object.__setattr__(self, "control_plane_id", _identifier(self.control_plane_id, "control_plane_id"))
         object.__setattr__(
@@ -162,7 +162,7 @@ class CausalFamilySpec:
             raise ValueError("causal family schema version mismatch")
         family_id = _identifier(self.family_id, "family_id")
         if family_id not in CAUSAL_FAMILY_IDS:
-            raise ValueError("family_id is not a shared YCB-100 causal family")
+            raise ValueError("family_id is not a shared ConsequenceBench causal family")
         object.__setattr__(self, "family_id", family_id)
         edge = _identifier(self.intervention_edge, "intervention_edge")
         if edge == "scenario_mode":

@@ -1,4 +1,4 @@
-"""Synthetic banking refund-recovery world for the YCB-100 public vertical slice."""
+"""Synthetic banking refund-recovery world for the ConsequenceBench public vertical slice."""
 from __future__ import annotations
 
 import copy

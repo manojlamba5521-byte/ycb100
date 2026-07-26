@@ -1,4 +1,4 @@
-"""Evaluator-keyed structural-OOD pressure worlds for YCB-100 Pressure Worlds.
+"""Evaluator-keyed structural-OOD pressure worlds for ConsequenceBench Pressure Worlds.
 
 This module is a development control, not a sealed-custody implementation.
 It derives private causal compositions from evaluator-held key material while

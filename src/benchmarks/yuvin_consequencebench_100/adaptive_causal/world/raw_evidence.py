@@ -1,4 +1,4 @@
-"""Raw, public-development observations for YCB-100 causal-family construction.
+"""Raw, public-development observations for ConsequenceBench causal-family construction.
 
 These contracts deliberately model observations rather than conclusions.  The
 agent presentation contains source records, timestamps, replica positions, and

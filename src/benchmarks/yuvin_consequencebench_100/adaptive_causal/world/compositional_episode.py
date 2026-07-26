@@ -1,4 +1,4 @@
-"""Compositional public-development worlds for YCB-100.
+"""Compositional public-development worlds for ConsequenceBench.
 
 The older adaptive world maps one visible event category to a fixed route.  It
 is retained as a compatibility control only.  This module instead exposes a
