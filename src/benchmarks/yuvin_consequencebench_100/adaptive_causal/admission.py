@@ -1,4 +1,4 @@
-"""Task-admission contracts for public and sealed YCB-100 corpus review.
+"""Task-admission contracts for public and sealed ConsequenceBench corpus review.
 
 The module records review evidence; it does not simulate human reviewers or
 turn developer-authored approval into independent admission.  Any caller that

@@ -1,4 +1,4 @@
-"""Optional provider-neutral qualitative review for YCB-100 traces.
+"""Optional provider-neutral qualitative review for ConsequenceBench traces.
 
 This module is deliberately separate from the evaluator-owned oracle. An LLM
 review can explain reasoning quality, but it cannot create, modify, or certify

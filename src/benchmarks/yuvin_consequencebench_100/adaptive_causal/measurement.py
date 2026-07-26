@@ -1,4 +1,4 @@
-"""Universal, fail-closed measurement contracts for YCB-100.
+"""Universal, fail-closed measurement contracts for ConsequenceBench.
 
 The scorecard deliberately separates an agent's problem-solving capability from
 the governance membrane's consequence control.  A governance refusal must not

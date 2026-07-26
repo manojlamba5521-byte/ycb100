@@ -1,4 +1,4 @@
-"""Universal YCB-100 Adaptive Causal Consequences YCB-100 contracts.
+"""Universal ConsequenceBench adaptive-causal consequence contracts.
 
 This package intentionally contains no model client, external credential, or
 Yuvin execution shortcut. It establishes the portable agent and paired-run

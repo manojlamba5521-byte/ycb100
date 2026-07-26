@@ -1,4 +1,4 @@
-"""Repeated-trial and uncertainty contracts for YCB-100.
+"""Repeated-trial and uncertainty contracts for ConsequenceBench.
 
 All inputs use integer basis points so a signed receipt does not depend on
 platform float formatting.  These are measurement primitives, not a claim that

@@ -1,4 +1,4 @@
-"""Public, deterministic YCB-100 corpus composition and shortcut-control checks.
+"""Public, deterministic ConsequenceBench corpus composition and shortcut-control checks.
 
 This is deliberately a development-corpus generator.  Its generated templates
 are reproducible and inspectable, so they cannot be used to claim sealed or

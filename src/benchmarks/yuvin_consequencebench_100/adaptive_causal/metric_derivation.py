@@ -1,4 +1,4 @@
-"""Derive YCB-100 score dimensions from evaluator-owned observations.
+"""Derive ConsequenceBench score dimensions from evaluator-owned observations.
 
 `Ycb100ScorecardV1` remains a compact result contract.  This module prevents
 public controls from treating caller-supplied percentages as measurements: it

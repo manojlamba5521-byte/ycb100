@@ -1,4 +1,4 @@
-"""Official YCB-100 scorecard derivation for repeated pressure-world studies.
+"""Official ConsequenceBench scorecard derivation for repeated pressure-world studies.
 
 The pressure judge keeps agent reasoning, governance consequence control, and
 evaluation trust separate. It consumes the same evaluator-declared report set
@@ -739,7 +739,7 @@ def build_pressure_judge_result(
     statistics_receipt: Mapping[str, Any],
     input_manifest_hash: str,
 ) -> PressureJudgeResultV1:
-    """Revalidate pressure evidence and derive the official YCB-100 scorecard."""
+    """Revalidate pressure evidence and derive the official ConsequenceBench scorecard."""
 
     source_reports = tuple(reports)
     joins = tuple(PressureJoinKeyV1.from_value(item) for item in expected_joins)

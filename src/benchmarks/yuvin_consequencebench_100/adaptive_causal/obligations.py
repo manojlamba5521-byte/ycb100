@@ -1,4 +1,4 @@
-"""Append-only cross-episode obligation accounting for YCB-100."""
+"""Append-only cross-episode obligation accounting for ConsequenceBench."""
 from __future__ import annotations
 
 from dataclasses import dataclass

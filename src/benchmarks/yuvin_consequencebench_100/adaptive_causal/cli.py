@@ -1,4 +1,4 @@
-"""Credential-free public controls for the portable YCB-100 package."""
+"""Credential-free public controls for the portable ConsequenceBench package."""
 from __future__ import annotations
 
 import argparse
@@ -321,7 +321,7 @@ def run_lifecycle_agent(
 
 
 def run_public_controls() -> dict[str, Any]:
-    """Run pure YCB-100 structural controls without model, Yuvin, or credentials."""
+    """Run pure ConsequenceBench structural controls without model, Yuvin, or credentials."""
     corpus = build_public_raw_causal_family_corpus()
     rendered_views = [json.dumps(view, sort_keys=True).casefold() for view in corpus.agent_views()]
     leakage = [
@@ -418,9 +418,9 @@ def run_public_controls() -> dict[str, Any]:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Run YCB-100 public controls")
+    parser = argparse.ArgumentParser(description="Run ConsequenceBench public controls")
     subcommands = parser.add_subparsers(dest="command", required=True)
-    control = subcommands.add_parser("public-controls", help="run credential-free public YCB-100 controls")
+    control = subcommands.add_parser("public-controls", help="run credential-free public ConsequenceBench controls")
     control.add_argument("--out", type=Path)
     manifest = subcommands.add_parser(
         "validate-scenarios",

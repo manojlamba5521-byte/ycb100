@@ -1,4 +1,4 @@
-"""Versioned, portable contracts for YCB-100 Adaptive Causal Consequences YCB-100."""
+"""Versioned, portable contracts for ConsequenceBench adaptive causal consequences."""
 from __future__ import annotations
 
 import hashlib
@@ -113,12 +113,12 @@ def _plain(value: Any) -> Any:
     if value is None or isinstance(value, (str, bool, int)):
         return value
     if isinstance(value, float):
-        raise TypeError("floating-point values are not canonical YCB-100 contract data")
+        raise TypeError("floating-point values are not canonical ConsequenceBench contract data")
     if isinstance(value, Mapping):
         return {str(key): _plain(item) for key, item in sorted(value.items(), key=lambda item: str(item[0]))}
     if isinstance(value, (list, tuple)):
         return [_plain(item) for item in value]
-    raise TypeError(f"unsupported YCB-100 contract value: {type(value).__name__}")
+    raise TypeError(f"unsupported ConsequenceBench contract value: {type(value).__name__}")
 
 
 def _identifier(value: Any, field_name: str) -> str:

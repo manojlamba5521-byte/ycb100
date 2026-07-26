@@ -1,4 +1,4 @@
-"""Evaluator-owned adaptive attack and trajectory-search contracts for YCB-100.
+"""Evaluator-owned adaptive attack and trajectory-search contracts for ConsequenceBench.
 
 The attacker receives only a bounded public behavioural observation; it never
 reads evaluator files, oracle state, private seeds, or agent private memory.

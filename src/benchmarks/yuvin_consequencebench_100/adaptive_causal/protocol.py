@@ -1,4 +1,4 @@
-"""Strict JSONL message validation for universal YCB-100 agent adapters."""
+"""Strict JSONL message validation for universal ConsequenceBench agent adapters."""
 from __future__ import annotations
 
 from typing import Any, Mapping
