@@ -7,6 +7,7 @@
 | [Benchmark Plan](YCB100_BENCHMARK_PLAN.md) | Universal adaptive-causal benchmark protocol and study separation. |
 | [Catalog](CATALOG.md) | The 100 public scenario archetypes. |
 | [Scoring](SCORING.md) | Official dimensions, hard counters, and evaluator rules. |
+| [Development Leaderboard](LEADERBOARD.md) | Completed local paired studies, multidimensional results, and evidence limits. |
 | [Consequence Lifecycle Protocol](CONSEQUENCE_LIFECYCLE_PROTOCOL.md) | Full model-owned lifecycle, frozen pack, independent oracle, and paired comparison contract. |
 | [Threat Model](YCB100_THREAT_MODEL.md) | Candidate, evaluator, oracle, and custody boundaries. |
 | [Limitations](LIMITATIONS.md) | Scientific, domain, and claim boundaries. |
@@ -24,6 +25,7 @@
 | Document | Purpose |
 | --- | --- |
 | [Qualification Plan](YCB100_QUALIFICATION_PLAN.md) | Independent qualification requirements. |
-Generated runs are intentionally absent from the source repository archive.
-Separately published evidence bundles must include their own immutable manifest,
-artifact hashes, candidate configuration, and claim label.
+Raw generated runs remain absent from the source repository archive. The public
+development leaderboard contains hash-bound summary receipts only. Separately
+published evidence bundles must include their own immutable manifest, artifact
+hashes, candidate configuration, and claim label.
