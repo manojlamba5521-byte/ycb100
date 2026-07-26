@@ -1,4 +1,4 @@
-"""Run Gemini through the contained YCB-100 JSONL agent protocol.
+"""Run Gemini through the contained ConsequenceBench JSONL agent protocol.
 
 This program is executed from a temporary evaluator-owned working directory.
 It reads Vertex credentials only from its filtered process environment and
@@ -97,7 +97,7 @@ def _emit(message: Mapping[str, Any]) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Contained Vertex Gemini YCB-100 JSONL agent")
+    parser = argparse.ArgumentParser(description="Contained Vertex Gemini ConsequenceBench JSONL agent")
     parser.add_argument("--model", default="gemini-3.6-flash")
     parser.add_argument("--timeout-seconds", type=float, default=120.0)
     parser.add_argument("--max-investigations", type=int, default=5)

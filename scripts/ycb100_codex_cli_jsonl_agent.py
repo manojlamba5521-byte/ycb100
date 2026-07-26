@@ -1,4 +1,4 @@
-"""Run Codex CLI through the contained YCB-100 JSONL agent protocol."""
+"""Run Codex CLI through the contained ConsequenceBench JSONL agent protocol."""
 from __future__ import annotations
 
 import argparse
@@ -35,7 +35,7 @@ def _emit(message: Mapping[str, Any]) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Contained Codex CLI YCB-100 JSONL agent")
+    parser = argparse.ArgumentParser(description="Contained Codex CLI ConsequenceBench JSONL agent")
     parser.add_argument("--model", default="gpt-5.5")
     parser.add_argument("--reasoning-effort", default="xhigh")
     parser.add_argument("--codex-package", default=CODEX_CLI_PACKAGE)

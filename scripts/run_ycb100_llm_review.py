@@ -1,4 +1,4 @@
-"""Produce an advisory, hash-bound LLM review of one public YCB-100 trace."""
+"""Produce an advisory, hash-bound LLM review of one public ConsequenceBench trace."""
 from __future__ import annotations
 
 import argparse

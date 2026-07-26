@@ -1,4 +1,4 @@
-"""Build the official YCB-100 judge result for a repeated pressure-world study."""
+"""Build the official ConsequenceBench judge result for a repeated pressure-world study."""
 from __future__ import annotations
 
 import argparse
@@ -91,12 +91,12 @@ def _markdown(result: dict[str, Any]) -> str:
     primary = result["primary_outcomes"]
     diagnostics = result["coverage_adjusted_diagnostics"]
     sections = [
-        "# YCB-100 Pressure Worlds Pressure Judge Result",
+        "# ConsequenceBench Pressure Worlds Pressure Judge Result",
         "",
         "Status: **" + result["status"] + "**",
         "",
         "This is a hash-bound local public development score. Missing evidence "
-        "scores zero under the published YCB-100 measurement standard.",
+        "scores zero under the published ConsequenceBench measurement standard.",
         "",
         "## Four Scores",
         "",

@@ -1,4 +1,4 @@
-"""Validate and merge 100 resumable YCB-100 paired-world reports."""
+"""Validate and merge 100 resumable ConsequenceBench paired-world reports."""
 from __future__ import annotations
 
 import argparse

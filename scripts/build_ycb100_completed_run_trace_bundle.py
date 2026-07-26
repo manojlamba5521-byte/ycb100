@@ -1,4 +1,4 @@
-"""Export exact public worlds and detailed traces from completed YCB-100 runs."""
+"""Export exact public worlds and detailed traces from completed ConsequenceBench runs."""
 from __future__ import annotations
 
 import argparse
@@ -400,7 +400,7 @@ def build_bundle(run_dir: Path) -> dict[str, Any]:
         trace_paths[report_id] = trace_path
 
     markdown: list[str] = [
-        "# YCB-100 Actual 100 Worlds And Four-Arm Execution Traces",
+        "# ConsequenceBench Actual 100 Worlds And Four-Arm Execution Traces",
         "",
         "Generated directly from the completed Gemini 3.6 Flash and GPT-5.6 Sol "
         "xhigh seed-0 reports. This is local development evidence and remains "
@@ -560,7 +560,7 @@ def build_bundle(run_dir: Path) -> dict[str, Any]:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Export exact YCB-100 worlds and four-arm execution traces"
+        description="Export exact ConsequenceBench worlds and four-arm execution traces"
     )
     parser.add_argument("--run-dir", type=Path, required=True)
     args = parser.parse_args(argv)

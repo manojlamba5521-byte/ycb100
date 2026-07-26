@@ -1,4 +1,4 @@
-"""Build the canonical YCB-100 catalog-to-world binding manifest."""
+"""Build the canonical ConsequenceBench catalog-to-world binding manifest."""
 from __future__ import annotations
 
 import argparse
@@ -146,7 +146,7 @@ def build_manifest() -> dict[str, Any]:
         )
     body: dict[str, Any] = {
         "schema_version": SCHEMA_VERSION,
-        "benchmark_id": "YCB-100",
+        "benchmark_id": "ConsequenceBench",
         "release_tier": "DEVELOPMENT_PREVIEW_NOT_QUALIFIED",
         "catalog_entry_count": len(entries),
         "generator_suite": "pressure_worlds",

@@ -1,4 +1,4 @@
-"""Run a local Ollama model through the contained YCB-100 JSONL protocol."""
+"""Run a local Ollama model through the contained ConsequenceBench JSONL protocol."""
 from __future__ import annotations
 
 import argparse
@@ -37,7 +37,7 @@ def _emit(message: Mapping[str, Any]) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Contained Ollama YCB-100 JSONL agent")
+    parser = argparse.ArgumentParser(description="Contained Ollama ConsequenceBench JSONL agent")
     parser.add_argument("--model", default="qwen3.6:35b")
     parser.add_argument("--timeout-seconds", type=float, default=300.0)
     parser.add_argument("--max-investigations", type=int, default=16)

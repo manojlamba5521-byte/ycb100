@@ -1,4 +1,4 @@
-"""Build a deterministic, allowlisted YCB-100 GitHub source snapshot."""
+"""Build a deterministic, allowlisted ConsequenceBench GitHub source snapshot."""
 from __future__ import annotations
 
 import argparse
@@ -118,7 +118,7 @@ SECRET_PATTERNS = (
     re.compile(rb"-----BEGIN (?:OPENSSH )?PRIVATE KEY-----"),
 )
 FIXED_ZIP_TIME = (2026, 7, 25, 0, 0, 0)
-ARCHIVE_ROOT = "YCB-100-" + VERSION
+ARCHIVE_ROOT = "ConsequenceBench-" + VERSION
 
 
 def _sha256(path: Path) -> str:
@@ -214,8 +214,8 @@ def build_public_repository(output: Path) -> dict[str, object]:
     output.mkdir(parents=True)
     rows = _copy_files(source_files, output)
     body: dict[str, object] = {
-        "schema_version": "ycb100.public_repository_integrity.v1",
-        "benchmark_id": "YCB-100",
+        "schema_version": "consequencebench.public_repository_integrity.v1",
+        "benchmark_id": "CONSEQUENCEBENCH",
         "version": VERSION,
         "release_tier": "DEVELOPMENT_PREVIEW_NOT_QUALIFIED",
         "file_count": len(rows),
@@ -233,7 +233,7 @@ def build_public_repository(output: Path) -> dict[str, object]:
         raise FileExistsError(f"archive already exists: {archive_path}")
     _write_deterministic_zip(output, archive_path)
     receipt = {
-        "schema_version": "ycb100.public_repository_archive.v1",
+        "schema_version": "consequencebench.public_repository_archive.v1",
         "archive": archive_path.name,
         "archive_size_bytes": archive_path.stat().st_size,
         "archive_sha256": _sha256(archive_path),
