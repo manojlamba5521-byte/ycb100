@@ -1,4 +1,4 @@
-"""Scenario-bound lifecycle world generation for YCB-100.
+"""Scenario-bound lifecycle world generation for ConsequenceBench.
 
 Catalog identity is immutable evidence about which scenario is under test. It is
 not oracle truth. Oracle state is reconstructed from a domain-native kernel

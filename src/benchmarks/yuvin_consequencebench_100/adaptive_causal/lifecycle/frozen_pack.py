@@ -27,9 +27,9 @@ FROZEN_PACK_SCHEMA_VERSION = "ycb100.consequence_lifecycle.frozen_pack.v1"
 FROZEN_ARCHIVE_SCHEMA_VERSION = "ycb100.consequence_lifecycle.archive.v1"
 FROZEN_WORLD_SCHEMA_VERSION = "ycb100.consequence_lifecycle.frozen_world.v1"
 FIXED_ZIP_TIME = (2026, 7, 25, 0, 0, 0)
-PUBLIC_ARCHIVE_NAME = "ycb100-consequence-lifecycle-public.zip"
-EVALUATOR_ARCHIVE_NAME = "ycb100-consequence-lifecycle-evaluator.zip"
-RECEIPT_NAME = "ycb100-consequence-lifecycle-pack.json"
+PUBLIC_ARCHIVE_NAME = "consequencebench-lifecycle-public.zip"
+EVALUATOR_ARCHIVE_NAME = "consequencebench-lifecycle-evaluator.zip"
+RECEIPT_NAME = "consequencebench-lifecycle-pack.json"
 def _canonical_bytes(value: object) -> bytes:
     return json.dumps(
         value,
@@ -195,7 +195,7 @@ def materialize_frozen_pack(
     bindings = _source_bindings()
     receipt: dict[str, Any] = {
         "schema_version": FROZEN_PACK_SCHEMA_VERSION,
-        "benchmark_id": "YCB-100",
+        "benchmark_id": "ConsequenceBench",
         "track_id": "consequence_lifecycle",
         "release_tier": "DEVELOPMENT_PREVIEW_NOT_QUALIFIED",
         "seed": int(seed),
@@ -347,7 +347,7 @@ def verify_frozen_pack(
         if not isinstance(value, int) or isinstance(value, bool) or value < 0:
             raise ValueError("frozen pack counters must be non-negative integers")
     if (
-        receipt.get("benchmark_id") != "YCB-100"
+        receipt.get("benchmark_id") != "ConsequenceBench"
         or receipt.get("track_id") != "consequence_lifecycle"
         or receipt.get("release_tier") != "DEVELOPMENT_PREVIEW_NOT_QUALIFIED"
         or receipt.get("execution_tier") != "MATERIALIZED_DATA_ONLY"
