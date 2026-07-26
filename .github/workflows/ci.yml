@@ -32,9 +32,9 @@ jobs:
           tests/test_adaptive_causal_package_isolation.py
       - name: Credential-free controls
         run: |
-          ycb100 validate-scenarios --out scenario-validation.json
-          ycb100 public-controls --out public-controls.json
-          ycb100 pressure-controls --out pressure-controls.json
+          consequencebench validate-scenarios --out scenario-validation.json
+          consequencebench public-controls --out public-controls.json
+          consequencebench pressure-controls --out pressure-controls.json
 
   artifacts:
     runs-on: ubuntu-latest
@@ -48,10 +48,10 @@ jobs:
           python -m pip install ".[dev]"
           python -m build --sdist --wheel
           python -m twine check dist/*
-          python scripts/build_public_repository.py --out release/ycb100-0.1.0
+          python scripts/build_public_repository.py --out release/consequencebench-0.1.0
       - uses: actions/upload-artifact@v4
         with:
-          name: ycb100-development-preview
+          name: consequencebench-development-preview
           path: |
             dist/*
             release/*.zip
