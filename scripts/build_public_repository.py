@@ -34,6 +34,7 @@ ROOT_FILES = (
 DIRECTORIES = (
     ".github",
     "docs",
+    "results",
     "scripts",
     "src",
     "tests",
@@ -62,6 +63,7 @@ EXCLUDED_SCRIPT_NAMES = {
 }
 PUBLIC_TEST_NAMES = {
     "conftest.py",
+    "test_development_leaderboard.py",
     "test_public_repository.py",
     "test_scenario_manifest.py",
     "test_adaptive_causal_portable_entrypoint.py",
@@ -80,6 +82,7 @@ PUBLIC_DOC_NAMES = {
     "CATALOG.md",
     "CONSEQUENCE_LIFECYCLE_PROTOCOL.md",
     "INDEX.md",
+    "LEADERBOARD.md",
     "LIMITATIONS.md",
     "SCORING.md",
     "VALIDITY_HARDENING.md",
