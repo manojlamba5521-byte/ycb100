@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use YCB-100, cite this software and report the exact release and scenario-manifest hashes."
+title: "YCB-100: ConsequenceBench"
+type: software
+version: 0.1.0
+date-released: 2026-07-25
+license: MIT
+authors:
+  - name: "Yuvin Research Team"
+repository-code: "https://github.com/manojlamba5521-byte/ycb100"
+abstract: >-
+  A synthetic benchmark for measuring evidence-grounded consequential
+  decision-making, governance conformance, and the incremental effect of a
+  governance boundary on arbitrary AI agents.
+keywords:
+  - AI agents
+  - governance
+  - safety
+  - benchmark
+  - evaluation

@@ -1,0 +1,655 @@
+{
+  "benchmark_id": "YCB-100",
+  "file_count": 129,
+  "files": [
+    {
+      "path": ".editorconfig",
+      "sha256": "sha256:e74e511d97036b0f0e74af747a404ce20c91066ca17906da67b2b80267a3af9c",
+      "size_bytes": 225
+    },
+    {
+      "path": ".env.example",
+      "sha256": "sha256:d96426c05e892b77670ae5f809b74ad2c4516106276599c882ee1d8d3a7d8b88",
+      "size_bytes": 203
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "sha256:8b0e37e3f651a7b49e19d17bc4f5ac04709f5b95a25866ec9c0438f8f7cff755",
+      "size_bytes": 141
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "sha256": "sha256:e2a30c700f3e0c82cefea6e2f7506c39382c66b76144872e918d679a9de09a4b",
+      "size_bytes": 1028
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "sha256": "sha256:c5488afc37de796f538e73541d18953fe8ba370a3712dfed46b57081ee110f1e",
+      "size_bytes": 238
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "sha256": "sha256:4086acfed5edfce9264ce1d9e801df2f97f784149a50529f0a16a477548fabd6",
+      "size_bytes": 426
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "sha256:072f25f1ae9364f3fdc99e854dac887a1298f1d2cf195a68a54bd58f71e8c0da",
+      "size_bytes": 1642
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "sha256:0529e1aa24563ee74437ae86214854dd658559cf05bb3cbe6205ddc2da378d00",
+      "size_bytes": 226
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "sha256:cfd0dc516631e058d9ea5cb600e71323297666658fee2c10ed23790d3049d338",
+      "size_bytes": 802
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "sha256:fdb3439457ca5658c225f131a06cdb065c7d44664400aaa12775e91e0fa2249b",
+      "size_bytes": 621
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "sha256": "sha256:2a12f3d70dfb9b43628af259d70576f9dc29fde7afeb1fdc4ea927fe24280116",
+      "size_bytes": 686
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "sha256:a7f90a423515888733ffbf46559b16428adcbe1a84bc3ccf90cea7e85ed88edb",
+      "size_bytes": 1282
+    },
+    {
+      "path": "GOVERNANCE.md",
+      "sha256": "sha256:5864c29c521feb3cde9cdada4ebe2373e1026cd46f763a0afc7d86435fcb8427",
+      "size_bytes": 763
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "sha256:160bfc8412fbf913002f45a4a5ad0fd1bacd7490004fbb91f97e3e89c588a24a",
+      "size_bytes": 1076
+    },
+    {
+      "path": "MANIFEST.in",
+      "sha256": "sha256:13d8b573d975a256a9a47ce9b854349c6912ace59e6423d3a8a2c696a61272a0",
+      "size_bytes": 255
+    },
+    {
+      "path": "README.md",
+      "sha256": "sha256:037326f81c552d24d0c719d435f2853075b1b4f0a6c6aa37574fb9ee64bb7322",
+      "size_bytes": 7450
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "sha256:fdebfdbfb22d5479661a112cda0d705489a90a3341fbd86dc323e4e010da3a09",
+      "size_bytes": 1022
+    },
+    {
+      "path": "docs/CATALOG.md",
+      "sha256": "sha256:90100d6dab3077b35bf8d117e266d6e494162407eb6bc182101fcbd36627b71f",
+      "size_bytes": 87560
+    },
+    {
+      "path": "docs/CONSEQUENCE_LIFECYCLE_PROTOCOL.md",
+      "sha256": "sha256:0a7da2eafa54c09f008aab222f15a54fc0f6aceefee1a504b348930c32f5ffcb",
+      "size_bytes": 8241
+    },
+    {
+      "path": "docs/INDEX.md",
+      "sha256": "sha256:490ef6b98344b05bacb8124ed7b69d029820927118d1c48494c8063702986a52",
+      "size_bytes": 1411
+    },
+    {
+      "path": "docs/LIMITATIONS.md",
+      "sha256": "sha256:8e6b55158ea7e540b726425269ef31a9952eccbaa2565afd2e22da22d6f1290c",
+      "size_bytes": 1244
+    },
+    {
+      "path": "docs/SCORING.md",
+      "sha256": "sha256:869651531e5e13f1b2d3b8101a2dd951f5c8ea10ac52fc46437e734eb81466a9",
+      "size_bytes": 6232
+    },
+    {
+      "path": "docs/VALIDITY_HARDENING.md",
+      "sha256": "sha256:0d9bbd8abf2a03c55eb5b8573536c7f4c344297c13947f928c318d095337679c",
+      "size_bytes": 3895
+    },
+    {
+      "path": "docs/YCB100_BENCHMARK_PLAN.md",
+      "sha256": "sha256:a9d0737602e475df00dec0ccd65bf7e7c1f0c51c29a417d11f57d7f5b7ab0471",
+      "size_bytes": 32655
+    },
+    {
+      "path": "docs/YCB100_EVALUATOR_HANDBOOK.md",
+      "sha256": "sha256:96bc1f6b97c3df1ef638aff4581c7a8c7b4d5495bcf3f98874a45d1ab8c299cb",
+      "size_bytes": 4763
+    },
+    {
+      "path": "docs/YCB100_OPERATOR_GUIDE.md",
+      "sha256": "sha256:06d55c5cb7ea15b7efe403100773bbbd1bbf78185f55040138b2ae95ce43425a",
+      "size_bytes": 5321
+    },
+    {
+      "path": "docs/YCB100_QUALIFICATION_PLAN.md",
+      "sha256": "sha256:dde7560beaf05b9d5687ae49ea3ff761c8312c0ae3a047777a6cc1a32f056852",
+      "size_bytes": 20480
+    },
+    {
+      "path": "docs/YCB100_THREAT_MODEL.md",
+      "sha256": "sha256:e80589b7ce445693fd24300c35cd00d6e832809e5a013a707ea3973527120797",
+      "size_bytes": 4998
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "sha256:8344b33d0be2803ca8f3a69b717a259e9da7d9157e352bfe2d1093a22cb9316b",
+      "size_bytes": 2035
+    },
+    {
+      "path": "scripts/bind_ycb100_pressure_trial.py",
+      "sha256": "sha256:3a8b2e3561c209014d221e65097f76ad2ecbd16a25265b1ec1f73cf718528999",
+      "size_bytes": 1598
+    },
+    {
+      "path": "scripts/build_public_repository.py",
+      "sha256": "sha256:b2501ba73982389c8d29177ec6fbeeb4b569f8b88dbb93d19444fe0482571fcb",
+      "size_bytes": 8534
+    },
+    {
+      "path": "scripts/build_ycb100_completed_run_trace_bundle.py",
+      "sha256": "sha256:575f5b48cf66adcc80b50d2a8c127256da2c673252994c11d96026e01969edec",
+      "size_bytes": 22074
+    },
+    {
+      "path": "scripts/build_ycb100_pressure_campaign.py",
+      "sha256": "sha256:35e4b8a196add5076f04702e81b8a5ab013b5e4e6ab38df6474ee5e99039c8dd",
+      "size_bytes": 1520
+    },
+    {
+      "path": "scripts/build_ycb100_pressure_judge.py",
+      "sha256": "sha256:8f2fd56e974e19a958692c749468423eab599cd408218ad987ed370f49189a84",
+      "size_bytes": 11536
+    },
+    {
+      "path": "scripts/build_ycb100_pressure_redteam.py",
+      "sha256": "sha256:b7518a674d9f43cc50759308cdecb88be898c5e15a3a34f1915cdb0087ceec4c",
+      "size_bytes": 1353
+    },
+    {
+      "path": "scripts/build_ycb100_pressure_statistics.py",
+      "sha256": "sha256:46e2bea68fe5b9127852f62a0bda18d1c2e79b9301f7d82e38673630522adbcf",
+      "size_bytes": 5283
+    },
+    {
+      "path": "scripts/build_ycb100_public_release.py",
+      "sha256": "sha256:b859a09be623368227f93a1a02c3f23149898525201616b05995d0ebb0e60fdd",
+      "size_bytes": 2062
+    },
+    {
+      "path": "scripts/build_ycb100_scenario_manifest.py",
+      "sha256": "sha256:d2bc3861e04a3987a05f1959e59f00a7078c84f53b65dd25947db10df66d0e21",
+      "size_bytes": 6050
+    },
+    {
+      "path": "scripts/merge_ycb100_single_world_reports.py",
+      "sha256": "sha256:5dbde7cbc61021015e396611a92d5f8dded9615b67ee898e0ae59b6a32a5d952",
+      "size_bytes": 6277
+    },
+    {
+      "path": "scripts/run_ycb100_llm_review.py",
+      "sha256": "sha256:307428fa93504a04a5a642e37edf27ea7371037220fc7456afcfa32ab9a4f96e",
+      "size_bytes": 1413
+    },
+    {
+      "path": "scripts/ycb100_codex_cli_jsonl_agent.py",
+      "sha256": "sha256:3c031dfba2e4aa25ea8f0ae088a07a47f1c50ed320b01e9adc96151d0ab82f6d",
+      "size_bytes": 2514
+    },
+    {
+      "path": "scripts/ycb100_ollama_jsonl_agent.py",
+      "sha256": "sha256:9ed61fe11cf5287717c5b538ecb7c5e52eecbe2335f4e6e883e921d683080acd",
+      "size_bytes": 2563
+    },
+    {
+      "path": "scripts/ycb100_vertex_gemini_jsonl_agent.py",
+      "sha256": "sha256:0dabbc940fe20a81801cb84ea9fc2bfe570a30916385b45ca59c0310d29d5385",
+      "size_bytes": 5189
+    },
+    {
+      "path": "setup.py",
+      "sha256": "sha256:b8aaa5b959817f8c9c989bc832010c193fbdf9ffc88b92d7f19ad31a4bcae0c2",
+      "size_bytes": 1706
+    },
+    {
+      "path": "src/benchmarks/__init__.py",
+      "sha256": "sha256:7945923fe1ab4bd5e07de73c33e941b49110e6ac1b9fb4caba9338d90a2210b2",
+      "size_bytes": 727
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/__init__.py",
+      "sha256": "sha256:607ba4152bab40e057575c3f57e24d1652c1a74ca58630cef4aa524f3c78d312",
+      "size_bytes": 1318
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/__init__.py",
+      "sha256": "sha256:47241885c9c1443035c70c27cad93cde238591e66c23cc29f224cc08ec65384a",
+      "size_bytes": 3824
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/admission.py",
+      "sha256": "sha256:fef7c985f7357ea24acc88892ab82aeca636e5874bd2222e9aaa8c92f7b1d5a0",
+      "size_bytes": 11711
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/adversary.py",
+      "sha256": "sha256:d722323e4faa0aa284a8303e70de38f8d4484d76bf06964adb624fe78c9576f1",
+      "size_bytes": 9553
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/agents/__init__.py",
+      "sha256": "sha256:78fb691d3da6895aae6c037360e43b52cf55332dbc3bcd99c5c93ad3dc879fcc",
+      "size_bytes": 471
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/agents/codex_cli_jsonl.py",
+      "sha256": "sha256:34d8d6e0205562f450186c45659155973cd4b6164b900c4897ce33e10e6873fd",
+      "size_bytes": 9265
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/agents/ollama_jsonl.py",
+      "sha256": "sha256:3f27b07f6a2d91b024311aabe8767f580097667cd656c776a45b06b3e802e2b9",
+      "size_bytes": 3663
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/agents/vertex_gemini_jsonl.py",
+      "sha256": "sha256:b3f4ea58dbf8056fe864a71b0f66d21cff7753d5d66a065fd2b15d98854b19d4",
+      "size_bytes": 13383
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/checkpoints.py",
+      "sha256": "sha256:9e8c0dd7682584720e3062aabe41c8ce5027ed8d12963ce23a5835c2d607f911",
+      "size_bytes": 11690
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/cli.py",
+      "sha256": "sha256:3c53d03596128ae5ec2db5cac9beae758a0104648b0179998d1d1b530711b715",
+      "size_bytes": 27040
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/contracts.py",
+      "sha256": "sha256:e7a3e2713735a68839c9e2be3989ba175d61a15272d23f9f683a0f079c29f142",
+      "size_bytes": 25901
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/data/archetypes.v1.json",
+      "sha256": "sha256:c3b45e4828d486339a2b3f656266950e6f362e0bdbb05828bf2d7ee23a21b843",
+      "size_bytes": 125761
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/__init__.py",
+      "sha256": "sha256:f55eb6334ac5ebf551bf7d29d7ce0af8d379f941f34276af99c49d0fbfa3ee9f",
+      "size_bytes": 3025
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/admission.py",
+      "sha256": "sha256:59b86a2b6cfc5b2188828a0e329c311acd34bd2b19d57da3346df6fe1d50fd71",
+      "size_bytes": 27009
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/contracts.py",
+      "sha256": "sha256:45dcb99ad0fa834b1cd65ef13522deec21f453d3dd4ff07f1616143aae0a14fb",
+      "size_bytes": 10050
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/domain_kernels.py",
+      "sha256": "sha256:39916d0c33ae43bed74561b128e56689ff67c4b53734c1f40337929dc23c9d57",
+      "size_bytes": 42908
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/environment.py",
+      "sha256": "sha256:0c0acfd0fc2548845d8a8f95d12f7bf13caadb87f14b1b29490b045fa81e6ae6",
+      "size_bytes": 71388
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/frozen_pack.py",
+      "sha256": "sha256:e1b5020e63ac7b0436c1f6fbeeba06bbb656453bc651b9661dda9e801b66ed08",
+      "size_bytes": 18448
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/generator.py",
+      "sha256": "sha256:8580878891e6cf989be1c20fc90d64cd3d6662573aeaf1348feb7bf2c8ceb8bb",
+      "size_bytes": 43057
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/oracle.py",
+      "sha256": "sha256:c524433ce835f5a2fce8405436bffa747afbcd236113034049f8c8f753ed064f",
+      "size_bytes": 57099
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/paired.py",
+      "sha256": "sha256:ebd2e22d4c69a0ca8f797d73358972e170b5f7c0cf09162cd05df5fac9421166",
+      "size_bytes": 26961
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/reference.py",
+      "sha256": "sha256:9a181ecdf1a2230ebc13e95a41ef4efc6dc132321ce30eebdca2414f9971f59c",
+      "size_bytes": 13908
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/scoring.py",
+      "sha256": "sha256:3a9decff1951001400ae6a10164d826a8312b30c10f7bb1f18d3b4f4df1cff67",
+      "size_bytes": 11005
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/source.py",
+      "sha256": "sha256:dca0a82a2564a5da7dfbc559419f94d4317ec65bcc901fb0391544305ce38789",
+      "size_bytes": 23706
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/store.py",
+      "sha256": "sha256:3345bab25f6a0cc846f0ae267ef8c097dd2244e4dcacf81d0bdec0a1a09c267f",
+      "size_bytes": 79615
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/measurement.py",
+      "sha256": "sha256:1e12f4e8275f2bf78f61cd35d3f640b28eed4f0091344044708bd1df796df0e8",
+      "size_bytes": 8053
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/metric_derivation.py",
+      "sha256": "sha256:e7b2c575ec61fbe4861d1aa4e5a8eb7c224b55411f7aaff468ce5b21150b827a",
+      "size_bytes": 12325
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/obligations.py",
+      "sha256": "sha256:572f7af94a74a723befac18f9d1448b49ce0d124899e728d59166991d22af870",
+      "size_bytes": 9174
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/pressure_admission.py",
+      "sha256": "sha256:716b3e19a396982859fa88f872486942706ee3ad1ddf4d5434ca2046df5d944e",
+      "size_bytes": 12377
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/pressure_campaign.py",
+      "sha256": "sha256:91b172da60b5137cf39d6efd8a5c334592a4fbf7b73bd155dc4d042bddae7d03",
+      "size_bytes": 14725
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/pressure_capability.py",
+      "sha256": "sha256:12444400f6696e525e697120295663faa4d20ec7219ddb4288af36679f090231",
+      "size_bytes": 6095
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/pressure_judge.py",
+      "sha256": "sha256:dc3b3797ce5ce9f16d6e5026f7f9463d74e877df551c70dec96297e7132f1ff7",
+      "size_bytes": 39772
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/pressure_redteam.py",
+      "sha256": "sha256:7bd149674cc91fe3d9a0597ca6c8754fbb0781339513d519914cd6ff158376bb",
+      "size_bytes": 34600
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/pressure_statistics.py",
+      "sha256": "sha256:f51b523993b0506cf6744b37c895521dd09bd4761915e096192eab1a9141c6bf",
+      "size_bytes": 43185
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/pressure_trial_binding.py",
+      "sha256": "sha256:49b80073048251df29988e1fd8cc16f2c07a90e2e5e268ca7d66d5df6acf7269",
+      "size_bytes": 4601
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/procedural.py",
+      "sha256": "sha256:e535bb2c7ce4512b7b30f1c99158d2ea42909d8a72b84ae104741196141d2fd1",
+      "size_bytes": 18476
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/protocol.py",
+      "sha256": "sha256:3d1dd883745b4c2bf5c7d92b47ea58d14faaafad4e7119228495db117725a5d7",
+      "size_bytes": 3051
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/public_release.py",
+      "sha256": "sha256:196253479648f18fc7853875c36f51116e34e77bc2236952fb59d87cd904a9a0",
+      "size_bytes": 26640
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/qualification.py",
+      "sha256": "sha256:19682c91c713a19efc690b697cf6a74464bf7c2224bb03e51a91cc4ce01e3276",
+      "size_bytes": 19275
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/qualification_campaign.py",
+      "sha256": "sha256:6a3c4f979b1dbe66eb98f22e6a027c289ca44f4aeb8e2f55e7c1a638eafc2c0c",
+      "size_bytes": 42920
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/qualification_evidence.py",
+      "sha256": "sha256:5f9bc346c67239e05406ed07ad500cca7754716b46cb4e4806a298cd58265d12",
+      "size_bytes": 25730
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/reliability.py",
+      "sha256": "sha256:781dfb81ad469ebd41741c78b7b92cce2dd5d45eb1892563ac61ff6b5dbb78d0",
+      "size_bytes": 8105
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/reports/__init__.py",
+      "sha256": "sha256:148c442142304d46617b4033a0ba07e23b74bdfc6dc8203a4dd701130ddef3d1",
+      "size_bytes": 207
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/reports/banking.py",
+      "sha256": "sha256:4fcb592bc40e59541e808293ca2b63744828ec2867f3556d9cf4717265ed191f",
+      "size_bytes": 3051
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/review_judge.py",
+      "sha256": "sha256:eb2c31441ca69e5b4a4799259e991573f7abb9b4a4c42a7845b546c2b6de9a7e",
+      "size_bytes": 12151
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/runner/__init__.py",
+      "sha256": "sha256:e154c4f175478b3e283bad0d1a1f4829b3c68ba67cdb80517ab46f61201d20de",
+      "size_bytes": 1218
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/runner/adaptive_episode.py",
+      "sha256": "sha256:94207632f9fa5dff2c225b07bcc571667aa13b2821e91ceb25d0084f83ae9be9",
+      "size_bytes": 3980
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/runner/compositional_episode.py",
+      "sha256": "sha256:83283f89d497b2d669751fa8bc95b04e8a53182ff817776f40aa597d421b90e7",
+      "size_bytes": 11732
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/runner/containment.py",
+      "sha256": "sha256:fecaf0421ca68b480f29ab694d54c04de5406de464021c2f9efbb880822638aa",
+      "size_bytes": 1649
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/runner/jsonl_adapter.py",
+      "sha256": "sha256:d0718a1792e81703bb35bc979328f27aa143de6ad6169e049cc5318fc22e8181",
+      "size_bytes": 14096
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/runner/lifecycle_jsonl.py",
+      "sha256": "sha256:1e0e83f3048d2cdc5f89ce670138c6a3bc5f039cec1da6d4baf7a76512eb3cdf",
+      "size_bytes": 21496
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/scenario_manifest.py",
+      "sha256": "sha256:6c62f1acc83d648b9c6c7986bd723a5b4c08db16ca805f279fcd0cefe0b60c01",
+      "size_bytes": 5359
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/sealed_custody.py",
+      "sha256": "sha256:4b187b1ec58c13188a188419874c78b84a8e16803af27558d38fa6f023f0fc8a",
+      "size_bytes": 25152
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/sister_worlds.py",
+      "sha256": "sha256:5abf4858dfe0fd9b957d72c2515fafec7702bd66b59b4f7c727f319c852b3501",
+      "size_bytes": 20185
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/__init__.py",
+      "sha256": "sha256:9b82ee88ed2c8a349075860ba51b330d89e33d2614cd474b49a623a116f237e7",
+      "size_bytes": 4683
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/adaptive_episode.py",
+      "sha256": "sha256:ccddef3ca49b36569b8045db935bcdaaa2133fbb65488cad716cd06cf109811c",
+      "size_bytes": 22712
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/banking.py",
+      "sha256": "sha256:6b89cffa6def55d46dd8f289481e9d612fe97ae18d1c2937914e3954d238bace",
+      "size_bytes": 22412
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/causal_episode.py",
+      "sha256": "sha256:c1c80b23060ef65b6aeb1aac1b46613404539dc9de1f275831bbb6967de34d8f",
+      "size_bytes": 29337
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/compositional_agent.py",
+      "sha256": "sha256:19254866bd5a7ffc9705a96c095accd9981aa7025aaf6b0557a158ab81208987",
+      "size_bytes": 14949
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/compositional_effect.py",
+      "sha256": "sha256:1d0fc7103b251877b464c563741a292d4dd72880936f09be60df57410dea6265",
+      "size_bytes": 15276
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/compositional_episode.py",
+      "sha256": "sha256:893c76374084dea419f8896a93b392de439971b3f6ddf1af5d14baa4cc12dee7",
+      "size_bytes": 24411
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/control_planes.py",
+      "sha256": "sha256:490cf0b6f7d9daf8350ff4490dbc349fdd2e6a55b6a3a155396548f304308e62",
+      "size_bytes": 24244
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/episode.py",
+      "sha256": "sha256:1c24e6da58fd7a97955c015b382dd7302d48690f10933a4b2f158280b080be79",
+      "size_bytes": 3169
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/family_corpus.py",
+      "sha256": "sha256:88e6410428059560634e2d80bc5f7aefb2e350d998cc054b26fba83389b3d380",
+      "size_bytes": 34693
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/gateway.py",
+      "sha256": "sha256:8774c67fac5eca13b4580452a2fa4b14cca4882321b87f9071d7bc21f1e7d0c6",
+      "size_bytes": 11188
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/kernel.py",
+      "sha256": "sha256:186c4a973be490dcc98a0e0b292579aee92a1f30f716080b5d6d57122ef0455f",
+      "size_bytes": 15129
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/pressure_agent.py",
+      "sha256": "sha256:4877d68d26e8334c2ef4f72303bbc7b873dd1d2e5b8ae82252e53ca9fa895d51",
+      "size_bytes": 9076
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/pressure_episode.py",
+      "sha256": "sha256:ee1c9b084a625664d14923f2c2c64798a609aaa357393a8a07d2ff47d2ed4d6a",
+      "size_bytes": 48727
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/pressure_ood.py",
+      "sha256": "sha256:cd503828fb34b8e563f0c4c5e852f26428944c5ebd61ece33a2c8f6b134c8b50",
+      "size_bytes": 36991
+    },
+    {
+      "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/world/raw_evidence.py",
+      "sha256": "sha256:ea0c9477a73877ef67ace96eb808e2813e18795308ca438397bda5d3e4afb298",
+      "size_bytes": 10817
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "sha256:da5f1f6671b8718ec79b4012162387bc5343a8a4fb103d43d56982a363e2243e",
+      "size_bytes": 210
+    },
+    {
+      "path": "tests/test_adaptive_causal_package_isolation.py",
+      "sha256": "sha256:db4e58dffc145bd8effd3f784619955abfaf1d4f7bcd67669fdfb5f7f5c0798e",
+      "size_bytes": 1956
+    },
+    {
+      "path": "tests/test_adaptive_causal_portable_entrypoint.py",
+      "sha256": "sha256:898b634be26a1bf36a8aec7767fde532d898c0d09ff3f3ad1d680cfcf5ad2acc",
+      "size_bytes": 6341
+    },
+    {
+      "path": "tests/test_consequence_frozen_pack.py",
+      "sha256": "sha256:c74a48e84d2467d017b01a11dd5508b8176da614c1897ad1a815bdab9ef62a83",
+      "size_bytes": 9009
+    },
+    {
+      "path": "tests/test_consequence_lifecycle_admission.py",
+      "sha256": "sha256:b0e43dc434184cfbcfba451574bbade1ba4d1e5836a2756bfd5639354b29c047",
+      "size_bytes": 21226
+    },
+    {
+      "path": "tests/test_consequence_lifecycle_cli.py",
+      "sha256": "sha256:e50e863c7cb761392efd2bb56360d851198e9fc410dc658a8da8f8ff1966aa3a",
+      "size_bytes": 4709
+    },
+    {
+      "path": "tests/test_consequence_lifecycle_environment.py",
+      "sha256": "sha256:970249c087ccd2bcc5cb2550fb81de22bc75a660ce5716415f06813a714cb4ab",
+      "size_bytes": 20602
+    },
+    {
+      "path": "tests/test_consequence_lifecycle_generator.py",
+      "sha256": "sha256:ecd5b7f25feb5cceab003527fcc5049ea3f71d48c342d486c8a8b6748fd2d86b",
+      "size_bytes": 20509
+    },
+    {
+      "path": "tests/test_consequence_lifecycle_paired.py",
+      "sha256": "sha256:09b2738c1fed086fd355adfc82b35322431a20b9f74fe41a9f8d93b89e9611b6",
+      "size_bytes": 18581
+    },
+    {
+      "path": "tests/test_consequence_lifecycle_reference.py",
+      "sha256": "sha256:4daaae72a82e695650b977ab9e38cdd7d2c3d2610d05515fb4aade038938e547",
+      "size_bytes": 733
+    },
+    {
+      "path": "tests/test_consequence_lifecycle_store.py",
+      "sha256": "sha256:f6fc08f80607d398db3e19fff1a3c34df6ccd6918bef1508284123cb181629a1",
+      "size_bytes": 16301
+    },
+    {
+      "path": "tests/test_pressure_effect_binding.py",
+      "sha256": "sha256:bf0b9bc7846d5e559e915708da4e1a96114e39bbb9dbcc82f31d0defd63c42a1",
+      "size_bytes": 2782
+    },
+    {
+      "path": "tests/test_public_repository.py",
+      "sha256": "sha256:ac98661d75417070d46d84bd3937c8d2df752fe0a2e49672c481a05c17ecbbb4",
+      "size_bytes": 6267
+    },
+    {
+      "path": "tests/test_scenario_manifest.py",
+      "sha256": "sha256:d0870ddac58c7fdd6040c0b85c82909e7f80cc4d0902d8cc11ed44717dcde621",
+      "size_bytes": 1028
+    }
+  ],
+  "manifest_hash": "sha256:c964f0c09f75ecb75162eeafb8cdc4c678559f103e59b80ca5d679a9190a95e4",
+  "release_tier": "DEVELOPMENT_PREVIEW_NOT_QUALIFIED",
+  "schema_version": "ycb100.public_repository_integrity.v1",
+  "version": "0.1.0"
+}

@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ycb100"
+version = "0.1.0"
+description = "Universal benchmark for evidence-grounded consequential AI agents"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = []
+authors = [
+  { name = "Yuvin Research Team" },
+]
+keywords = [
+  "ai-agents",
+  "benchmark",
+  "governance",
+  "safety",
+  "evaluation",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2.2",
+  "pytest>=8.0",
+  "setuptools>=77",
+  "twine>=5.1",
+  "wheel>=0.45",
+]
+vertex = [
+  "google-genai>=1.30",
+]
+
+[project.urls]
+Documentation = "https://github.com/manojlamba5521-byte/ycb100/tree/main/docs"
+Issues = "https://github.com/manojlamba5521-byte/ycb100/issues"
+Repository = "https://github.com/manojlamba5521-byte/ycb100"
+
+[project.scripts]
+ycb100 = "benchmarks.yuvin_consequencebench_100.adaptive_causal.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = false
+packages = [
+  "benchmarks.yuvin_consequencebench_100",
+  "benchmarks.yuvin_consequencebench_100.adaptive_causal",
+  "benchmarks.yuvin_consequencebench_100.adaptive_causal.agents",
+  "benchmarks.yuvin_consequencebench_100.adaptive_causal.lifecycle",
+  "benchmarks.yuvin_consequencebench_100.adaptive_causal.reports",
+  "benchmarks.yuvin_consequencebench_100.adaptive_causal.runner",
+  "benchmarks.yuvin_consequencebench_100.adaptive_causal.world",
+]
+
+[tool.setuptools.package-data]
+"benchmarks.yuvin_consequencebench_100.adaptive_causal" = [
+  "data/*.json",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
