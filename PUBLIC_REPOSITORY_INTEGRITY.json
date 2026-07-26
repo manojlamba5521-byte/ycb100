@@ -1,6 +1,6 @@
 {
   "benchmark_id": "CONSEQUENCEBENCH",
-  "file_count": 129,
+  "file_count": 133,
   "files": [
     {
       "path": ".editorconfig",
@@ -34,8 +34,8 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "sha256": "sha256:1f0408976e16b68afb4d0fc95d8b9528078384482bbc009c5f37b4863138fb35",
-      "size_bytes": 1692
+      "sha256": "sha256:ad575391d714196cebe4d3e78d015cfe156a91430c9116a808ed31c095655bb9",
+      "size_bytes": 1740
     },
     {
       "path": ".gitignore",
@@ -79,8 +79,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "sha256:d6b3f2c79fc9ad04ef7d22aebb6ae85d078a70247130c283520c164de45eba3c",
-      "size_bytes": 7956
+      "sha256": "sha256:a7185ccac708f71f0dc5b5004e20e4221a86278281e8875aabf9ab641668e923",
+      "size_bytes": 8782
     },
     {
       "path": "SECURITY.md",
@@ -99,8 +99,13 @@
     },
     {
       "path": "docs/INDEX.md",
-      "sha256": "sha256:d17cd114f854729894575e07fd90b8d32b276675bd411f99b8d2ba3a50c58178",
-      "size_bytes": 1420
+      "sha256": "sha256:7f92b73de2f7fc11fab39d7d7269b2a9f69219b45f1058ce67932edac5908c19",
+      "size_bytes": 1618
+    },
+    {
+      "path": "docs/LEADERBOARD.md",
+      "sha256": "sha256:557fd2e24dc17497e87e627bffc2efff7bc57f9f37e338825185a0f2b261e729",
+      "size_bytes": 3268
     },
     {
       "path": "docs/LIMITATIONS.md",
@@ -148,14 +153,24 @@
       "size_bytes": 2133
     },
     {
+      "path": "results/development_leaderboard.v1.json",
+      "sha256": "sha256:347041cccd6eff9bf7c5724b1a8b6180588ca74ab9cf6a740164416da1ef91ae",
+      "size_bytes": 10821
+    },
+    {
       "path": "scripts/bind_ycb100_pressure_trial.py",
       "sha256": "sha256:3a8b2e3561c209014d221e65097f76ad2ecbd16a25265b1ec1f73cf718528999",
       "size_bytes": 1598
     },
     {
+      "path": "scripts/build_development_leaderboard.py",
+      "sha256": "sha256:85af19a34ad7702368f09944f9414d3e87b9d4c060d8e62a50578844f97e61f8",
+      "size_bytes": 18224
+    },
+    {
       "path": "scripts/build_public_repository.py",
-      "sha256": "sha256:a9ddaa543aa11e8059df6773ae7dad7ec34cf755b42b2d105a0cd7cc984b3fb9",
-      "size_bytes": 8581
+      "sha256": "sha256:f374b82b5cf8a30e7b9c06e82665d0cc3729c6da393f07d6f16b14f4094aec8b",
+      "size_bytes": 8657
     },
     {
       "path": "scripts/build_ycb100_completed_run_trace_bundle.py",
@@ -633,14 +648,19 @@
       "size_bytes": 16301
     },
     {
+      "path": "tests/test_development_leaderboard.py",
+      "sha256": "sha256:76c57fabb6fff4c251148c54e9c0c5cf2baaa9f9181f5471b63af539ff959014",
+      "size_bytes": 3671
+    },
+    {
       "path": "tests/test_pressure_effect_binding.py",
       "sha256": "sha256:bf0b9bc7846d5e559e915708da4e1a96114e39bbb9dbcc82f31d0defd63c42a1",
       "size_bytes": 2782
     },
     {
       "path": "tests/test_public_repository.py",
-      "sha256": "sha256:1794e02dad297375167b2676514533ef39b7abb9532530fbc64f577a055aee65",
-      "size_bytes": 6880
+      "sha256": "sha256:ea38be34ea9c8d0e87f2171292233aecf8ab57fcd0acf5ac55cfab2bdfe1fe0e",
+      "size_bytes": 6962
     },
     {
       "path": "tests/test_scenario_manifest.py",
@@ -648,7 +668,7 @@
       "size_bytes": 1028
     }
   ],
-  "manifest_hash": "sha256:685aed474ded3fa433714bc0fce9502bf95492e22f9bb40ac5d2060e9e870051",
+  "manifest_hash": "sha256:286e2ceae4fc245f48b36c9733aa6383ca6a969d548b3b81446626a698820869",
   "release_tier": "DEVELOPMENT_PREVIEW_NOT_QUALIFIED",
   "schema_version": "consequencebench.public_repository_integrity.v1",
   "version": "0.1.0"

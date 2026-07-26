@@ -33,6 +33,19 @@ Never merge these tracks into one score. Report task correctness, consequence
 correctness, unsafe effects, legitimate-effect preservation, evidence
 grounding, recovery, and hard failures separately.
 
+## Development Leaderboard
+
+The [development leaderboard](docs/LEADERBOARD.md) publishes three completed
+100-world paired studies across six configurations: Gemma4 e4b, Gemini 3.6
+Flash, and GPT-5.6 Sol, each run directly and with Yuvin as the declared
+governance layer. Its machine-readable receipt is
+[`results/development_leaderboard.v1.json`](results/development_leaderboard.v1.json).
+
+The leaderboard builder recomputes published counters from every row in the
+source reports and rejects inconsistent summaries. These locally operated runs
+remain unranked `SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE`; they are not model
+ratings, safety certifications, or independent qualification results.
+
 ## Benchmark Scope
 
 The public corpus contains 100 canonical scenarios: 20 each for banking,
@@ -144,7 +157,8 @@ src/                  canonical installable public implementation
 tests/                public and benchmark-development regressions
 scripts/              evaluator, evidence, and release commands
 docs/                 protocol, scoring, operations, and limitations
-runs/                  ignored local development evidence
+results/               public summary receipts for completed development runs
+runs/                  ignored raw local development evidence
 .github/               CI and contribution templates
 ```
 
@@ -190,6 +204,7 @@ LLM reviewers may explain traces but cannot change deterministic hard scores.
 
 - [Benchmark protocol](docs/YCB100_BENCHMARK_PLAN.md)
 - [Consequence Lifecycle protocol](docs/CONSEQUENCE_LIFECYCLE_PROTOCOL.md)
+- [Development leaderboard](docs/LEADERBOARD.md)
 - [100-scenario catalog](docs/CATALOG.md)
 - [Scoring](docs/SCORING.md)
 - [Threat model](docs/YCB100_THREAT_MODEL.md)
