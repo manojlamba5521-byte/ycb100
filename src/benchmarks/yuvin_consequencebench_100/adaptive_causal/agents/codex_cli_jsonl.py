@@ -1,4 +1,4 @@
-"""Codex CLI bridge for the contained public YCB-100 JSONL agent protocol.
+"""Codex CLI bridge for the contained public ConsequenceBench JSONL agent protocol.
 
 The bridge treats Codex as an external candidate process.  It receives only
 the evaluator-provided public episode view, asks Codex for schema-constrained

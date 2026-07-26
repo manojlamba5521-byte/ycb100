@@ -1,4 +1,4 @@
-"""Local Ollama structured-chat client for the contained YCB-100 agent protocol."""
+"""Local Ollama structured-chat client for the contained ConsequenceBench agent protocol."""
 from __future__ import annotations
 
 import json

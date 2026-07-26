@@ -1,4 +1,4 @@
-"""Vertex Gemini bridge for the contained public YCB-100 JSONL agent protocol.
+"""Vertex Gemini bridge for the contained public ConsequenceBench JSONL agent protocol.
 
 The bridge is intentionally an adapter, not an evaluator.  It gives a model
 only the evaluator's raw public episode view and forwards the model-selected

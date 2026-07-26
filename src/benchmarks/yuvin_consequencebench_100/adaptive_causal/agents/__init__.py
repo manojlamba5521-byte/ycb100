@@ -1,4 +1,4 @@
-"""Contained arbitrary-agent bridges for public YCB-100 development studies."""
+"""Contained arbitrary-agent bridges for public ConsequenceBench development studies."""
 
 from benchmarks.yuvin_consequencebench_100.adaptive_causal.agents.vertex_gemini_jsonl import (
     VERTEX_GEMINI_AGENT_SYSTEM_PROMPT,
