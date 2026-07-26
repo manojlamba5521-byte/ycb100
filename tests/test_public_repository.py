@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import importlib
 import importlib.util
-import zipfile
 import json
 import re
+import tomllib
+import zipfile
 from pathlib import Path
 from urllib.parse import unquote
 
@@ -74,6 +75,20 @@ def test_public_repository_essential_files_exist() -> None:
         "docs/YCB100_QUALIFICATION_PLAN.md",
     }
     assert not sorted(path for path in required if not (root / path).is_file())
+
+
+def test_public_distribution_uses_consequencebench_identity() -> None:
+    root = Path(__file__).resolve().parents[1]
+    metadata = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))
+
+    assert metadata["project"]["name"] == "consequencebench"
+    assert metadata["project"]["scripts"]["consequencebench"].endswith(":main")
+    assert metadata["project"]["scripts"]["ycb100"] == (
+        metadata["project"]["scripts"]["consequencebench"]
+    )
+    assert metadata["project"]["urls"]["Repository"] == (
+        "https://github.com/yuvin-labs/consequencebench"
+    )
 
 
 def test_public_repository_excludes_generated_package_metadata() -> None:
@@ -146,7 +161,7 @@ def test_public_archive_bytes_do_not_depend_on_output_directory_name(
 
     assert left_zip.read_bytes() == right_zip.read_bytes()
     with zipfile.ZipFile(left_zip) as archive:
-        assert archive.namelist() == ["YCB-100-0.1.0/README.md"]
+        assert archive.namelist() == ["ConsequenceBench-0.1.0/README.md"]
 
 
 def test_public_markdown_local_links_resolve() -> None:
