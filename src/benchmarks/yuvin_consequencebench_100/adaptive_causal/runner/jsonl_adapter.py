@@ -1,4 +1,4 @@
-"""Interactive JSONL adapter runner for public YCB-100 development episodes."""
+"""Interactive JSONL adapter runner for public ConsequenceBench development episodes."""
 from __future__ import annotations
 
 import json

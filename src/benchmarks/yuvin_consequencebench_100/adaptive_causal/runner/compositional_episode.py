@@ -1,4 +1,4 @@
-"""Universal multi-tool JSONL runner for compositional YCB-100 development worlds."""
+"""Universal multi-tool JSONL runner for compositional ConsequenceBench development worlds."""
 from __future__ import annotations
 
 import queue

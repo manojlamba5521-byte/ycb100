@@ -1,4 +1,4 @@
-"""YCB-100 agent-adapter execution with explicit containment tiers."""
+"""ConsequenceBench agent-adapter execution with explicit containment tiers."""
 
 from benchmarks.yuvin_consequencebench_100.adaptive_causal.runner.jsonl_adapter import (
     AdapterInvocationV1,

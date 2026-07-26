@@ -1,4 +1,4 @@
-"""Bind an arbitrary JSONL adapter to a YCB-100 adaptive public-development world."""
+"""Bind an arbitrary JSONL adapter to a ConsequenceBench adaptive public-development world."""
 from __future__ import annotations
 
 from dataclasses import dataclass
