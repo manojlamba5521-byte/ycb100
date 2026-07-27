@@ -45,6 +45,7 @@ vertex = [
 ]
 
 [project.urls]
+Homepage = "https://yuvinlab.com/consequencebench"
 Documentation = "https://github.com/yuvin-labs/consequencebench/tree/main/docs"
 Issues = "https://github.com/yuvin-labs/consequencebench/issues"
 Repository = "https://github.com/yuvin-labs/consequencebench"

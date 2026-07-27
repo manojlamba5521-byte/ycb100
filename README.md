@@ -2,6 +2,10 @@
 
 **Evaluating evidence-grounded agents under real-world consequences.**
 
+[Website](https://yuvinlab.com/consequencebench) |
+[Hugging Face dataset](https://huggingface.co/datasets/yuvin-labs/consequencebench) |
+[Development leaderboard](docs/LEADERBOARD.md)
+
 ConsequenceBench is a universal synthetic benchmark for consequential AI agents. It
 tests whether an agent investigates the right evidence, chooses the right
 action, avoids unsafe effects, preserves legitimate effects, recovers from
