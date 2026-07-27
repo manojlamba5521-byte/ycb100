@@ -79,8 +79,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "sha256:a7185ccac708f71f0dc5b5004e20e4221a86278281e8875aabf9ab641668e923",
-      "size_bytes": 8782
+      "sha256": "sha256:4fdcc34005bb9396ab0db43051ded958c803b44903302533f03527f46600cceb",
+      "size_bytes": 9549
     },
     {
       "path": "SECURITY.md",
@@ -164,8 +164,8 @@
     },
     {
       "path": "scripts/build_development_leaderboard.py",
-      "sha256": "sha256:85af19a34ad7702368f09944f9414d3e87b9d4c060d8e62a50578844f97e61f8",
-      "size_bytes": 18224
+      "sha256": "sha256:fbfab105e279b6ccd6a33d20d62787286b963fbf102276009ccdf7f7c2b50816",
+      "size_bytes": 20866
     },
     {
       "path": "scripts/build_public_repository.py",
@@ -649,8 +649,8 @@
     },
     {
       "path": "tests/test_development_leaderboard.py",
-      "sha256": "sha256:76c57fabb6fff4c251148c54e9c0c5cf2baaa9f9181f5471b63af539ff959014",
-      "size_bytes": 3671
+      "sha256": "sha256:72e8fdd69ec911997c55ee0c945cb12089175195e8c0f111d0320b80a3f8b79d",
+      "size_bytes": 4212
     },
     {
       "path": "tests/test_pressure_effect_binding.py",
@@ -668,7 +668,7 @@
       "size_bytes": 1028
     }
   ],
-  "manifest_hash": "sha256:286e2ceae4fc245f48b36c9733aa6383ca6a969d548b3b81446626a698820869",
+  "manifest_hash": "sha256:a07e017775251cf0bd944f83d690098d346b91b0986bd9c1a770caf5dd6434a2",
   "release_tier": "DEVELOPMENT_PREVIEW_NOT_QUALIFIED",
   "schema_version": "consequencebench.public_repository_integrity.v1",
   "version": "0.1.0"

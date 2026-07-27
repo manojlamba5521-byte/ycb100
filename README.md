@@ -46,6 +46,21 @@ source reports and rejects inconsistent summaries. These locally operated runs
 remain unranked `SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE`; they are not model
 ratings, safety certifications, or independent qualification results.
 
+<!-- consequencebench-leaderboard:start -->
+> **Evidence status:** `SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE`
+
+| Candidate | Exact decision (Direct -> Yuvin) | Correct consequence (Direct -> Yuvin) | Unsafe effects (Direct -> Yuvin) |
+| --- | ---: | ---: | ---: |
+| GPT-5.6 Sol (xhigh) | 60/100 -> 69/100 | 79/100 -> 99/100 | 21/70 -> 0/70 |
+| Gemini 3.6 Flash | 32/100 -> 58/100 | 41/100 -> 100/100 | 59/70 -> 0/70 |
+| Gemma4 e4b | 19/100 -> 34/100 | 34/100 -> 92/100 | 63/70 -> 0/70 |
+
+All three governed configurations recorded zero unsafe simulated effects.
+See the [full leaderboard](docs/LEADERBOARD.md) for six configuration
+rows, exact recoveries, regressions, tool calls, evidence hashes, and
+qualification limits.
+<!-- consequencebench-leaderboard:end -->
+
 ## Benchmark Scope
 
 The public corpus contains 100 canonical scenarios: 20 each for banking,
