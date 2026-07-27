@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850" role="img" aria-labelledby="title description">
+  <title id="title">Unsafe simulated effects, Direct versus With Yuvin</title>
+  <desc id="description">Three paired development comparisons. GPT-5.6 Sol recorded 21 unsafe effects without Yuvin and 0 with Yuvin. Gemini 3.6 Flash recorded 59 and 0. Gemma4 e4b recorded 63 and 0.</desc>
+  <rect x="0" y="0" width="1400" height="850" rx="0" fill="#F5F7FB"/>
+  <rect x="38" y="34" width="1324" height="782" rx="16" fill="#FFFFFF" stroke="#D9E0EA"/>
+  <text x="78" y="88" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="15" font-weight="650" fill="#2756D8" text-anchor="start" letter-spacing="1.6">CONSEQUENCEBENCH / PAIRED DEVELOPMENT RUNS</text>
+  <text x="78" y="145" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="36" font-weight="720" fill="#101828" text-anchor="start">Unsafe simulated effects</text>
+  <text x="78" y="180" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="18" font-weight="400" fill="#475467" text-anchor="start">Same model, same 70 unsafe-action worlds per arm. Lower is better.</text>
+  <rect x="1024" y="74" width="280" height="42" rx="21" fill="#E7EDFC"/>
+  <text x="1164" y="101" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="13" font-weight="650" fill="#2756D8" text-anchor="middle" letter-spacing="0.7">WITHOUT YUVIN  /  WITH YUVIN</text>
+  <text x="78" y="238" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="22" font-weight="700" fill="#101828" text-anchor="start">GPT-5.6 Sol (xhigh)</text>
+  <text x="1302" y="238" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="end">21  →  0</text>
+  <text x="78" y="285" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="15" font-weight="650" fill="#B85C4C" text-anchor="start">Without Yuvin</text>
+  <text x="196" y="285" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="400" fill="#667085" text-anchor="start">Direct</text>
+  <rect x="318" y="269" width="892" height="18" rx="9" fill="#F6E9E6"/>
+  <rect x="318" y="269" width="268" height="18" rx="9" fill="#B85C4C"/>
+  <text x="1302" y="285" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="15" font-weight="650" fill="#B85C4C" text-anchor="end">21 / 70</text>
+  <text x="78" y="329" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="15" font-weight="650" fill="#2756D8" text-anchor="start">With Yuvin</text>
+  <text x="174" y="329" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="400" fill="#667085" text-anchor="start">Governed</text>
+  <rect x="318" y="313" width="892" height="18" rx="9" fill="#E7EDFC"/>
+  <rect x="318" y="313" width="4" height="18" rx="2" fill="#2756D8"/>
+  <text x="1302" y="329" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="15" font-weight="650" fill="#2756D8" text-anchor="end">0 / 70</text>
+  <line x1="78" y1="374" x2="1322" y2="374" stroke="#D9E0EA" stroke-width="1"/>
+  <text x="78" y="410" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="22" font-weight="700" fill="#101828" text-anchor="start">Gemini 3.6 Flash</text>
+  <text x="1302" y="410" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="end">59  →  0</text>
+  <text x="78" y="457" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="15" font-weight="650" fill="#B85C4C" text-anchor="start">Without Yuvin</text>
+  <text x="196" y="457" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="400" fill="#667085" text-anchor="start">Direct</text>
+  <rect x="318" y="441" width="892" height="18" rx="9" fill="#F6E9E6"/>
+  <rect x="318" y="441" width="752" height="18" rx="9" fill="#B85C4C"/>
+  <text x="1302" y="457" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="15" font-weight="650" fill="#B85C4C" text-anchor="end">59 / 70</text>
+  <text x="78" y="501" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="15" font-weight="650" fill="#2756D8" text-anchor="start">With Yuvin</text>
+  <text x="174" y="501" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="400" fill="#667085" text-anchor="start">Governed</text>
+  <rect x="318" y="485" width="892" height="18" rx="9" fill="#E7EDFC"/>
+  <rect x="318" y="485" width="4" height="18" rx="2" fill="#2756D8"/>
+  <text x="1302" y="501" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="15" font-weight="650" fill="#2756D8" text-anchor="end">0 / 70</text>
+  <line x1="78" y1="546" x2="1322" y2="546" stroke="#D9E0EA" stroke-width="1"/>
+  <text x="78" y="582" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="22" font-weight="700" fill="#101828" text-anchor="start">Gemma4 e4b</text>
+  <text x="1302" y="582" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="18" font-weight="700" fill="#101828" text-anchor="end">63  →  0</text>
+  <text x="78" y="629" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="15" font-weight="650" fill="#B85C4C" text-anchor="start">Without Yuvin</text>
+  <text x="196" y="629" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="400" fill="#667085" text-anchor="start">Direct</text>
+  <rect x="318" y="613" width="892" height="18" rx="9" fill="#F6E9E6"/>
+  <rect x="318" y="613" width="803" height="18" rx="9" fill="#B85C4C"/>
+  <text x="1302" y="629" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="15" font-weight="650" fill="#B85C4C" text-anchor="end">63 / 70</text>
+  <text x="78" y="673" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="15" font-weight="650" fill="#2756D8" text-anchor="start">With Yuvin</text>
+  <text x="174" y="673" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="400" fill="#667085" text-anchor="start">Governed</text>
+  <rect x="318" y="657" width="892" height="18" rx="9" fill="#E7EDFC"/>
+  <rect x="318" y="657" width="4" height="18" rx="2" fill="#2756D8"/>
+  <text x="1302" y="673" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="15" font-weight="650" fill="#2756D8" text-anchor="end">0 / 70</text>
+  <line x1="78" y1="742" x2="1322" y2="742" stroke="#D9E0EA" stroke-width="1"/>
+  <text x="78" y="778" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="400" fill="#667085" text-anchor="start">100 paired worlds per model  ·  seed 0  ·  values rendered from the public receipt</text>
+  <text x="1322" y="778" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="13" font-weight="650" fill="#475467" text-anchor="end">DEVELOPMENT / SELF-REPORTED / UNRANKED</text>
+</svg>
