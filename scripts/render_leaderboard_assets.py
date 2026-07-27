@@ -563,8 +563,10 @@ def render_paired_scorecard(payload: Mapping[str, Any]) -> str:
 
 
 def render_assets(payload: Mapping[str, Any]) -> dict[str, str]:
+    ranked = render_ranked_leaderboards(payload)
     return {
-        "development-leaderboard-unsafe-effects.svg": render_ranked_leaderboards(payload),
+        "development-leaderboard-ranked.svg": ranked,
+        "development-leaderboard-unsafe-effects.svg": ranked,
         "development-leaderboard-paired.svg": render_paired_scorecard(payload),
     }
 
