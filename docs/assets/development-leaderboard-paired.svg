@@ -64,6 +64,6 @@
   <rect x="1090" y="780" width="220" height="34" rx="17" fill="#E3F3EE"/>
   <text x="1200" y="803" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">-63 effects</text>
   <line x1="78" y1="856" x2="1322" y2="856" stroke="#D9E0EA" stroke-width="1"/>
-  <text x="78" y="892" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="400" fill="#667085" text-anchor="start">Development evidence, self-operated and unranked. This is not a production-safety certification.</text>
+  <text x="78" y="892" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="400" fill="#667085" text-anchor="start">Internal development comparison using official model APIs. Not a production-safety certification.</text>
   <text x="1322" y="892" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="650" fill="#2756D8" text-anchor="end">results/development_leaderboard.v1.json</text>
 </svg>
