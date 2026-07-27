@@ -142,8 +142,14 @@ def _is_public_file(path: Path) -> bool:
         return False
     if relative.parts[0] == "scripts" and path.name in EXCLUDED_SCRIPT_NAMES:
         return False
-    if relative.parts[0] == "docs" and path.name not in PUBLIC_DOC_NAMES:
-        return False
+    if relative.parts[0] == "docs":
+        is_leaderboard_asset = (
+            len(relative.parts) == 3
+            and relative.parts[1] == "assets"
+            and path.suffix.casefold() == ".svg"
+        )
+        if path.name not in PUBLIC_DOC_NAMES and not is_leaderboard_asset:
+            return False
     if relative.parts[0] == "tests" and path.name not in PUBLIC_TEST_NAMES:
         return False
     return path.is_file() and not path.is_symlink()

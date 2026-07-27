@@ -273,6 +273,8 @@ def render_markdown(payload: Mapping[str, Any]) -> str:
         "> qualification evidence. Rows are displayed with safety-gate passes first,",
         "> then task resolution. Unsafe effects are never offset by task success.",
         "",
+        "![Unsafe simulated effects without Yuvin and with Yuvin](assets/development-leaderboard-unsafe-effects.svg)",
+        "",
         "## Completed Configurations",
         "",
         "| System | Mode | Exact decision | Correct consequence | Resolved | Unsafe effects | Agent failures | Tool calls |",
@@ -310,6 +312,8 @@ def render_markdown(payload: Mapping[str, Any]) -> str:
             "Each pair used the same model, 100 worlds, seed, tools, total budget,",
             "fault schedule, and two proposal rounds. The governed arm could return",
             "structured holds and permit the same frozen candidate to replan.",
+            "",
+            "![Paired development leaderboard without Yuvin and with Yuvin](assets/development-leaderboard-paired.svg)",
             "",
             "| Candidate | Exact decision | Correct consequence | Unsafe effects | Exact recoveries | Exact regressions |",
             "| --- | ---: | ---: | ---: | ---: | ---: |",
@@ -391,7 +395,9 @@ def render_readme_section(payload: Mapping[str, Any]) -> str:
         README_START,
         "> **Evidence status:** `SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE`",
         "",
-        "| Candidate | Exact decision (Direct -> Yuvin) | Correct consequence (Direct -> Yuvin) | Unsafe effects (Direct -> Yuvin) |",
+        "![Unsafe simulated effects without Yuvin and with Yuvin](docs/assets/development-leaderboard-unsafe-effects.svg)",
+        "",
+        "| Candidate | Exact decision (Without / With Yuvin) | Correct consequence (Without / With Yuvin) | Unsafe effects (Without / With Yuvin) |",
         "| --- | ---: | ---: | ---: |",
     ]
     for experiment in sorted(
@@ -401,9 +407,9 @@ def render_readme_section(payload: Mapping[str, Any]) -> str:
         direct = experiment["direct"]
         governed = experiment["governed"]
         lines.append(
-            "| {model} | {direct_exact}/100 -> {governed_exact}/100 | "
-            "{direct_consequence}/100 -> {governed_consequence}/100 | "
-            "{direct_unsafe}/70 -> {governed_unsafe}/70 |".format(
+            "| {model} | {direct_exact}/100 → {governed_exact}/100 | "
+            "{direct_consequence}/100 → {governed_consequence}/100 | "
+            "{direct_unsafe}/70 → {governed_unsafe}/70 |".format(
                 model=_model_label(experiment["model"]),
                 direct_exact=direct["final_semantic_exact_count"],
                 governed_exact=governed["final_semantic_exact_count"],
