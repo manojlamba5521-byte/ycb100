@@ -1,0 +1,72 @@
+name: Result submission
+description: Submit a hash-bound development result for reproducibility review.
+title: "[Result]: "
+labels:
+  - result-submission
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Read docs/SUBMIT_RESULTS.md first. Screenshots and aggregate-only reports are not evidence.
+  - type: input
+    id: evidence_bundle
+    attributes:
+      label: Immutable evidence bundle
+      description: Public URL containing row-level attempts, manifests, receipts, and SHA-256 hashes.
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: benchmark_commit
+    attributes:
+      label: Benchmark commit
+      placeholder: 40-character Git commit
+    validations:
+      required: true
+  - type: dropdown
+    id: study
+    attributes:
+      label: Study
+      options:
+        - Direct Agent Capability
+        - Governance Conformance
+        - Frozen-Candidate Incremental Effect
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence_tier
+    attributes:
+      label: Evidence tier
+      options:
+        - SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE
+        - INDEPENDENTLY_REPRODUCED_DEVELOPMENT_EVIDENCE
+        - EXTERNALLY_CUSTODIED_QUALIFICATION_EVIDENCE
+    validations:
+      required: true
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Candidate and execution configuration
+      description: Candidate digest, model, prompt, tools, budgets, retries, faults, seed, hardware, and environment.
+    validations:
+      required: true
+  - type: textarea
+    id: counters
+    attributes:
+      label: Complete counters
+      description: Include denominators, intervals, hard failures, unsafe and legitimate effects, failures, and paired regressions.
+    validations:
+      required: true
+  - type: checkboxes
+    id: attestations
+    attributes:
+      label: Attestations
+      options:
+        - label: I included every attempt, including malformed output, timeout, crash, retry, and refusal.
+          required: true
+        - label: I disclosed conflicts, operator involvement, exclusions, and known limitations.
+          required: true
+        - label: The bundle contains no credentials, private customer data, or evaluator-private oracle material.
+          required: true
+        - label: I understand that submission does not imply acceptance, ranking, certification, or endorsement.
+          required: true

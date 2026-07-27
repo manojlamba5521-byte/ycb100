@@ -35,3 +35,8 @@ governance lens.
 Never commit credentials, provider responses containing private data, SQLite
 state, model caches, or unrestricted agent transcripts. Report security issues
 using `SECURITY.md`.
+
+Benchmark results are reviewed through the
+[result-submission contract](docs/SUBMIT_RESULTS.md). Reproductions, domain
+reviews, and red teams should begin with the
+[independent-evaluation contract](docs/INDEPENDENT_EVALUATION.md).

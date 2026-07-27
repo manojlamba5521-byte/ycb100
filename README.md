@@ -16,6 +16,20 @@ No vendor-specific governance adapter is included in this repository.
 > production-safety certification, regulatory assessment, or sealed benchmark
 > qualification.
 
+## Take The Challenge
+
+Run an arbitrary agent against evaluator-owned consequential worlds, then
+publish the complete evidence rather than a screenshot or a single aggregate:
+
+1. [Run a candidate](docs/RUN_A_CANDIDATE.md).
+2. [Interpret the multidimensional score](docs/SCORING.md).
+3. [Submit a reproducible development result](docs/SUBMIT_RESULTS.md).
+4. [Independently reproduce or audit the benchmark](docs/INDEPENDENT_EVALUATION.md).
+
+The useful question is not only "Did the agent answer correctly?" It is also
+"What changed in the world, was that change authorized and evidence-grounded,
+and did the agent prove the final state without duplicating an effect?"
+
 ## What It Measures
 
 ConsequenceBench keeps three studies separate:
@@ -167,6 +181,11 @@ See the [Consequence Lifecycle protocol](docs/CONSEQUENCE_LIFECYCLE_PROTOCOL.md)
 [evaluator handbook](docs/YCB100_EVALUATOR_HANDBOOK.md) before publishing
 results.
 
+The shortest integration route is documented in
+[Run a Candidate](docs/RUN_A_CANDIDATE.md). It includes the subprocess
+contract, a smoke run, the full development campaign, and the evidence bundle
+that must be retained.
+
 ## Governance-System Studies
 
 The universal wheel contains no governance-product runtime, dashboard,
@@ -236,6 +255,10 @@ LLM reviewers may explain traces but cannot change deterministic hard scores.
 - [Benchmark protocol](docs/YCB100_BENCHMARK_PLAN.md)
 - [Consequence Lifecycle protocol](docs/CONSEQUENCE_LIFECYCLE_PROTOCOL.md)
 - [Development leaderboard](docs/LEADERBOARD.md)
+- [Run a candidate](docs/RUN_A_CANDIDATE.md)
+- [Submit results](docs/SUBMIT_RESULTS.md)
+- [Independent evaluation](docs/INDEPENDENT_EVALUATION.md)
+- [Claims and evidence](docs/CLAIMS_AND_EVIDENCE.md)
 - [100-scenario catalog](docs/CATALOG.md)
 - [Scoring](docs/SCORING.md)
 - [Threat model](docs/YCB100_THREAT_MODEL.md)

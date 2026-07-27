@@ -1,0 +1,41 @@
+name: Independent evaluation or audit
+description: Coordinate a reproduction, domain review, red team, or custody campaign.
+title: "[Independent evaluation]: "
+labels:
+  - independent-evaluation
+body:
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Evaluation type
+      options:
+        - Clean-machine reproduction
+        - Candidate-agent evaluation
+        - Domain semantics review
+        - Security or isolation red team
+        - Artifact and statistics audit
+        - External evaluator custody
+        - Structural-OOD world contribution
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Proposed scope and protocol
+      description: State the benchmark commit, artifacts, sample, methods, and intended evidence claim.
+    validations:
+      required: true
+  - type: textarea
+    id: independence
+    attributes:
+      label: Independence and conflicts
+      description: Disclose affiliations, relationships, funding, author assistance, and who controls execution and artifacts.
+    validations:
+      required: true
+  - type: textarea
+    id: outputs
+    attributes:
+      label: Planned public outputs
+      description: Reports, raw artifacts, hashes, code, timelines, and disclosure handling.
+    validations:
+      required: true

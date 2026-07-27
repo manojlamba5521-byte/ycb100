@@ -17,6 +17,8 @@
 
 | Document | Purpose |
 | --- | --- |
+| [Run a Candidate](RUN_A_CANDIDATE.md) | Fast path from clean checkout to a complete development study. |
+| [Submit Results](SUBMIT_RESULTS.md) | Artifact, reporting, evidence-label, and public review requirements. |
 | [Operator Guide](YCB100_OPERATOR_GUIDE.md) | Agent submission and official judging. |
 | [Evaluator Handbook](YCB100_EVALUATOR_HANDBOOK.md) | Reproducible evaluator operation and evidence custody. |
 
@@ -24,6 +26,8 @@
 
 | Document | Purpose |
 | --- | --- |
+| [Independent Evaluation](INDEPENDENT_EVALUATION.md) | Reproduction, domain review, red-team, and audit participation. |
+| [Claims and Evidence](CLAIMS_AND_EVIDENCE.md) | Permitted public claims for each evidence tier. |
 | [Qualification Plan](YCB100_QUALIFICATION_PLAN.md) | Independent qualification requirements. |
 Raw generated runs remain absent from the source repository archive. The public
 development leaderboard contains hash-bound summary receipts only. Separately
