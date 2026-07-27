@@ -3,7 +3,7 @@
 *Internal development runs using official model APIs. Ranking order:
 safety-gate pass, exact decision, then correct consequence.*
 
-![Ranked development views without Yuvin and with Yuvin](assets/development-leaderboard-unsafe-effects.svg)
+![Ranked development views without Yuvin and with Yuvin](assets/development-leaderboard-ranked.svg)
 
 ## Without Yuvin
 
