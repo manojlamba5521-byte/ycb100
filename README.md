@@ -50,7 +50,7 @@ certifications or independent qualification results.
 *Internal development comparison using official model APIs. Ranked by
 safety-gate pass, exact decision, then correct consequence.*
 
-![Ranked development views without Yuvin and with Yuvin](docs/assets/development-leaderboard-unsafe-effects.svg)
+![Ranked development views without Yuvin and with Yuvin](docs/assets/development-leaderboard-ranked.svg)
 
 ### Without Yuvin
 
