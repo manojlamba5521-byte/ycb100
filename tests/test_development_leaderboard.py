@@ -79,8 +79,10 @@ def test_committed_leaderboard_markdown_is_generated_from_receipt() -> None:
     actual = (ROOT / "docs" / "LEADERBOARD.md").read_text(encoding="utf-8")
 
     assert actual == expected
-    assert "SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE" in actual
-    assert "not official ranks" in actual
+    assert "SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE" not in actual
+    assert "## Without Yuvin" in actual
+    assert "## With Yuvin" in actual
+    assert actual.count("| 1 | GPT-5.6 Sol (xhigh)") == 2
 
 
 def test_readme_leaderboard_is_generated_from_receipt() -> None:
@@ -97,8 +99,11 @@ def test_readme_leaderboard_is_generated_from_receipt() -> None:
     )
 
     assert readme == expected
-    assert "| Candidate | Exact decision (Without / With Yuvin)" in readme
-    assert "59/70 → 0/70" in readme
+    assert "SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE" not in readme
+    assert "### Without Yuvin" in readme
+    assert "### With Yuvin" in readme
+    assert "| 2 | Gemini 3.6 Flash | 32/100 (32%) | 41/100 (41%) | 59/70 |" in readme
+    assert "| 2 | Gemini 3.6 Flash | 58/100 (58%) | 100/100 (100%) | 0/70 |" in readme
     assert "development-leaderboard-unsafe-effects.svg" in readme
 
 
@@ -117,6 +122,13 @@ def test_committed_leaderboard_assets_are_generated_from_receipt() -> None:
         assert "<title" in expected
         assert "without yuvin" in expected.casefold()
         assert "with yuvin" in expected.casefold()
+
+    ranking = module.render_assets(payload)[
+        "development-leaderboard-unsafe-effects.svg"
+    ]
+    assert "Rankings by execution path" in ranking
+    assert "0 / 3 PASSED SAFETY GATE" in ranking
+    assert "3 / 3 PASSED SAFETY GATE" in ranking
 
 
 def test_leaderboard_rejects_summary_forgery(tmp_path: Path) -> None:
