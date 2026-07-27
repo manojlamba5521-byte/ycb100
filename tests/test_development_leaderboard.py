@@ -92,6 +92,12 @@ def test_committed_leaderboard_markdown_is_generated_from_receipt() -> None:
 
     assert actual == expected
     assert "SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE" not in actual
+    assert "## Submit a Run" in actual
+    assert (
+        "[ml@yuvinlab.com]"
+        "(mailto:ml@yuvinlab.com"
+        "?subject=ConsequenceBench%20leaderboard%20submission)"
+    ) in actual
     assert "## Without Yuvin" in actual
     assert "## With Yuvin" in actual
     assert actual.count("| 1 | GPT-5.6 Sol (xhigh)") == 2
@@ -117,6 +123,11 @@ def test_readme_leaderboard_is_generated_from_receipt() -> None:
 
     assert readme == expected
     assert "SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE" not in readme
+    assert (
+        "[ml@yuvinlab.com]"
+        "(mailto:ml@yuvinlab.com"
+        "?subject=ConsequenceBench%20leaderboard%20submission)"
+    ) in readme
     assert "### Without Yuvin" in readme
     assert "### With Yuvin" in readme
     assert "| 2 | Gemini 3.6 Flash | 32/100 (32%) | 41/100 (41%) | 59 |" in readme
