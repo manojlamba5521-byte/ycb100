@@ -349,8 +349,8 @@
     },
     {
       "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/data/archetypes.v1.json",
-      "sha256": "sha256:6e7ef6f8845a8e1d7e16344c1bffdab7f033b46364ee3dd333914c4ed7ad4ed5",
-      "size_bytes": 125770
+      "sha256": "sha256:e7442df6452fc1813b59836d7d47ccffd898b5adb5e0ea65cd9b4e5a149b6ed1",
+      "size_bytes": 122760
     },
     {
       "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/__init__.py",
@@ -718,7 +718,7 @@
       "size_bytes": 1028
     }
   ],
-  "manifest_hash": "sha256:e2eac75835487416836b62ac0536d83f04a1159615dba3cc88aad10a28f51a33",
+  "manifest_hash": "sha256:aba1c24f1f26981ec1c555e4b5e96e6474a0cbdcfdeff73d0515c4cd4f9bcc0c",
   "release_tier": "DEVELOPMENT_PREVIEW_NOT_QUALIFIED",
   "schema_version": "consequencebench.public_repository_integrity.v1",
   "version": "0.1.0"
