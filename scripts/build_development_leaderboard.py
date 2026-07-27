@@ -253,56 +253,110 @@ def _percent(value: int, total: int) -> str:
     return f"{100 * value / total:.0f}%"
 
 
-def render_markdown(payload: Mapping[str, Any]) -> str:
-    experiments = payload["experiments"]
-    entries = sorted(
-        payload["entries"],
-        key=lambda item: (
-            not item["safety_gate_passed"],
-            -item["task_resolved_count"],
-            -item["consequence_correct_count"],
-            item["system"],
+def _ranked_entries(
+    payload: Mapping[str, Any],
+    configuration: str,
+) -> list[Mapping[str, Any]]:
+    return sorted(
+        (
+            entry
+            for entry in payload["entries"]
+            if entry["configuration"] == configuration
+        ),
+        key=lambda entry: (
+            not entry["safety_gate_passed"],
+            -entry["final_semantic_exact_count"],
+            -entry["consequence_correct_count"],
+            entry["system"],
         ),
     )
-    lines = [
-        "# ConsequenceBench Development Leaderboard",
-        "",
-        "> **Evidence status:** `SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE`",
-        ">",
-        "> These results are not official ranks, certifications, or independent",
-        "> qualification evidence. Rows are displayed with safety-gate passes first,",
-        "> then task resolution. Unsafe effects are never offset by task success.",
-        "",
-        "![Unsafe simulated effects without Yuvin and with Yuvin](assets/development-leaderboard-unsafe-effects.svg)",
-        "",
-        "## Completed Configurations",
-        "",
-        "| System | Mode | Exact decision | Correct consequence | Resolved | Unsafe effects | Agent failures | Tool calls |",
-        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |",
-    ]
-    for entry in entries:
-        mode = (
-            "Direct"
-            if entry["configuration"] == "direct"
-            else f"Governed ({entry['governance_layer']})"
+
+
+def _append_ranking_table(
+    lines: list[str],
+    entries: Sequence[Mapping[str, Any]],
+    *,
+    include_operational_metrics: bool,
+) -> None:
+    if include_operational_metrics:
+        lines.extend(
+            [
+                "| Rank | Model | Exact decision | Correct consequence | Resolved | Unsafe effects | Agent failures | Tool calls |",
+                "| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |",
+            ]
         )
-        lines.append(
-            "| {system} | {mode} | {exact}/100 ({exact_pct}) | "
-            "{consequence}/100 ({consequence_pct}) | {resolved}/100 "
-            "({resolved_pct}) | {unsafe}/70 | {failures} | {tools:,} |".format(
-                system=entry["system"],
-                mode=mode,
-                exact=entry["final_semantic_exact_count"],
-                exact_pct=_percent(entry["final_semantic_exact_count"], 100),
-                consequence=entry["consequence_correct_count"],
-                consequence_pct=_percent(entry["consequence_correct_count"], 100),
+    else:
+        lines.extend(
+            [
+                "| Rank | Model | Exact decision | Correct consequence | Unsafe effects |",
+                "| ---: | --- | ---: | ---: | ---: |",
+            ]
+        )
+
+    for rank, entry in enumerate(entries, start=1):
+        row = (
+            "| {rank} | {system} | {exact}/100 ({exact_pct}) | "
+            "{consequence}/100 ({consequence_pct}) | "
+        ).format(
+            rank=rank,
+            system=entry["system"],
+            exact=entry["final_semantic_exact_count"],
+            exact_pct=_percent(entry["final_semantic_exact_count"], 100),
+            consequence=entry["consequence_correct_count"],
+            consequence_pct=_percent(entry["consequence_correct_count"], 100),
+        )
+        if include_operational_metrics:
+            row += (
+                "{resolved}/100 ({resolved_pct}) | {unsafe}/70 | "
+                "{failures} | {tools:,} |"
+            ).format(
                 resolved=entry["task_resolved_count"],
                 resolved_pct=_percent(entry["task_resolved_count"], 100),
                 unsafe=entry["unsafe_effect_count"],
                 failures=entry["agent_failure_count"],
                 tools=entry["tool_call_count"],
             )
-        )
+        else:
+            row += f"{entry['unsafe_effect_count']}/70 |"
+        lines.append(row)
+
+
+def render_markdown(payload: Mapping[str, Any]) -> str:
+    experiments = payload["experiments"]
+    direct_entries = _ranked_entries(payload, "direct")
+    governed_entries = _ranked_entries(payload, "governed")
+    lines = [
+        "# ConsequenceBench Development Leaderboard",
+        "",
+        "*Internal development runs using official model APIs. Ranking order:",
+        "safety-gate pass, exact decision, then correct consequence.*",
+        "",
+        "![Ranked development views without Yuvin and with Yuvin](assets/development-leaderboard-unsafe-effects.svg)",
+        "",
+        "## Without Yuvin",
+        "",
+        "Models execute through the direct connector path.",
+        "",
+    ]
+    _append_ranking_table(
+        lines,
+        direct_entries,
+        include_operational_metrics=True,
+    )
+    lines.extend(
+        [
+            "",
+            "## With Yuvin",
+            "",
+            "The same models execute through the governed path.",
+            "",
+        ]
+    )
+    _append_ranking_table(
+        lines,
+        governed_entries,
+        include_operational_metrics=True,
+    )
 
     lines.extend(
         [
@@ -393,39 +447,37 @@ def render_markdown(payload: Mapping[str, Any]) -> str:
 def render_readme_section(payload: Mapping[str, Any]) -> str:
     lines = [
         README_START,
-        "> **Evidence status:** `SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE`",
+        "*Internal development comparison using official model APIs. Ranked by",
+        "safety-gate pass, exact decision, then correct consequence.*",
         "",
-        "![Unsafe simulated effects without Yuvin and with Yuvin](docs/assets/development-leaderboard-unsafe-effects.svg)",
+        "![Ranked development views without Yuvin and with Yuvin](docs/assets/development-leaderboard-unsafe-effects.svg)",
         "",
-        "| Candidate | Exact decision (Without / With Yuvin) | Correct consequence (Without / With Yuvin) | Unsafe effects (Without / With Yuvin) |",
-        "| --- | ---: | ---: | ---: |",
+        "### Without Yuvin",
+        "",
     ]
-    for experiment in sorted(
-        payload["experiments"],
-        key=lambda item: _model_label(item["model"]),
-    ):
-        direct = experiment["direct"]
-        governed = experiment["governed"]
-        lines.append(
-            "| {model} | {direct_exact}/100 → {governed_exact}/100 | "
-            "{direct_consequence}/100 → {governed_consequence}/100 | "
-            "{direct_unsafe}/70 → {governed_unsafe}/70 |".format(
-                model=_model_label(experiment["model"]),
-                direct_exact=direct["final_semantic_exact_count"],
-                governed_exact=governed["final_semantic_exact_count"],
-                direct_consequence=direct["consequence_correct_count"],
-                governed_consequence=governed["consequence_correct_count"],
-                direct_unsafe=direct["unsafe_effect_count"],
-                governed_unsafe=governed["unsafe_effect_count"],
-            )
-        )
+    _append_ranking_table(
+        lines,
+        _ranked_entries(payload, "direct"),
+        include_operational_metrics=False,
+    )
     lines.extend(
         [
             "",
-            "All three governed configurations recorded zero unsafe simulated effects.",
-            "See the [full leaderboard](docs/LEADERBOARD.md) for six configuration",
-            "rows, exact recoveries, regressions, tool calls, evidence hashes, and",
-            "qualification limits.",
+            "### With Yuvin",
+            "",
+        ]
+    )
+    _append_ranking_table(
+        lines,
+        _ranked_entries(payload, "governed"),
+        include_operational_metrics=False,
+    )
+    lines.extend(
+        [
+            "",
+            "All three governed runs recorded zero unsafe simulated effects.",
+            "See the [full leaderboard](docs/LEADERBOARD.md) for operational",
+            "metrics, paired recoveries, regressions, and the benchmark receipt.",
             README_END,
         ]
     )

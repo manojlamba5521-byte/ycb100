@@ -129,9 +129,163 @@ def _pairs(payload: Mapping[str, Any]) -> list[dict[str, Any]]:
     return pairs
 
 
-def render_unsafe_effects(payload: Mapping[str, Any]) -> str:
+def _ranked_entries(
+    payload: Mapping[str, Any],
+    configuration: str,
+) -> list[Mapping[str, Any]]:
+    return sorted(
+        (
+            entry
+            for entry in payload["entries"]
+            if entry["configuration"] == configuration
+        ),
+        key=lambda entry: (
+            not entry["safety_gate_passed"],
+            -entry["final_semantic_exact_count"],
+            -entry["consequence_correct_count"],
+            entry["system"],
+        ),
+    )
+
+
+def _ranking_panel(
+    *,
+    x: int,
+    title: str,
+    mode: str,
+    gate_summary: str,
+    accent: str,
+    accent_soft: str,
+    entries: list[Mapping[str, Any]],
+) -> list[str]:
+    panel_width = 598
+    body = [
+        _rect(x, 214, panel_width, 102, fill=accent_soft, radius=14),
+        _text(x + 24, 250, title, size=15, weight=720, fill=accent),
+        _text(x + 24, 288, mode, size=26, weight=740),
+        _text(
+            x + panel_width - 24,
+            250,
+            gate_summary,
+            size=13,
+            weight=680,
+            fill=accent,
+            anchor="end",
+            family=MONO,
+        ),
+        _text(
+            x + 82,
+            356,
+            "MODEL",
+            size=12,
+            weight=700,
+            fill=MUTED,
+            family=MONO,
+            letter_spacing=0.8,
+        ),
+        _text(
+            x + 300,
+            356,
+            "EXACT",
+            size=12,
+            weight=700,
+            fill=MUTED,
+            anchor="middle",
+            family=MONO,
+            letter_spacing=0.6,
+        ),
+        _text(
+            x + 435,
+            356,
+            "CORRECT STATE",
+            size=12,
+            weight=700,
+            fill=MUTED,
+            anchor="middle",
+            family=MONO,
+            letter_spacing=0.4,
+        ),
+        _text(
+            x + 548,
+            356,
+            "UNSAFE",
+            size=12,
+            weight=700,
+            fill=MUTED,
+            anchor="end",
+            family=MONO,
+            letter_spacing=0.6,
+        ),
+        _line(x + 20, 376, x + panel_width - 20, 376),
+    ]
+
+    for index, entry in enumerate(entries):
+        row_top = 402 + index * 166
+        if index:
+            body.append(
+                _line(
+                    x + 20,
+                    row_top - 24,
+                    x + panel_width - 20,
+                    row_top - 24,
+                )
+            )
+        body.extend(
+            [
+                _text(
+                    x + 24,
+                    row_top + 55,
+                    f"{index + 1:02d}",
+                    size=30,
+                    weight=760,
+                    fill=accent,
+                    family=MONO,
+                ),
+                _text(
+                    x + 82,
+                    row_top + 56,
+                    entry["system"],
+                    size=18,
+                    weight=720,
+                ),
+                _text(
+                    x + 300,
+                    row_top + 56,
+                    f"{entry['final_semantic_exact_count']}/100",
+                    size=17,
+                    weight=720,
+                    fill=accent,
+                    anchor="middle",
+                    family=MONO,
+                ),
+                _text(
+                    x + 435,
+                    row_top + 56,
+                    f"{entry['consequence_correct_count']}/100",
+                    size=17,
+                    weight=720,
+                    fill=accent,
+                    anchor="middle",
+                    family=MONO,
+                ),
+                _text(
+                    x + 548,
+                    row_top + 56,
+                    f"{entry['unsafe_effect_count']}/70",
+                    size=17,
+                    weight=720,
+                    fill=accent,
+                    anchor="end",
+                    family=MONO,
+                ),
+            ]
+        )
+    return body
+
+
+def render_ranked_leaderboards(payload: Mapping[str, Any]) -> str:
     width = 1400
-    height = 850
+    height = 980
     body: list[str] = [
         _rect(0, 0, width, height, fill=CANVAS),
         _rect(38, 34, width - 76, height - 68, fill=SURFACE, radius=16, stroke=LINE),
@@ -145,175 +299,62 @@ def render_unsafe_effects(payload: Mapping[str, Any]) -> str:
             family=MONO,
             letter_spacing=1.6,
         ),
-        _text(78, 145, "Unsafe simulated effects", size=36, weight=720),
+        _text(78, 145, "Rankings by execution path", size=38, weight=740),
         _text(
             78,
             180,
-            "Same model, same 70 unsafe-action worlds per arm. Lower is better.",
+            "Same models and 100 worlds. Direct execution and governed execution are ranked separately.",
             size=18,
             fill=INK_SOFT,
         ),
-        _rect(1024, 74, 280, 42, fill=YUVIN_SOFT, radius=21),
+        *_ranking_panel(
+            x=78,
+            title="WITHOUT YUVIN",
+            mode="Direct connector path",
+            gate_summary="0 / 3 PASSED SAFETY GATE",
+            accent=DIRECT,
+            accent_soft=DIRECT_SOFT,
+            entries=_ranked_entries(payload, "direct"),
+        ),
+        *_ranking_panel(
+            x=724,
+            title="WITH YUVIN",
+            mode="Governed execution",
+            gate_summary="3 / 3 PASSED SAFETY GATE",
+            accent=YUVIN,
+            accent_soft=YUVIN_SOFT,
+            entries=_ranked_entries(payload, "governed"),
+        ),
+        _line(78, 888, 1322, 888),
         _text(
-            1164,
-            101,
-            "WITHOUT YUVIN  /  WITH YUVIN",
+            78,
+            924,
+            "Ranking rule: safety-gate pass, then exact decision, then correct consequence.",
+            size=14,
+            fill=MUTED,
+            family=MONO,
+        ),
+        _text(
+            1322,
+            924,
+            "INTERNAL DEVELOPMENT COMPARISON  ·  OFFICIAL MODEL APIs",
             size=13,
             weight=650,
-            fill=YUVIN,
-            anchor="middle",
+            fill=INK_SOFT,
+            anchor="end",
             family=MONO,
-            letter_spacing=0.7,
         ),
     ]
-
-    bar_x = 318
-    bar_width = 892
-    max_unsafe = int(payload["corpus"]["unsafe_action_world_count"])
-    for index, pair in enumerate(_pairs(payload)):
-        top = 238 + index * 172
-        direct_value = int(pair["direct"]["unsafe_effect_count"])
-        governed_value = int(pair["governed"]["unsafe_effect_count"])
-        direct_width = round(bar_width * direct_value / max_unsafe)
-        governed_width = max(
-            4,
-            round(bar_width * governed_value / max_unsafe),
-        )
-
-        if index:
-            body.append(_line(78, top - 36, 1322, top - 36))
-        body.extend(
-            [
-                _text(78, top, pair["system"], size=22, weight=700),
-                _text(
-                    1302,
-                    top,
-                    f"{direct_value}  →  {governed_value}",
-                    size=18,
-                    weight=700,
-                    fill=INK,
-                    anchor="end",
-                    family=MONO,
-                ),
-                _text(
-                    78,
-                    top + 47,
-                    "Without Yuvin",
-                    size=15,
-                    weight=650,
-                    fill=DIRECT,
-                ),
-                _text(
-                    196,
-                    top + 47,
-                    "Direct",
-                    size=14,
-                    fill=MUTED,
-                    family=MONO,
-                ),
-                _rect(
-                    bar_x,
-                    top + 31,
-                    bar_width,
-                    18,
-                    fill=DIRECT_SOFT,
-                    radius=9,
-                ),
-                _rect(
-                    bar_x,
-                    top + 31,
-                    direct_width,
-                    18,
-                    fill=DIRECT,
-                    radius=9,
-                ),
-                _text(
-                    1302,
-                    top + 47,
-                    f"{direct_value} / {max_unsafe}",
-                    size=15,
-                    weight=650,
-                    fill=DIRECT,
-                    anchor="end",
-                    family=MONO,
-                ),
-                _text(
-                    78,
-                    top + 91,
-                    "With Yuvin",
-                    size=15,
-                    weight=650,
-                    fill=YUVIN,
-                ),
-                _text(
-                    174,
-                    top + 91,
-                    "Governed",
-                    size=14,
-                    fill=MUTED,
-                    family=MONO,
-                ),
-                _rect(
-                    bar_x,
-                    top + 75,
-                    bar_width,
-                    18,
-                    fill=YUVIN_SOFT,
-                    radius=9,
-                ),
-                _rect(
-                    bar_x,
-                    top + 75,
-                    governed_width,
-                    18,
-                    fill=YUVIN,
-                    radius=2 if governed_value == 0 else 9,
-                ),
-                _text(
-                    1302,
-                    top + 91,
-                    f"{governed_value} / {max_unsafe}",
-                    size=15,
-                    weight=650,
-                    fill=YUVIN,
-                    anchor="end",
-                    family=MONO,
-                ),
-            ]
-        )
-
-    body.extend(
-        [
-            _line(78, 742, 1322, 742),
-            _text(
-                78,
-                778,
-                "100 paired worlds per model  ·  seed 0  ·  values rendered from the public receipt",
-                size=14,
-                fill=MUTED,
-                family=MONO,
-            ),
-            _text(
-                1322,
-                778,
-                "DEVELOPMENT / SELF-REPORTED / UNRANKED",
-                size=13,
-                weight=650,
-                fill=INK_SOFT,
-                anchor="end",
-                family=MONO,
-            ),
-        ]
-    )
 
     return _document(
         width=width,
         height=height,
-        title="Unsafe simulated effects, Direct versus With Yuvin",
+        title="ConsequenceBench rankings without Yuvin and with Yuvin",
         description=(
-            "Three paired development comparisons. GPT-5.6 Sol recorded 21 "
-            "unsafe effects without Yuvin and 0 with Yuvin. Gemini 3.6 Flash "
-            "recorded 59 and 0. Gemma4 e4b recorded 63 and 0."
+            "Two complete three-model development rankings. Without Yuvin, "
+            "GPT-5.6 Sol ranks first, Gemini 3.6 Flash second, and Gemma4 e4b "
+            "third. With Yuvin, the same order is shown with all models "
+            "recording zero unsafe simulated effects."
         ),
         body=body,
     )
@@ -491,7 +532,7 @@ def render_paired_scorecard(payload: Mapping[str, Any]) -> str:
             _text(
                 78,
                 892,
-                "Development evidence, self-operated and unranked. This is not a production-safety certification.",
+                "Internal development comparison using official model APIs. Not a production-safety certification.",
                 size=14,
                 fill=MUTED,
                 family=MONO,
@@ -523,7 +564,7 @@ def render_paired_scorecard(payload: Mapping[str, Any]) -> str:
 
 def render_assets(payload: Mapping[str, Any]) -> dict[str, str]:
     return {
-        "development-leaderboard-unsafe-effects.svg": render_unsafe_effects(payload),
+        "development-leaderboard-unsafe-effects.svg": render_ranked_leaderboards(payload),
         "development-leaderboard-paired.svg": render_paired_scorecard(payload),
     }
 
