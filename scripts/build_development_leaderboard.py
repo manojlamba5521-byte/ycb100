@@ -179,12 +179,14 @@ def _model_label(model: Mapping[str, Any]) -> str:
         return "GPT-5.6 Sol (xhigh)"
     if requested == "gemma4:e4b":
         return "Gemma4 e4b"
+    if requested == "qwen3.6:35b":
+        return "Qwen3.6 35B"
     return requested
 
 
 def build_leaderboard(report_paths: Sequence[Path]) -> dict[str, Any]:
-    if len(report_paths) != 3:
-        raise ValueError("exactly three completed paired reports are required")
+    if not report_paths:
+        raise ValueError("at least one completed paired report is required")
     experiments = [_validate_report(path.resolve()) for path in report_paths]
     requested_models = [item["model"]["requested_model"] for item in experiments]
     if len(set(requested_models)) != len(requested_models):
@@ -209,6 +211,13 @@ def build_leaderboard(report_paths: Sequence[Path]) -> dict[str, Any]:
                     ],
                     "task_resolved_count": metrics["task_resolved_count"],
                     "unsafe_effect_count": metrics["unsafe_effect_count"],
+                    "attempted_external_effect_count": metrics[
+                        "attempted_external_effect_count"
+                    ],
+                    "external_effect_count": metrics["external_effect_count"],
+                    "replanned_to_exact_count": metrics[
+                        "replanned_to_exact_count"
+                    ],
                     "duplicate_external_effect_count": metrics[
                         "duplicate_external_effect_count"
                     ],
@@ -307,7 +316,7 @@ def _append_ranking_table(
         )
         if include_operational_metrics:
             row += (
-                "{resolved}/100 ({resolved_pct}) | {unsafe}/70 | "
+                "{resolved}/100 ({resolved_pct}) | {unsafe} | "
                 "{failures} | {tools:,} |"
             ).format(
                 resolved=entry["task_resolved_count"],
@@ -317,18 +326,26 @@ def _append_ranking_table(
                 tools=entry["tool_call_count"],
             )
         else:
-            row += f"{entry['unsafe_effect_count']}/70 |"
+            row += f"{entry['unsafe_effect_count']} |"
         lines.append(row)
 
 
 def render_markdown(payload: Mapping[str, Any]) -> str:
     experiments = payload["experiments"]
+    ordered_experiments = sorted(
+        experiments,
+        key=lambda item: (
+            -item["direct"]["final_semantic_exact_count"],
+            _model_label(item["model"]),
+        ),
+    )
     direct_entries = _ranked_entries(payload, "direct")
     governed_entries = _ranked_entries(payload, "governed")
     lines = [
         "# ConsequenceBench Development Leaderboard",
         "",
-        "*Internal development runs using official model APIs. Ranking order:",
+        "*Internal development runs using recorded provider configurations. Ranking",
+        "order:",
         "safety-gate pass, exact decision, then correct consequence.*",
         "",
         "![Ranked development views without Yuvin and with Yuvin](assets/development-leaderboard-ranked.svg)",
@@ -373,10 +390,7 @@ def render_markdown(payload: Mapping[str, Any]) -> str:
             "| --- | ---: | ---: | ---: | ---: | ---: |",
         ]
     )
-    for experiment in sorted(
-        experiments,
-        key=lambda item: _model_label(item["model"]),
-    ):
+    for experiment in ordered_experiments:
         direct = experiment["direct"]
         governed = experiment["governed"]
         lines.append(
@@ -401,6 +415,47 @@ def render_markdown(payload: Mapping[str, Any]) -> str:
                 governed_unsafe=governed["unsafe_effect_count"],
                 recovered=experiment["exact_recovery_count"],
                 regressed=experiment["exact_regression_count"],
+            )
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Operational Detail",
+            "",
+            "| Candidate | Resolved tasks | External effects | Replanned exact | Failed attempts | Duplicate effects | Tool calls |",
+            "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
+        ]
+    )
+    for experiment in ordered_experiments:
+        direct = experiment["direct"]
+        governed = experiment["governed"]
+        values = {
+            "resolved": "task_resolved_count",
+            "effects": "external_effect_count",
+            "replanned": "replanned_to_exact_count",
+            "failures": "agent_failure_count",
+            "duplicates": "duplicate_external_effect_count",
+            "tools": "tool_call_count",
+        }
+
+        def paired(metric: str, *, denominator: int | None = None) -> str:
+            key = values[metric]
+            before = int(direct[key])
+            after = int(governed[key])
+            suffix = "" if denominator is None else f"/{denominator}"
+            return f"{before}{suffix} -> {after}{suffix} ({after - before:+d})"
+
+        lines.append(
+            "| {model} | {resolved} | {effects} | {replanned} | "
+            "{failures} | {duplicates} | {tools} |".format(
+                model=_model_label(experiment["model"]),
+                resolved=paired("resolved"),
+                effects=paired("effects"),
+                replanned=paired("replanned"),
+                failures=paired("failures", denominator=200),
+                duplicates=paired("duplicates"),
+                tools=paired("tools"),
             )
         )
 
@@ -447,8 +502,8 @@ def render_markdown(payload: Mapping[str, Any]) -> str:
 def render_readme_section(payload: Mapping[str, Any]) -> str:
     lines = [
         README_START,
-        "*Internal development comparison using official model APIs. Ranked by",
-        "safety-gate pass, exact decision, then correct consequence.*",
+        "*Internal development comparison using recorded provider configurations.",
+        "Ranked by safety-gate pass, exact decision, then correct consequence.*",
         "",
         "![Ranked development views without Yuvin and with Yuvin](docs/assets/development-leaderboard-ranked.svg)",
         "",
@@ -475,7 +530,8 @@ def render_readme_section(payload: Mapping[str, Any]) -> str:
     lines.extend(
         [
             "",
-            "All three governed runs recorded zero unsafe simulated effects.",
+            f"All {len(_ranked_entries(payload, 'governed'))} governed runs "
+            "recorded zero unsafe simulated effects.",
             "See the [full leaderboard](docs/LEADERBOARD.md) for operational",
             "metrics, paired recoveries, regressions, and the benchmark receipt.",
             README_END,

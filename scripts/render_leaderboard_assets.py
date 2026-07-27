@@ -14,6 +14,7 @@ DEFAULT_OUTPUT = ROOT / "docs" / "assets"
 SYSTEM_ORDER = (
     "GPT-5.6 Sol (xhigh)",
     "Gemini 3.6 Flash",
+    "Qwen3.6 35B",
     "Gemma4 e4b",
 )
 
@@ -153,12 +154,13 @@ def _ranking_panel(
     x: int,
     title: str,
     mode: str,
-    gate_summary: str,
     accent: str,
     accent_soft: str,
     entries: list[Mapping[str, Any]],
 ) -> list[str]:
     panel_width = 598
+    gate_passes = sum(bool(entry["safety_gate_passed"]) for entry in entries)
+    gate_summary = f"{gate_passes} / {len(entries)} PASSED SAFETY GATE"
     body = [
         _rect(x, 214, panel_width, 102, fill=accent_soft, radius=14),
         _text(x + 24, 250, title, size=15, weight=720, fill=accent),
@@ -220,7 +222,7 @@ def _ranking_panel(
     ]
 
     for index, entry in enumerate(entries):
-        row_top = 402 + index * 166
+        row_top = 398 + index * 128
         if index:
             body.append(
                 _line(
@@ -271,7 +273,7 @@ def _ranking_panel(
                 _text(
                     x + 548,
                     row_top + 56,
-                    f"{entry['unsafe_effect_count']}/70",
+                    entry["unsafe_effect_count"],
                     size=17,
                     weight=720,
                     fill=accent,
@@ -311,7 +313,6 @@ def render_ranked_leaderboards(payload: Mapping[str, Any]) -> str:
             x=78,
             title="WITHOUT YUVIN",
             mode="Direct connector path",
-            gate_summary="0 / 3 PASSED SAFETY GATE",
             accent=DIRECT,
             accent_soft=DIRECT_SOFT,
             entries=_ranked_entries(payload, "direct"),
@@ -320,7 +321,6 @@ def render_ranked_leaderboards(payload: Mapping[str, Any]) -> str:
             x=724,
             title="WITH YUVIN",
             mode="Governed execution",
-            gate_summary="3 / 3 PASSED SAFETY GATE",
             accent=YUVIN,
             accent_soft=YUVIN_SOFT,
             entries=_ranked_entries(payload, "governed"),
@@ -337,7 +337,7 @@ def render_ranked_leaderboards(payload: Mapping[str, Any]) -> str:
         _text(
             1322,
             924,
-            "INTERNAL DEVELOPMENT COMPARISON  ·  OFFICIAL MODEL APIs",
+            "INTERNAL DEVELOPMENT COMPARISON  ·  RECORDED PROVIDER CONFIGURATIONS",
             size=13,
             weight=650,
             fill=INK_SOFT,
@@ -351,10 +351,10 @@ def render_ranked_leaderboards(payload: Mapping[str, Any]) -> str:
         height=height,
         title="ConsequenceBench rankings without Yuvin and with Yuvin",
         description=(
-            "Two complete three-model development rankings. Without Yuvin, "
-            "GPT-5.6 Sol ranks first, Gemini 3.6 Flash second, and Gemma4 e4b "
-            "third. With Yuvin, the same order is shown with all models "
-            "recording zero unsafe simulated effects."
+            f"Two complete {len(_ranked_entries(payload, 'direct'))}-model "
+            "development rankings. Each model is shown without Yuvin and with "
+            "Yuvin, including exact decision, correct consequence, and unsafe "
+            "simulated-effect counts."
         ),
         body=body,
     )
@@ -407,7 +407,9 @@ def _metric_row(
 
 def render_paired_scorecard(payload: Mapping[str, Any]) -> str:
     width = 1400
-    height = 940
+    pairs = _pairs(payload)
+    footer_y = 286 + len(pairs) * 190
+    height = footer_y + 84
     body: list[str] = [
         _rect(0, 0, width, height, fill=CANVAS),
         _rect(38, 34, width - 76, height - 68, fill=SURFACE, radius=16, stroke=LINE),
@@ -481,7 +483,7 @@ def render_paired_scorecard(payload: Mapping[str, Any]) -> str:
         _line(78, 250, 1322, 250),
     ]
 
-    for index, pair in enumerate(_pairs(payload)):
+    for index, pair in enumerate(pairs):
         direct = pair["direct"]
         governed = pair["governed"]
         top = 300 + index * 190
@@ -519,8 +521,8 @@ def render_paired_scorecard(payload: Mapping[str, Any]) -> str:
                 *_metric_row(
                     y=top + 124,
                     label="Unsafe effects",
-                    direct=f"{direct['unsafe_effect_count']} / 70",
-                    governed=f"{governed['unsafe_effect_count']} / 70",
+                    direct=str(direct["unsafe_effect_count"]),
+                    governed=str(governed["unsafe_effect_count"]),
                     change=f"{unsafe_delta:+d} effects",
                 ),
             ]
@@ -528,18 +530,18 @@ def render_paired_scorecard(payload: Mapping[str, Any]) -> str:
 
     body.extend(
         [
-            _line(78, 856, 1322, 856),
+            _line(78, footer_y, 1322, footer_y),
             _text(
                 78,
-                892,
-                "Internal development comparison using official model APIs. Not a production-safety certification.",
+                footer_y + 36,
+                "Internal development comparison using recorded provider configurations. Not a production-safety certification.",
                 size=14,
                 fill=MUTED,
                 family=MONO,
             ),
             _text(
                 1322,
-                892,
+                footer_y + 36,
                 "results/development_leaderboard.v1.json",
                 size=14,
                 weight=650,
