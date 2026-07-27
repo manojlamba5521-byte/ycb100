@@ -4,18 +4,18 @@
   "files": [
     {
       "path": ".editorconfig",
-      "sha256": "sha256:a2aa749ce6a54fc7c2a17064b70ab4bf9579f1850e419c35f030700b8a13c85e",
-      "size_bytes": 240
+      "sha256": "sha256:e74e511d97036b0f0e74af747a404ce20c91066ca17906da67b2b80267a3af9c",
+      "size_bytes": 225
     },
     {
       "path": ".env.example",
-      "sha256": "sha256:52d6f7f0030f9b45126e05d38ac2692e8d0acac3a09579b9f4f78d9b9e92aca9",
-      "size_bytes": 217
+      "sha256": "sha256:756e9bbf84cf931fdb14234a304a038b06e450e01597c97fb472d6e3bbfbaeca",
+      "size_bytes": 212
     },
     {
       "path": ".gitattributes",
-      "sha256": "sha256:06bb30ec1ef73ed96dae63abcf9732cfc6054bd08b636a66270a03bb2d29e518",
-      "size_bytes": 149
+      "sha256": "sha256:8b0e37e3f651a7b49e19d17bc4f5ac04709f5b95a25866ec9c0438f8f7cff755",
+      "size_bytes": 141
     },
     {
       "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
@@ -49,8 +49,8 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "sha256:b712de617e2d9ed15c95eba9d690694b7eea4826dc7a1bfaee5829c3887c9775",
-      "size_bytes": 250
+      "sha256": "sha256:0529e1aa24563ee74437ae86214854dd658559cf05bb3cbe6205ddc2da378d00",
+      "size_bytes": 226
     },
     {
       "path": "CHANGELOG.md",
@@ -59,8 +59,8 @@
     },
     {
       "path": "CITATION.cff",
-      "sha256": "sha256:c09185afc99b17266b045e5b1020df870dcea9d4834a20f3c95a386078a3c4d4",
-      "size_bytes": 709
+      "sha256": "sha256:77e712639c809ae7d81358fb7ab9c8682ee4f956c26e6f67cd5d6061579caf97",
+      "size_bytes": 689
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -79,13 +79,13 @@
     },
     {
       "path": "LICENSE",
-      "sha256": "sha256:6488732edb3053f5f56446c694709735d8e4514e39bbb560c892f38f62d606ff",
-      "size_bytes": 1097
+      "sha256": "sha256:40b1ca82a1652cad3cb6802eddbf4db7dd3fc2fea0e0c7b02c2f7604e4c8c184",
+      "size_bytes": 1076
     },
     {
       "path": "MANIFEST.in",
-      "sha256": "sha256:aca087754a8c713da22e5250f88cab77ff298331b08419657bb5e22da0699b52",
-      "size_bytes": 267
+      "sha256": "sha256:13d8b573d975a256a9a47ce9b854349c6912ace59e6423d3a8a2c696a61272a0",
+      "size_bytes": 255
     },
     {
       "path": "README.md",
@@ -179,18 +179,18 @@
     },
     {
       "path": "docs/assets/development-leaderboard-paired.svg",
-      "sha256": "sha256:24bd137d66862ecb0f698b85766991e592b44acf48b19571d6421418e4fe0ea8",
-      "size_bytes": 14591
+      "sha256": "sha256:8999f17548d0345bee6ef64381b811b94351f0998e9bab9291dd39ef6acbee9e",
+      "size_bytes": 14505
     },
     {
       "path": "docs/assets/development-leaderboard-ranked.svg",
-      "sha256": "sha256:44bf049978628a4c4ff21476134ee61f30739c3a956a266452123c81a15910f1",
-      "size_bytes": 13684
+      "sha256": "sha256:fcc2865051a828425d8b92e5f8f293b9076724bf30e2f02cea8ab2b8afc91d70",
+      "size_bytes": 13608
     },
     {
       "path": "docs/assets/development-leaderboard-unsafe-effects.svg",
-      "sha256": "sha256:44bf049978628a4c4ff21476134ee61f30739c3a956a266452123c81a15910f1",
-      "size_bytes": 13684
+      "sha256": "sha256:fcc2865051a828425d8b92e5f8f293b9076724bf30e2f02cea8ab2b8afc91d70",
+      "size_bytes": 13608
     },
     {
       "path": "pyproject.toml",
@@ -349,8 +349,8 @@
     },
     {
       "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/data/archetypes.v1.json",
-      "sha256": "sha256:e7442df6452fc1813b59836d7d47ccffd898b5adb5e0ea65cd9b4e5a149b6ed1",
-      "size_bytes": 122760
+      "sha256": "sha256:6e7ef6f8845a8e1d7e16344c1bffdab7f033b46364ee3dd333914c4ed7ad4ed5",
+      "size_bytes": 125770
     },
     {
       "path": "src/benchmarks/yuvin_consequencebench_100/adaptive_causal/lifecycle/__init__.py",
@@ -718,7 +718,7 @@
       "size_bytes": 1028
     }
   ],
-  "manifest_hash": "sha256:ae38426e3a550972c95fe1d30244d239466c5fa8bfe94a4b26db59b0335de0af",
+  "manifest_hash": "sha256:e2eac75835487416836b62ac0536d83f04a1159615dba3cc88aad10a28f51a33",
   "release_tier": "DEVELOPMENT_PREVIEW_NOT_QUALIFIED",
   "schema_version": "consequencebench.public_repository_integrity.v1",
   "version": "0.1.0"
