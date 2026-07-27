@@ -35,20 +35,20 @@ grounding, recovery, and hard failures separately.
 
 ## Development Leaderboard
 
-The [development leaderboard](docs/LEADERBOARD.md) publishes three completed
-100-world paired studies across six configurations: Gemma4 e4b, Gemini 3.6
-Flash, and GPT-5.6 Sol, each run directly and with Yuvin as the declared
-governance layer. Its machine-readable receipt is
+The [development leaderboard](docs/LEADERBOARD.md) publishes four completed
+100-world paired studies across eight configurations: Gemma4 e4b, Gemini 3.6
+Flash, GPT-5.6 Sol, and Qwen3.6 35B. Each model ran directly and with Yuvin as
+the declared governance layer. Its machine-readable receipt is
 [`results/development_leaderboard.v1.json`](results/development_leaderboard.v1.json).
 
 The leaderboard builder recomputes published counters from every row in the
-source reports and rejects inconsistent summaries. These development runs were
-performed internally using official model APIs. They are not production-safety
+source reports and rejects inconsistent summaries. These development runs used
+their recorded provider configurations. They are not production-safety
 certifications or independent qualification results.
 
 <!-- consequencebench-leaderboard:start -->
-*Internal development comparison using official model APIs. Ranked by
-safety-gate pass, exact decision, then correct consequence.*
+*Internal development comparison using recorded provider configurations.
+Ranked by safety-gate pass, exact decision, then correct consequence.*
 
 ![Ranked development views without Yuvin and with Yuvin](docs/assets/development-leaderboard-ranked.svg)
 
@@ -56,19 +56,21 @@ safety-gate pass, exact decision, then correct consequence.*
 
 | Rank | Model | Exact decision | Correct consequence | Unsafe effects |
 | ---: | --- | ---: | ---: | ---: |
-| 1 | GPT-5.6 Sol (xhigh) | 60/100 (60%) | 79/100 (79%) | 21/70 |
-| 2 | Gemini 3.6 Flash | 32/100 (32%) | 41/100 (41%) | 59/70 |
-| 3 | Gemma4 e4b | 19/100 (19%) | 34/100 (34%) | 63/70 |
+| 1 | GPT-5.6 Sol (xhigh) | 60/100 (60%) | 79/100 (79%) | 21 |
+| 2 | Gemini 3.6 Flash | 32/100 (32%) | 41/100 (41%) | 59 |
+| 3 | Qwen3.6 35B | 23/100 (23%) | 23/100 (23%) | 73 |
+| 4 | Gemma4 e4b | 19/100 (19%) | 34/100 (34%) | 63 |
 
 ### With Yuvin
 
 | Rank | Model | Exact decision | Correct consequence | Unsafe effects |
 | ---: | --- | ---: | ---: | ---: |
-| 1 | GPT-5.6 Sol (xhigh) | 69/100 (69%) | 99/100 (99%) | 0/70 |
-| 2 | Gemini 3.6 Flash | 58/100 (58%) | 100/100 (100%) | 0/70 |
-| 3 | Gemma4 e4b | 34/100 (34%) | 92/100 (92%) | 0/70 |
+| 1 | GPT-5.6 Sol (xhigh) | 69/100 (69%) | 99/100 (99%) | 0 |
+| 2 | Gemini 3.6 Flash | 58/100 (58%) | 100/100 (100%) | 0 |
+| 3 | Gemma4 e4b | 34/100 (34%) | 92/100 (92%) | 0 |
+| 4 | Qwen3.6 35B | 32/100 (32%) | 95/100 (95%) | 0 |
 
-All three governed runs recorded zero unsafe simulated effects.
+All 4 governed runs recorded zero unsafe simulated effects.
 See the [full leaderboard](docs/LEADERBOARD.md) for operational
 metrics, paired recoveries, regressions, and the benchmark receipt.
 <!-- consequencebench-leaderboard:end -->
