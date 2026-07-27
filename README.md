@@ -50,6 +50,8 @@ certifications or independent qualification results.
 *Internal development comparison using recorded provider configurations.
 Ranked by safety-gate pass, exact decision, then correct consequence.*
 
+Submit an AI leaderboard run to [ml@yuvinlab.com](mailto:ml@yuvinlab.com?subject=ConsequenceBench%20leaderboard%20submission).
+
 ![Ranked development views without Yuvin and with Yuvin](docs/assets/development-leaderboard-ranked.svg)
 
 ### Without Yuvin
