@@ -13,6 +13,8 @@ REPORT_SCHEMA = "ycb100.yuvin_pressure_feedback_merged.v1"
 RELEASE_STATUS = "DEVELOPMENT_PREVIEW_NOT_QUALIFIED"
 CLAIM_BOUNDARY = "source_operated_local_development_comparison"
 LEADERBOARD_SCHEMA = "consequencebench.development_leaderboard.v1"
+README_START = "<!-- consequencebench-leaderboard:start -->"
+README_END = "<!-- consequencebench-leaderboard:end -->"
 EXPECTED_WORLD_COUNT = 100
 UNSAFE_ACTION_WORLD_COUNT = 70
 LEGITIMATE_ACTION_WORLD_COUNT = 30
@@ -384,6 +386,54 @@ def render_markdown(payload: Mapping[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def render_readme_section(payload: Mapping[str, Any]) -> str:
+    lines = [
+        README_START,
+        "> **Evidence status:** `SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE`",
+        "",
+        "| Candidate | Exact decision (Direct -> Yuvin) | Correct consequence (Direct -> Yuvin) | Unsafe effects (Direct -> Yuvin) |",
+        "| --- | ---: | ---: | ---: |",
+    ]
+    for experiment in sorted(
+        payload["experiments"],
+        key=lambda item: _model_label(item["model"]),
+    ):
+        direct = experiment["direct"]
+        governed = experiment["governed"]
+        lines.append(
+            "| {model} | {direct_exact}/100 -> {governed_exact}/100 | "
+            "{direct_consequence}/100 -> {governed_consequence}/100 | "
+            "{direct_unsafe}/70 -> {governed_unsafe}/70 |".format(
+                model=_model_label(experiment["model"]),
+                direct_exact=direct["final_semantic_exact_count"],
+                governed_exact=governed["final_semantic_exact_count"],
+                direct_consequence=direct["consequence_correct_count"],
+                governed_consequence=governed["consequence_correct_count"],
+                direct_unsafe=direct["unsafe_effect_count"],
+                governed_unsafe=governed["unsafe_effect_count"],
+            )
+        )
+    lines.extend(
+        [
+            "",
+            "All three governed configurations recorded zero unsafe simulated effects.",
+            "See the [full leaderboard](docs/LEADERBOARD.md) for six configuration",
+            "rows, exact recoveries, regressions, tool calls, evidence hashes, and",
+            "qualification limits.",
+            README_END,
+        ]
+    )
+    return "\n".join(lines)
+
+
+def update_readme(text: str, section: str) -> str:
+    if text.count(README_START) != 1 or text.count(README_END) != 1:
+        raise ValueError("README must contain exactly one leaderboard marker pair")
+    start = text.index(README_START)
+    end = text.index(README_END, start) + len(README_END)
+    return text[:start] + section + text[end:]
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--report", action="append", type=Path, required=True)
@@ -397,23 +447,36 @@ def main(argv: list[str] | None = None) -> int:
         type=Path,
         default=ROOT / "docs" / "LEADERBOARD.md",
     )
+    parser.add_argument(
+        "--readme",
+        type=Path,
+        default=ROOT / "README.md",
+    )
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args(argv)
 
     payload = build_leaderboard(args.report)
     json_text = json.dumps(payload, sort_keys=True, indent=2) + "\n"
     markdown_text = render_markdown(payload)
+    readme_text = args.readme.read_text(encoding="utf-8")
+    updated_readme_text = update_readme(
+        readme_text,
+        render_readme_section(payload),
+    )
     if args.check:
         if args.out_json.read_text(encoding="utf-8") != json_text:
             raise ValueError("committed leaderboard JSON is stale")
         if args.out_markdown.read_text(encoding="utf-8") != markdown_text:
             raise ValueError("committed leaderboard Markdown is stale")
+        if readme_text != updated_readme_text:
+            raise ValueError("committed README leaderboard is stale")
         return 0
 
     args.out_json.parent.mkdir(parents=True, exist_ok=True)
     args.out_markdown.parent.mkdir(parents=True, exist_ok=True)
     args.out_json.write_text(json_text, encoding="utf-8", newline="\n")
     args.out_markdown.write_text(markdown_text, encoding="utf-8", newline="\n")
+    args.readme.write_text(updated_readme_text, encoding="utf-8", newline="\n")
     print(
         json.dumps(
             {
