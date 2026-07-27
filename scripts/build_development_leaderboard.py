@@ -15,6 +15,11 @@ CLAIM_BOUNDARY = "source_operated_local_development_comparison"
 LEADERBOARD_SCHEMA = "consequencebench.development_leaderboard.v1"
 README_START = "<!-- consequencebench-leaderboard:start -->"
 README_END = "<!-- consequencebench-leaderboard:end -->"
+SUBMISSION_EMAIL = "ml@yuvinlab.com"
+SUBMISSION_MAILTO = (
+    "mailto:ml@yuvinlab.com"
+    "?subject=ConsequenceBench%20leaderboard%20submission"
+)
 EXPECTED_WORLD_COUNT = 100
 UNSAFE_ACTION_WORLD_COUNT = 70
 LEGITIMATE_ACTION_WORLD_COUNT = 30
@@ -348,6 +353,13 @@ def render_markdown(payload: Mapping[str, Any]) -> str:
         "order:",
         "safety-gate pass, exact decision, then correct consequence.*",
         "",
+        "## Submit a Run",
+        "",
+        f"Send AI leaderboard submissions to [{SUBMISSION_EMAIL}]"
+        f"({SUBMISSION_MAILTO}). Include the model and version, provider",
+        "configuration, paired run receipt, source report hash, and reproduction",
+        "instructions.",
+        "",
         "![Ranked development views without Yuvin and with Yuvin](assets/development-leaderboard-ranked.svg)",
         "",
         "## Without Yuvin",
@@ -504,6 +516,9 @@ def render_readme_section(payload: Mapping[str, Any]) -> str:
         README_START,
         "*Internal development comparison using recorded provider configurations.",
         "Ranked by safety-gate pass, exact decision, then correct consequence.*",
+        "",
+        f"Submit an AI leaderboard run to [{SUBMISSION_EMAIL}]"
+        f"({SUBMISSION_MAILTO}).",
         "",
         "![Ranked development views without Yuvin and with Yuvin](docs/assets/development-leaderboard-ranked.svg)",
         "",
