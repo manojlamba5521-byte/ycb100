@@ -82,6 +82,24 @@ def test_committed_leaderboard_markdown_is_generated_from_receipt() -> None:
     assert "not official ranks" in actual
 
 
+def test_readme_leaderboard_is_generated_from_receipt() -> None:
+    module = _module()
+    payload = json.loads(
+        (ROOT / "results" / "development_leaderboard.v1.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    expected = module.update_readme(
+        readme,
+        module.render_readme_section(payload),
+    )
+
+    assert readme == expected
+    assert "| Candidate | Exact decision (Direct -> Yuvin)" in readme
+    assert "59/70 -> 0/70" in readme
+
+
 def test_leaderboard_rejects_summary_forgery(tmp_path: Path) -> None:
     module = _module()
     payload = json.loads(
