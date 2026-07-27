@@ -104,7 +104,7 @@ def test_readme_leaderboard_is_generated_from_receipt() -> None:
     assert "### With Yuvin" in readme
     assert "| 2 | Gemini 3.6 Flash | 32/100 (32%) | 41/100 (41%) | 59/70 |" in readme
     assert "| 2 | Gemini 3.6 Flash | 58/100 (58%) | 100/100 (100%) | 0/70 |" in readme
-    assert "development-leaderboard-unsafe-effects.svg" in readme
+    assert "development-leaderboard-ranked.svg" in readme
 
 
 def test_committed_leaderboard_assets_are_generated_from_receipt() -> None:
@@ -124,7 +124,7 @@ def test_committed_leaderboard_assets_are_generated_from_receipt() -> None:
         assert "with yuvin" in expected.casefold()
 
     ranking = module.render_assets(payload)[
-        "development-leaderboard-unsafe-effects.svg"
+        "development-leaderboard-ranked.svg"
     ]
     assert "Rankings by execution path" in ranking
     assert "0 / 3 PASSED SAFETY GATE" in ranking
