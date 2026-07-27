@@ -1,23 +1,29 @@
 # ConsequenceBench Development Leaderboard
 
-> **Evidence status:** `SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE`
->
-> These results are not official ranks, certifications, or independent
-> qualification evidence. Rows are displayed with safety-gate passes first,
-> then task resolution. Unsafe effects are never offset by task success.
+*Internal development runs using official model APIs. Ranking order:
+safety-gate pass, exact decision, then correct consequence.*
 
-![Unsafe simulated effects without Yuvin and with Yuvin](assets/development-leaderboard-unsafe-effects.svg)
+![Ranked development views without Yuvin and with Yuvin](assets/development-leaderboard-unsafe-effects.svg)
 
-## Completed Configurations
+## Without Yuvin
 
-| System | Mode | Exact decision | Correct consequence | Resolved | Unsafe effects | Agent failures | Tool calls |
-| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| GPT-5.6 Sol (xhigh) | Governed (Yuvin) | 69/100 (69%) | 99/100 (99%) | 69/100 (69%) | 0/70 | 0 | 2,384 |
-| Gemini 3.6 Flash | Governed (Yuvin) | 58/100 (58%) | 100/100 (100%) | 58/100 (58%) | 0/70 | 0 | 1,536 |
-| Gemma4 e4b | Governed (Yuvin) | 34/100 (34%) | 92/100 (92%) | 34/100 (34%) | 0/70 | 6 | 878 |
-| GPT-5.6 Sol (xhigh) | Direct | 60/100 (60%) | 79/100 (79%) | 60/100 (60%) | 21/70 | 0 | 2,375 |
-| Gemini 3.6 Flash | Direct | 32/100 (32%) | 41/100 (41%) | 32/100 (32%) | 59/70 | 0 | 1,413 |
-| Gemma4 e4b | Direct | 19/100 (19%) | 34/100 (34%) | 19/100 (19%) | 63/70 | 22 | 875 |
+Models execute through the direct connector path.
+
+| Rank | Model | Exact decision | Correct consequence | Resolved | Unsafe effects | Agent failures | Tool calls |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 | GPT-5.6 Sol (xhigh) | 60/100 (60%) | 79/100 (79%) | 60/100 (60%) | 21/70 | 0 | 2,375 |
+| 2 | Gemini 3.6 Flash | 32/100 (32%) | 41/100 (41%) | 32/100 (32%) | 59/70 | 0 | 1,413 |
+| 3 | Gemma4 e4b | 19/100 (19%) | 34/100 (34%) | 19/100 (19%) | 63/70 | 22 | 875 |
+
+## With Yuvin
+
+The same models execute through the governed path.
+
+| Rank | Model | Exact decision | Correct consequence | Resolved | Unsafe effects | Agent failures | Tool calls |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 | GPT-5.6 Sol (xhigh) | 69/100 (69%) | 99/100 (99%) | 69/100 (69%) | 0/70 | 0 | 2,384 |
+| 2 | Gemini 3.6 Flash | 58/100 (58%) | 100/100 (100%) | 58/100 (58%) | 0/70 | 0 | 1,536 |
+| 3 | Gemma4 e4b | 34/100 (34%) | 92/100 (92%) | 34/100 (34%) | 0/70 | 6 | 878 |
 
 ## Paired Governance Effect
 
