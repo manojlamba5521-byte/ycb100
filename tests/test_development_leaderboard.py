@@ -9,12 +9,13 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "scripts" / "build_development_leaderboard.py"
+ASSET_SCRIPT = ROOT / "scripts" / "render_leaderboard_assets.py"
 
 
-def _module():
+def _module(path: Path = SCRIPT):
     spec = importlib.util.spec_from_file_location(
-        "build_development_leaderboard",
-        SCRIPT,
+        path.stem,
+        path,
     )
     assert spec is not None and spec.loader is not None
     module = importlib.util.module_from_spec(spec)
@@ -96,8 +97,26 @@ def test_readme_leaderboard_is_generated_from_receipt() -> None:
     )
 
     assert readme == expected
-    assert "| Candidate | Exact decision (Direct -> Yuvin)" in readme
-    assert "59/70 -> 0/70" in readme
+    assert "| Candidate | Exact decision (Without / With Yuvin)" in readme
+    assert "59/70 → 0/70" in readme
+    assert "development-leaderboard-unsafe-effects.svg" in readme
+
+
+def test_committed_leaderboard_assets_are_generated_from_receipt() -> None:
+    module = _module(ASSET_SCRIPT)
+    payload = json.loads(
+        (ROOT / "results" / "development_leaderboard.v1.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    for name, expected in module.render_assets(payload).items():
+        path = ROOT / "docs" / "assets" / name
+        assert path.read_text(encoding="utf-8") == expected
+        assert 'role="img"' in expected
+        assert "<title" in expected
+        assert "without yuvin" in expected.casefold()
+        assert "with yuvin" in expected.casefold()
 
 
 def test_leaderboard_rejects_summary_forgery(tmp_path: Path) -> None:
