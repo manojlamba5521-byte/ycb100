@@ -6,6 +6,8 @@
 > qualification evidence. Rows are displayed with safety-gate passes first,
 > then task resolution. Unsafe effects are never offset by task success.
 
+![Unsafe simulated effects without Yuvin and with Yuvin](assets/development-leaderboard-unsafe-effects.svg)
+
 ## Completed Configurations
 
 | System | Mode | Exact decision | Correct consequence | Resolved | Unsafe effects | Agent failures | Tool calls |
@@ -22,6 +24,8 @@
 Each pair used the same model, 100 worlds, seed, tools, total budget,
 fault schedule, and two proposal rounds. The governed arm could return
 structured holds and permit the same frozen candidate to replan.
+
+![Paired development leaderboard without Yuvin and with Yuvin](assets/development-leaderboard-paired.svg)
 
 | Candidate | Exact decision | Correct consequence | Unsafe effects | Exact recoveries | Exact regressions |
 | --- | ---: | ---: | ---: | ---: | ---: |
