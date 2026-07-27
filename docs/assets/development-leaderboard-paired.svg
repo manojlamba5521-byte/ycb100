@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="940" viewBox="0 0 1400 940" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1130" viewBox="0 0 1400 1130" role="img" aria-labelledby="title description">
   <title id="title">ConsequenceBench paired development leaderboard</title>
   <desc id="description">A model-by-model comparison of exact decision, correct consequence, and unsafe simulated effects without Yuvin and with Yuvin.</desc>
-  <rect x="0" y="0" width="1400" height="940" rx="0" fill="#F5F7FB"/>
-  <rect x="38" y="34" width="1324" height="872" rx="16" fill="#FFFFFF" stroke="#D9E0EA"/>
+  <rect x="0" y="0" width="1400" height="1130" rx="0" fill="#F5F7FB"/>
+  <rect x="38" y="34" width="1324" height="1062" rx="16" fill="#FFFFFF" stroke="#D9E0EA"/>
   <rect x="38" y="34" width="1324" height="148" rx="16" fill="#101828"/>
   <rect x="38" y="166" width="1324" height="16" rx="0" fill="#101828"/>
   <text x="78" y="80" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#AFC2FF" text-anchor="start" letter-spacing="1.8">CONSEQUENCEBENCH</text>
@@ -25,8 +25,8 @@
   <rect x="1090" y="360" width="220" height="34" rx="17" fill="#E3F3EE"/>
   <text x="1200" y="383" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">+20 points</text>
   <text x="88" y="424" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="16" font-weight="600" fill="#475467" text-anchor="start">Unsafe effects</text>
-  <text x="668" y="424" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">21 / 70</text>
-  <text x="958" y="424" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">0 / 70</text>
+  <text x="668" y="424" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">21</text>
+  <text x="958" y="424" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">0</text>
   <rect x="1090" y="400" width="220" height="34" rx="17" fill="#E3F3EE"/>
   <text x="1200" y="423" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">-21 effects</text>
   <line x1="78" y1="444" x2="1322" y2="444" stroke="#D9E0EA" stroke-width="1"/>
@@ -42,28 +42,45 @@
   <rect x="1090" y="550" width="220" height="34" rx="17" fill="#E3F3EE"/>
   <text x="1200" y="573" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">+59 points</text>
   <text x="88" y="614" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="16" font-weight="600" fill="#475467" text-anchor="start">Unsafe effects</text>
-  <text x="668" y="614" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">59 / 70</text>
-  <text x="958" y="614" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">0 / 70</text>
+  <text x="668" y="614" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">59</text>
+  <text x="958" y="614" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">0</text>
   <rect x="1090" y="590" width="220" height="34" rx="17" fill="#E3F3EE"/>
   <text x="1200" y="613" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">-59 effects</text>
   <line x1="78" y1="634" x2="1322" y2="634" stroke="#D9E0EA" stroke-width="1"/>
-  <text x="88" y="680" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="22" font-weight="720" fill="#101828" text-anchor="start">Gemma4 e4b</text>
+  <text x="88" y="680" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="22" font-weight="720" fill="#101828" text-anchor="start">Qwen3.6 35B</text>
   <text x="88" y="724" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="16" font-weight="600" fill="#475467" text-anchor="start">Exact decision</text>
-  <text x="668" y="724" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">19 / 100</text>
-  <text x="958" y="724" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">34 / 100</text>
+  <text x="668" y="724" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">23 / 100</text>
+  <text x="958" y="724" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">32 / 100</text>
   <rect x="1090" y="700" width="220" height="34" rx="17" fill="#E3F3EE"/>
-  <text x="1200" y="723" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">+15 points</text>
+  <text x="1200" y="723" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">+9 points</text>
   <text x="88" y="764" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="16" font-weight="600" fill="#475467" text-anchor="start">Correct consequence</text>
-  <text x="668" y="764" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">34 / 100</text>
-  <text x="958" y="764" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">92 / 100</text>
+  <text x="668" y="764" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">23 / 100</text>
+  <text x="958" y="764" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">95 / 100</text>
   <rect x="1090" y="740" width="220" height="34" rx="17" fill="#E3F3EE"/>
-  <text x="1200" y="763" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">+58 points</text>
+  <text x="1200" y="763" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">+72 points</text>
   <text x="88" y="804" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="16" font-weight="600" fill="#475467" text-anchor="start">Unsafe effects</text>
-  <text x="668" y="804" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">63 / 70</text>
-  <text x="958" y="804" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">0 / 70</text>
+  <text x="668" y="804" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">73</text>
+  <text x="958" y="804" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">0</text>
   <rect x="1090" y="780" width="220" height="34" rx="17" fill="#E3F3EE"/>
-  <text x="1200" y="803" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">-63 effects</text>
-  <line x1="78" y1="856" x2="1322" y2="856" stroke="#D9E0EA" stroke-width="1"/>
-  <text x="78" y="892" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="400" fill="#667085" text-anchor="start">Internal development comparison using official model APIs. Not a production-safety certification.</text>
-  <text x="1322" y="892" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="650" fill="#2756D8" text-anchor="end">results/development_leaderboard.v1.json</text>
+  <text x="1200" y="803" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">-73 effects</text>
+  <line x1="78" y1="824" x2="1322" y2="824" stroke="#D9E0EA" stroke-width="1"/>
+  <text x="88" y="870" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="22" font-weight="720" fill="#101828" text-anchor="start">Gemma4 e4b</text>
+  <text x="88" y="914" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="16" font-weight="600" fill="#475467" text-anchor="start">Exact decision</text>
+  <text x="668" y="914" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">19 / 100</text>
+  <text x="958" y="914" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">34 / 100</text>
+  <rect x="1090" y="890" width="220" height="34" rx="17" fill="#E3F3EE"/>
+  <text x="1200" y="913" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">+15 points</text>
+  <text x="88" y="954" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="16" font-weight="600" fill="#475467" text-anchor="start">Correct consequence</text>
+  <text x="668" y="954" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">34 / 100</text>
+  <text x="958" y="954" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">92 / 100</text>
+  <rect x="1090" y="930" width="220" height="34" rx="17" fill="#E3F3EE"/>
+  <text x="1200" y="953" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">+58 points</text>
+  <text x="88" y="994" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="16" font-weight="600" fill="#475467" text-anchor="start">Unsafe effects</text>
+  <text x="668" y="994" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#B85C4C" text-anchor="end">63</text>
+  <text x="958" y="994" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="17" font-weight="680" fill="#2756D8" text-anchor="end">0</text>
+  <rect x="1090" y="970" width="220" height="34" rx="17" fill="#E3F3EE"/>
+  <text x="1200" y="993" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="700" fill="#17735B" text-anchor="middle">-63 effects</text>
+  <line x1="78" y1="1046" x2="1322" y2="1046" stroke="#D9E0EA" stroke-width="1"/>
+  <text x="78" y="1082" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="400" fill="#667085" text-anchor="start">Internal development comparison using recorded provider configurations. Not a production-safety certification.</text>
+  <text x="1322" y="1082" font-family="&#x27;SFMono-Regular&#x27;, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="14" font-weight="650" fill="#2756D8" text-anchor="end">results/development_leaderboard.v1.json</text>
 </svg>
