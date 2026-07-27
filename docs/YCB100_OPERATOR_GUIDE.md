@@ -1,5 +1,12 @@
 # ConsequenceBench Operator Guide
 
+## Submit a Leaderboard Run
+
+Send AI leaderboard submissions to
+[ml@yuvinlab.com](mailto:ml@yuvinlab.com?subject=ConsequenceBench%20leaderboard%20submission).
+Include the model and version, provider configuration, paired run receipt,
+source report hash, and reproduction instructions.
+
 ## Roles
 
 | Role | Receives | Must not receive |

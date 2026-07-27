@@ -4,6 +4,12 @@
 order:
 safety-gate pass, exact decision, then correct consequence.*
 
+## Submit a Run
+
+Send AI leaderboard submissions to [ml@yuvinlab.com](mailto:ml@yuvinlab.com?subject=ConsequenceBench%20leaderboard%20submission). Include the model and version, provider
+configuration, paired run receipt, source report hash, and reproduction
+instructions.
+
 ![Ranked development views without Yuvin and with Yuvin](assets/development-leaderboard-ranked.svg)
 
 ## Without Yuvin
