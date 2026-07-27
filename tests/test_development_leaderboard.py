@@ -39,8 +39,8 @@ def test_committed_leaderboard_is_hash_bound_and_internally_consistent() -> None
             if key != "leaderboard_hash"
         }
     )
-    assert len(payload["experiments"]) == 3
-    assert len(payload["entries"]) == 6
+    assert len(payload["experiments"]) == 4
+    assert len(payload["entries"]) == 8
     assert {
         (entry["system"], entry["configuration"])
         for entry in payload["entries"]
@@ -51,6 +51,8 @@ def test_committed_leaderboard_is_hash_bound_and_internally_consistent() -> None
         ("GPT-5.6 Sol (xhigh)", "governed"),
         ("Gemma4 e4b", "direct"),
         ("Gemma4 e4b", "governed"),
+        ("Qwen3.6 35B", "direct"),
+        ("Qwen3.6 35B", "governed"),
     }
     assert all(
         entry["official_rank_eligible"] is False
@@ -66,6 +68,16 @@ def test_committed_leaderboard_is_hash_bound_and_internally_consistent() -> None
         for entry in payload["entries"]
         if entry["configuration"] == "direct"
     )
+    qwen = next(
+        experiment
+        for experiment in payload["experiments"]
+        if experiment["model"]["requested_model"] == "qwen3.6:35b"
+    )
+    assert qwen["source_report_hash"] == (
+        "sha256:9f4e1519dfa52de56e0954de3124e921fbd8c304f914d3dcd4a1e748d6502fff"
+    )
+    assert qwen["direct"]["unsafe_effect_count"] == 73
+    assert qwen["governed"]["unsafe_effect_count"] == 0
 
 
 def test_committed_leaderboard_markdown_is_generated_from_receipt() -> None:
@@ -83,6 +95,11 @@ def test_committed_leaderboard_markdown_is_generated_from_receipt() -> None:
     assert "## Without Yuvin" in actual
     assert "## With Yuvin" in actual
     assert actual.count("| 1 | GPT-5.6 Sol (xhigh)") == 2
+    assert (
+        "| Qwen3.6 35B | 22 -> 32 (+10) | 93 -> 20 (-73) | "
+        "2 -> 14 (+12) | 8/200 -> 6/200 (-2) | 0 -> 0 (+0) | "
+        "918 -> 1024 (+106) |"
+    ) in actual
 
 
 def test_readme_leaderboard_is_generated_from_receipt() -> None:
@@ -102,8 +119,10 @@ def test_readme_leaderboard_is_generated_from_receipt() -> None:
     assert "SELF_REPORTED_LOCAL_DEVELOPMENT_EVIDENCE" not in readme
     assert "### Without Yuvin" in readme
     assert "### With Yuvin" in readme
-    assert "| 2 | Gemini 3.6 Flash | 32/100 (32%) | 41/100 (41%) | 59/70 |" in readme
-    assert "| 2 | Gemini 3.6 Flash | 58/100 (58%) | 100/100 (100%) | 0/70 |" in readme
+    assert "| 2 | Gemini 3.6 Flash | 32/100 (32%) | 41/100 (41%) | 59 |" in readme
+    assert "| 2 | Gemini 3.6 Flash | 58/100 (58%) | 100/100 (100%) | 0 |" in readme
+    assert "| 3 | Qwen3.6 35B | 23/100 (23%) | 23/100 (23%) | 73 |" in readme
+    assert "| 4 | Qwen3.6 35B | 32/100 (32%) | 95/100 (95%) | 0 |" in readme
     assert "development-leaderboard-ranked.svg" in readme
 
 
@@ -127,8 +146,9 @@ def test_committed_leaderboard_assets_are_generated_from_receipt() -> None:
         "development-leaderboard-ranked.svg"
     ]
     assert "Rankings by execution path" in ranking
-    assert "0 / 3 PASSED SAFETY GATE" in ranking
-    assert "3 / 3 PASSED SAFETY GATE" in ranking
+    assert "0 / 4 PASSED SAFETY GATE" in ranking
+    assert "4 / 4 PASSED SAFETY GATE" in ranking
+    assert "Qwen3.6 35B" in ranking
 
 
 def test_leaderboard_rejects_summary_forgery(tmp_path: Path) -> None:
