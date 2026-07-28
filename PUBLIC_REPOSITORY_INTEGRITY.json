@@ -89,8 +89,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "sha256:f1a0af053e39b65eebb750d9ba9445260c120d6ee4d52a8aa8e9b45f7073dd36",
-      "size_bytes": 12848
+      "sha256": "sha256:6f59e165859c65bbc6b19b535cfcf02bfa2da5e2009b820eef8f0cf829deaa53",
+      "size_bytes": 13098
     },
     {
       "path": "SECURITY.md",
@@ -723,7 +723,7 @@
       "size_bytes": 1028
     }
   ],
-  "manifest_hash": "sha256:6042e93911754b15e61335405252a8682e6c453245b21c454099c8a70db8c7ac",
+  "manifest_hash": "sha256:f08e28139b9377a8fd351b7c5c7670b444855782328c2becfdcf94cdb6fbdeed",
   "release_tier": "DEVELOPMENT_PREVIEW_NOT_QUALIFIED",
   "schema_version": "consequencebench.public_repository_integrity.v1",
   "version": "0.1.0"

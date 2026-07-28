@@ -4,6 +4,7 @@
 
 [Website](https://yuvinlab.com/consequencebench) |
 [Hugging Face dataset](https://huggingface.co/datasets/yuvin-labs/consequencebench) |
+[Interactive explorer](https://huggingface.co/spaces/yuvin-labs/consequencebench-explorer) |
 [Development leaderboard](docs/LEADERBOARD.md) |
 [Community discussions](https://github.com/yuvin-labs/consequencebench/discussions)
 
@@ -39,6 +40,7 @@ and did the agent prove the final state without duplicating an effect?"
 
 | Time | Goal | Start here |
 | --- | --- | --- |
+| 5 minutes | Browse scenarios, filters, and development runs | [Interactive explorer](https://huggingface.co/spaces/yuvin-labs/consequencebench-explorer) |
 | 15 minutes | Verify the package and inspect one case from each domain | [Independent evaluation: fast review packet](docs/INDEPENDENT_EVALUATION.md#fast-review-packet) |
 | 30-60 minutes | Connect a local or hosted model through the JSONL protocol | [Run a Candidate](docs/RUN_A_CANDIDATE.md) |
 | Half day | Review all 20 scenarios in one domain | [Domain semantics packet](docs/INDEPENDENT_EVALUATION.md#domain-semantics-packet) |
