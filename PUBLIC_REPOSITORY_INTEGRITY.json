@@ -1,21 +1,21 @@
 {
   "benchmark_id": "CONSEQUENCEBENCH",
-  "file_count": 143,
+  "file_count": 144,
   "files": [
     {
       "path": ".editorconfig",
-      "sha256": "sha256:e74e511d97036b0f0e74af747a404ce20c91066ca17906da67b2b80267a3af9c",
-      "size_bytes": 225
+      "sha256": "sha256:a2aa749ce6a54fc7c2a17064b70ab4bf9579f1850e419c35f030700b8a13c85e",
+      "size_bytes": 240
     },
     {
       "path": ".env.example",
-      "sha256": "sha256:756e9bbf84cf931fdb14234a304a038b06e450e01597c97fb472d6e3bbfbaeca",
-      "size_bytes": 212
+      "sha256": "sha256:52d6f7f0030f9b45126e05d38ac2692e8d0acac3a09579b9f4f78d9b9e92aca9",
+      "size_bytes": 217
     },
     {
       "path": ".gitattributes",
-      "sha256": "sha256:8b0e37e3f651a7b49e19d17bc4f5ac04709f5b95a25866ec9c0438f8f7cff755",
-      "size_bytes": 141
+      "sha256": "sha256:06bb30ec1ef73ed96dae63abcf9732cfc6054bd08b636a66270a03bb2d29e518",
+      "size_bytes": 149
     },
     {
       "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
@@ -49,8 +49,8 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "sha256:0529e1aa24563ee74437ae86214854dd658559cf05bb3cbe6205ddc2da378d00",
-      "size_bytes": 226
+      "sha256": "sha256:b712de617e2d9ed15c95eba9d690694b7eea4826dc7a1bfaee5829c3887c9775",
+      "size_bytes": 250
     },
     {
       "path": "CHANGELOG.md",
@@ -59,8 +59,8 @@
     },
     {
       "path": "CITATION.cff",
-      "sha256": "sha256:77e712639c809ae7d81358fb7ab9c8682ee4f956c26e6f67cd5d6061579caf97",
-      "size_bytes": 689
+      "sha256": "sha256:c09185afc99b17266b045e5b1020df870dcea9d4834a20f3c95a386078a3c4d4",
+      "size_bytes": 709
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -79,18 +79,18 @@
     },
     {
       "path": "LICENSE",
-      "sha256": "sha256:40b1ca82a1652cad3cb6802eddbf4db7dd3fc2fea0e0c7b02c2f7604e4c8c184",
-      "size_bytes": 1076
+      "sha256": "sha256:6488732edb3053f5f56446c694709735d8e4514e39bbb560c892f38f62d606ff",
+      "size_bytes": 1097
     },
     {
       "path": "MANIFEST.in",
-      "sha256": "sha256:13d8b573d975a256a9a47ce9b854349c6912ace59e6423d3a8a2c696a61272a0",
-      "size_bytes": 255
+      "sha256": "sha256:aca087754a8c713da22e5250f88cab77ff298331b08419657bb5e22da0699b52",
+      "size_bytes": 267
     },
     {
       "path": "README.md",
-      "sha256": "sha256:5f1798d06d4dc7b365324c1a0d40b12f9d0ea70ea482852da8a3bfd58cfaa3d9",
-      "size_bytes": 11241
+      "sha256": "sha256:f1a0af053e39b65eebb750d9ba9445260c120d6ee4d52a8aa8e9b45f7073dd36",
+      "size_bytes": 12848
     },
     {
       "path": "SECURITY.md",
@@ -114,13 +114,13 @@
     },
     {
       "path": "docs/INDEPENDENT_EVALUATION.md",
-      "sha256": "sha256:021f0a151946a5ddda523cc48424c09ed76779b4231081afa231fe1223fa1784",
-      "size_bytes": 2131
+      "sha256": "sha256:494fa860b04ab14b52a42bb152289ab5ca6d580588741dd2b4660c1eccf2aef0",
+      "size_bytes": 4664
     },
     {
       "path": "docs/INDEX.md",
-      "sha256": "sha256:109b099dc37e146cb3631f8dbfd4360bd4f5e636b1ddfa934e8e31775b924c8d",
-      "size_bytes": 2058
+      "sha256": "sha256:45d1fd02e76bd500120e2b3e497e862f666fdcdae569c7991bea9fd28aaefcb2",
+      "size_bytes": 2211
     },
     {
       "path": "docs/LEADERBOARD.md",
@@ -134,8 +134,8 @@
     },
     {
       "path": "docs/RUN_A_CANDIDATE.md",
-      "sha256": "sha256:3be8d5238f613acb651cd691b51803ca5091815e3c681ecbb064fdbb9511cea2",
-      "size_bytes": 3930
+      "sha256": "sha256:9b95a164b2ea8a4c63fc6aa76caf2af3d50fae528a638cec9ea49842ce276e80",
+      "size_bytes": 4544
     },
     {
       "path": "docs/SCORING.md",
@@ -178,24 +178,29 @@
       "size_bytes": 5025
     },
     {
+      "path": "docs/assets/consequencebench-social-preview.svg",
+      "sha256": "sha256:a6d8cb72fc71e575f85dfa9e8ccd1fcd4753795316888c3431ad718de6d9d0f0",
+      "size_bytes": 3791
+    },
+    {
       "path": "docs/assets/development-leaderboard-paired.svg",
-      "sha256": "sha256:8999f17548d0345bee6ef64381b811b94351f0998e9bab9291dd39ef6acbee9e",
-      "size_bytes": 14505
+      "sha256": "sha256:24bd137d66862ecb0f698b85766991e592b44acf48b19571d6421418e4fe0ea8",
+      "size_bytes": 14591
     },
     {
       "path": "docs/assets/development-leaderboard-ranked.svg",
-      "sha256": "sha256:fcc2865051a828425d8b92e5f8f293b9076724bf30e2f02cea8ab2b8afc91d70",
-      "size_bytes": 13608
+      "sha256": "sha256:44bf049978628a4c4ff21476134ee61f30739c3a956a266452123c81a15910f1",
+      "size_bytes": 13684
     },
     {
       "path": "docs/assets/development-leaderboard-unsafe-effects.svg",
-      "sha256": "sha256:fcc2865051a828425d8b92e5f8f293b9076724bf30e2f02cea8ab2b8afc91d70",
-      "size_bytes": 13608
+      "sha256": "sha256:44bf049978628a4c4ff21476134ee61f30739c3a956a266452123c81a15910f1",
+      "size_bytes": 13684
     },
     {
       "path": "pyproject.toml",
-      "sha256": "sha256:c46164364877076a6d6220a7567be1700961bdfcff7fd2a1ea42e600d3dfbb3e",
-      "size_bytes": 2133
+      "sha256": "sha256:ecbdb4411543be80a66209372730eedfa8eb5e5593210737660cb6b9aba54309",
+      "size_bytes": 2184
     },
     {
       "path": "results/development_leaderboard.v1.json",
@@ -718,7 +723,7 @@
       "size_bytes": 1028
     }
   ],
-  "manifest_hash": "sha256:aba1c24f1f26981ec1c555e4b5e96e6474a0cbdcfdeff73d0515c4cd4f9bcc0c",
+  "manifest_hash": "sha256:6042e93911754b15e61335405252a8682e6c453245b21c454099c8a70db8c7ac",
   "release_tier": "DEVELOPMENT_PREVIEW_NOT_QUALIFIED",
   "schema_version": "consequencebench.public_repository_integrity.v1",
   "version": "0.1.0"

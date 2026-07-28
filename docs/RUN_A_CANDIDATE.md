@@ -66,6 +66,20 @@ consequencebench lifecycle-agent \
 Start with a small development run to validate schemas and timeouts. Do not
 publish a smoke run as a benchmark comparison.
 
+The repository includes concrete adapters for three execution surfaces:
+
+```bash
+python scripts/ycb100_ollama_jsonl_agent.py --help
+python scripts/ycb100_vertex_gemini_jsonl_agent.py --help
+python scripts/ycb100_codex_cli_jsonl_agent.py --help
+```
+
+Use these as protocol examples, not as hidden evaluator baselines. Your
+`agent-command.json` is a JSON array containing the exact subprocess command.
+Your `agent-manifest.json` must bind the candidate source tree, model
+configuration, prompt root, and tool policy by SHA-256. A valid one-world smoke
+run proves only that the adapter and evaluator can communicate.
+
 ## 4. Run The Full Development Study
 
 Bind before execution:

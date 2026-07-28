@@ -21,6 +21,7 @@
 | [Submit Results](SUBMIT_RESULTS.md) | Artifact, reporting, evidence-label, and public review requirements. |
 | [Operator Guide](YCB100_OPERATOR_GUIDE.md) | Agent submission and official judging. |
 | [Evaluator Handbook](YCB100_EVALUATOR_HANDBOOK.md) | Reproducible evaluator operation and evidence custody. |
+| [GitHub Discussions](https://github.com/yuvin-labs/consequencebench/discussions) | Questions, proposed worlds, adapter help, and audit coordination. |
 
 ## Qualification
 

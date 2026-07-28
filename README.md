@@ -4,7 +4,8 @@
 
 [Website](https://yuvinlab.com/consequencebench) |
 [Hugging Face dataset](https://huggingface.co/datasets/yuvin-labs/consequencebench) |
-[Development leaderboard](docs/LEADERBOARD.md)
+[Development leaderboard](docs/LEADERBOARD.md) |
+[Community discussions](https://github.com/yuvin-labs/consequencebench/discussions)
 
 ConsequenceBench is a universal synthetic benchmark for consequential AI agents. It
 tests whether an agent investigates the right evidence, chooses the right
@@ -33,6 +34,21 @@ publish the complete evidence rather than a screenshot or a single aggregate:
 The useful question is not only "Did the agent answer correctly?" It is also
 "What changed in the world, was that change authorized and evidence-grounded,
 and did the agent prove the final state without duplicating an effect?"
+
+## Choose A Starting Point
+
+| Time | Goal | Start here |
+| --- | --- | --- |
+| 15 minutes | Verify the package and inspect one case from each domain | [Independent evaluation: fast review packet](docs/INDEPENDENT_EVALUATION.md#fast-review-packet) |
+| 30-60 minutes | Connect a local or hosted model through the JSONL protocol | [Run a Candidate](docs/RUN_A_CANDIDATE.md) |
+| Half day | Review all 20 scenarios in one domain | [Domain semantics packet](docs/INDEPENDENT_EVALUATION.md#domain-semantics-packet) |
+| Full study | Produce a reproducible development result | [Submission requirements](docs/SUBMIT_RESULTS.md) |
+| Ongoing | Ask questions, propose harder worlds, or coordinate an audit | [GitHub Discussions](https://github.com/yuvin-labs/consequencebench/discussions) |
+
+No provider key or model is required for the 15-minute review. Model runs need
+an adapter and the corresponding local or hosted inference access. Public
+leaderboard submissions require the complete evidence listed in
+[Submit Results](docs/SUBMIT_RESULTS.md), not only an aggregate score.
 
 ## What It Measures
 
@@ -189,6 +205,11 @@ The shortest integration route is documented in
 [Run a Candidate](docs/RUN_A_CANDIDATE.md). It includes the subprocess
 contract, a smoke run, the full development campaign, and the evidence bundle
 that must be retained.
+
+Questions about an adapter, scenario, or result belong in
+[GitHub Discussions](https://github.com/yuvin-labs/consequencebench/discussions).
+Reproducible defects and result submissions belong in
+[GitHub Issues](https://github.com/yuvin-labs/consequencebench/issues).
 
 ## Governance-System Studies
 
