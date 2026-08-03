@@ -96,6 +96,10 @@ PUBLIC_DOC_NAMES = {
     "YCB100_QUALIFICATION_PLAN.md",
     "YCB100_THREAT_MODEL.md",
 }
+PUBLIC_DOC_PATHS = {
+    "docs/paper/GOVERNANCE_IS_NOT_OPTIONAL.md",
+    "docs/paper/README.md",
+}
 FORBIDDEN_SUFFIXES = {
     ".db",
     ".log",
@@ -152,7 +156,11 @@ def _is_public_file(path: Path) -> bool:
             and relative.parts[1] == "assets"
             and path.suffix.casefold() == ".svg"
         )
-        if path.name not in PUBLIC_DOC_NAMES and not is_leaderboard_asset:
+        if (
+            path.name not in PUBLIC_DOC_NAMES
+            and relative.as_posix() not in PUBLIC_DOC_PATHS
+            and not is_leaderboard_asset
+        ):
             return False
     if relative.parts[0] == "tests" and path.name not in PUBLIC_TEST_NAMES:
         return False

@@ -47,6 +47,23 @@ def test_public_export_excludes_vendor_specific_adapters() -> None:
     assert "tests/test_yuvin_pressure_integration.py" not in exported
 
 
+def test_public_export_includes_scoped_research_notes() -> None:
+    root = Path(__file__).resolve().parents[1]
+    script_path = root / "scripts" / "build_public_repository.py"
+    spec = importlib.util.spec_from_file_location("build_public_repository", script_path)
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+    exported = {
+        path.relative_to(root).as_posix()
+        for path in module._source_files()
+    }
+
+    assert "docs/paper/GOVERNANCE_IS_NOT_OPTIONAL.md" in exported
+    assert "docs/paper/README.md" in exported
+
+
 def test_cli_writes_machine_readable_validation_receipts(tmp_path: Path) -> None:
     scenario_path = tmp_path / "scenario.json"
     controls_path = tmp_path / "controls.json"

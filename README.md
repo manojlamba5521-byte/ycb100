@@ -6,6 +6,7 @@
 [Hugging Face dataset](https://huggingface.co/datasets/yuvin-labs/consequencebench) |
 [Interactive explorer](https://huggingface.co/spaces/yuvin-labs/consequencebench-explorer) |
 [Development leaderboard](docs/LEADERBOARD.md) |
+[Research notes](docs/paper/README.md) |
 [Community discussions](https://github.com/yuvin-labs/consequencebench/discussions)
 
 ConsequenceBench is a universal synthetic benchmark for consequential AI agents. It
@@ -293,6 +294,7 @@ LLM reviewers may explain traces but cannot change deterministic hard scores.
 - [Evaluator handbook](docs/YCB100_EVALUATOR_HANDBOOK.md)
 - [Limitations](docs/LIMITATIONS.md)
 - [Qualification requirements](docs/YCB100_QUALIFICATION_PLAN.md)
+- [Research notes](docs/paper/README.md)
 - [Documentation index](docs/INDEX.md)
 
 ## License
