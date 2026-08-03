@@ -12,7 +12,6 @@
 | [Threat Model](YCB100_THREAT_MODEL.md) | Candidate, evaluator, oracle, and custody boundaries. |
 | [Limitations](LIMITATIONS.md) | Scientific, domain, and claim boundaries. |
 | [Validity Hardening](VALIDITY_HARDENING.md) | Known validity risks and required controls. |
-| [Research notes](paper/README.md) | Preliminary, scoped analyses that are not result submissions. |
 
 ## Operation
 
